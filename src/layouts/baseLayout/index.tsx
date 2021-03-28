@@ -1,29 +1,27 @@
 /*
  * @Author: yuyang
  * @Date: 2021-03-27 14:20:18
- * @LastEditTime: 2021-03-27 14:37:30
+ * @LastEditTime: 2021-03-28 11:31:01
  * @LastEditors: yuyang
  */
 import React from 'react';
 import { Layout } from 'antd';
-import HeaderContent from './header';
+import Header1 from './header';
 import MenuContent from './menu';
 import styles from './index.less';
-import { menusData, MenusData } from '../../../config/route';
+import { menusData } from '../../../config/route';
 
-const { Header, Content, Sider } = Layout;
+const { Header, Content } = Layout;
 
 const BaseLayout: React.FunctionComponent = (props: any) => {
   const { children } = props;
   return (
     <Layout className={styles.container}>
       <Header className={styles.contentHeader}>
-        <HeaderContent />
+        <Header1 />
+        <MenuContent menusData={menusData} />
       </Header>
       <Layout style={{ padding: 0 }}>
-        <Sider width={200} style={{ background: '#fff' }}>
-          <MenuContent menusData={menusData as MenusData} />
-        </Sider>
         <Content className={styles.content}>{children}</Content>
       </Layout>
     </Layout>

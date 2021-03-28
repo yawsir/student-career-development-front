@@ -1,61 +1,68 @@
+/*
+ * @Author: yuyang
+ * @Date: 2021-03-27 14:20:18
+ * @LastEditTime: 2021-03-28 11:27:10
+ * @LastEditors: yuyang
+ */
 import React from 'react';
+import type { ComponentType } from 'react';
 import { Link, useLocation } from 'umi';
 import { Menu } from 'antd';
 import queryKeysByPath from '@/utils/utils';
 import Icon from '@ant-design/icons';
-import { MenusData } from '../../../../config/route';
+import { MenuData } from '../../../../config/route';
 import styles from './index.less';
 
 const { SubMenu, Item } = Menu;
 
 export interface BasicLayoutProps {
-    menusData: MenusData;
+  menusData: MenuData[];
 }
 
 const MenuContent: React.FunctionComponent<BasicLayoutProps> = (props: BasicLayoutProps) => {
-    const { menusData } = props;
-    const location = useLocation();
+  const { menusData } = props;
+  const location = useLocation();
 
-    const renderTitle = (title: string, icon?: string) => {
-        return (
-            <div style={{ display: 'flex', alignItems: 'center' }}>
-                {icon && <Icon component={icon} />}
-                <span>{title}</span>
-            </div>
-        );
-    };
-    function renderMenu(data: any = []) {
-        const rows = Array.isArray(data) ? data : [];
-        return rows.map(row => {
-            if (row === undefined) return false;
-            const { title, link = '', key, icon, children, ...restState } = row;
-
-            if (children && children.length > 0) {
-                const subMenu = renderMenu(children);
-                return (
-                    <SubMenu key={key} title={renderTitle(title, icon)}>
-                        {subMenu}
-                    </SubMenu>
-                );
-            }
-            return (
-                <Item key={key} title={title} className={styles.item}>
-                    {icon && <Icon component={icon} />}
-                    <Link to={{ pathname: link, state: { ...restState, key } }}>
-                        <span>{title}</span>
-                    </Link>
-                </Item>
-            );
-        });
-    }
-
-    const { openKey, selectKey } = queryKeysByPath(location.pathname);
-
+  const renderTitle = (title: string, icon?: ComponentType) => {
     return (
-        <Menu selectedKeys={[selectKey || '']} defaultOpenKeys={[openKey]} mode="inline" theme="light" className="progressbar">
-            {renderMenu(menusData)}
-        </Menu>
+      <div style={{ display: 'flex', alignItems: 'center' }}>
+        {icon && <Icon component={icon} />}
+        <span>{title}</span>
+      </div>
     );
+  };
+  function renderMenu(data: any = []) {
+    const rows = Array.isArray(data) ? data : [];
+    return rows.map((row) => {
+      if (row === undefined) return false;
+      const { title, link = '', key, icon, children, ...restState } = row;
+
+      if (children && children.length > 0) {
+        const subMenu = renderMenu(children);
+        return (
+          <SubMenu key={key} title={renderTitle(title, icon)}>
+            {subMenu}
+          </SubMenu>
+        );
+      }
+      return (
+        <Item key={key} title={title} className={styles.item}>
+          {icon && <Icon component={icon} />}
+          <Link to={{ pathname: link, state: { ...restState, key } }}>
+            <span>{title}</span>
+          </Link>
+        </Item>
+      );
+    });
+  }
+
+  const { openKey, selectKey } = queryKeysByPath(location.pathname);
+
+  return (
+    <Menu selectedKeys={[selectKey || '']} defaultOpenKeys={[openKey]} mode="horizontal" theme="light" className="progressbar">
+      {renderMenu(menusData)}
+    </Menu>
+  );
 };
 
 export default MenuContent;
