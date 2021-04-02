@@ -1,7 +1,7 @@
 /*
  * @Author: yuyang
  * @Date: 2021-03-27 14:20:18
- * @LastEditTime: 2021-03-28 11:27:10
+ * @LastEditTime: 2021-04-02 14:39:07
  * @LastEditors: yuyang
  */
 import React from 'react';
@@ -59,7 +59,7 @@ const MenuContent: React.FunctionComponent<BasicLayoutProps> = (props: BasicLayo
   const { openKey, selectKey } = queryKeysByPath(location.pathname);
 
   return (
-    <Menu selectedKeys={[selectKey || '']} defaultOpenKeys={[openKey]} mode="horizontal" theme="light" className="progressbar">
+    <Menu selectedKeys={[selectKey || '']} defaultOpenKeys={[openKey]} mode="horizontal" theme="light" className={styles.menuwrap}>
       {renderMenu(menusData)}
     </Menu>
   );
