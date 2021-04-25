@@ -1,7 +1,7 @@
 /*
  * @Author: yuyang
  * @Date: 2021-03-27 14:20:18
- * @LastEditTime: 2021-04-02 14:39:07
+ * @LastEditTime: 2021-04-24 11:50:12
  * @LastEditors: yuyang
  */
 import React from 'react';
@@ -40,13 +40,13 @@ const MenuContent: React.FunctionComponent<BasicLayoutProps> = (props: BasicLayo
       if (children && children.length > 0) {
         const subMenu = renderMenu(children);
         return (
-          <SubMenu key={key} title={renderTitle(title, icon)}>
+          <SubMenu key={key} title={renderTitle(title, icon)} popupClassName={styles.submenu}>
             {subMenu}
           </SubMenu>
         );
       }
       return (
-        <Item key={key} title={title} className={styles.item}>
+        <Item key={key} title={title} className={styles.menuitem}>
           {icon && <Icon component={icon} />}
           <Link to={{ pathname: link, state: { ...restState, key } }}>
             <span>{title}</span>

@@ -3,13 +3,14 @@
   min-height: 100vh;
 
   /***系统头部***/
-  .contentHeader {
-    background: url('../../assets/headerbg.png') 100%/100% no-repeat;
+  .header {
+    background: @primary-color;
     display: flex;
+    flex-direction: column;
     justify-content: flex-start;
-    align-items: center;
-    flex-wrap: nowrap;
-    .contentHeaderWrap {
+    align-items: flex-start;
+    height: auto;
+    .header__menu {
       width: 100%;
     }
   }
