@@ -5,6 +5,6 @@
  * @LastEditors: yuyang
  */
 export default {
-  '@primary-color': '#156E3C',
+  '@background-color': '#156E3C',
   '@white': '#FFFFFF',
 };

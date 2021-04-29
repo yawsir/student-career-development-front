@@ -4,12 +4,16 @@
 
   /***系统头部***/
   .header {
-    background: @primary-color;
+    background: @background-color;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    align-items: flex-start;
+    align-items: center;
     height: auto;
+    .header__toolbar {
+      margin-top: 16px;
+      width: 100%;
+    }
     .header__menu {
       width: 100%;
     }

@@ -1,7 +1,7 @@
 /*
  * @Author: yuyang
  * @Date: 2021-03-27 14:20:18
- * @LastEditTime: 2021-04-24 11:50:12
+ * @LastEditTime: 2021-04-29 23:42:09
  * @LastEditors: yuyang
  */
 import React from 'react';
@@ -31,14 +31,14 @@ const MenuContent: React.FunctionComponent<BasicLayoutProps> = (props: BasicLayo
       </div>
     );
   };
-  function renderMenu(data: any = []) {
+  function renderMenu(data: any = [], isInside = false) {
     const rows = Array.isArray(data) ? data : [];
     return rows.map((row) => {
       if (row === undefined) return false;
       const { title, link = '', key, icon, children, ...restState } = row;
 
       if (children && children.length > 0) {
-        const subMenu = renderMenu(children);
+        const subMenu = renderMenu(children, true);
         return (
           <SubMenu key={key} title={renderTitle(title, icon)} popupClassName={styles.submenu}>
             {subMenu}
@@ -46,10 +46,10 @@ const MenuContent: React.FunctionComponent<BasicLayoutProps> = (props: BasicLayo
         );
       }
       return (
-        <Item key={key} title={title} className={styles.menuitem}>
+        <Item key={key} title={title}>
           {icon && <Icon component={icon} />}
           <Link to={{ pathname: link, state: { ...restState, key } }}>
-            <span>{title}</span>
+            <span className={isInside ? styles['menuitem-inside'] : styles['menuitem-outside']}>{title}</span>
           </Link>
         </Item>
       );
