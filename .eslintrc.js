@@ -1,7 +1,7 @@
 /*
  * @Author: yuyang
  * @Date: 2021-02-03 10:09:10
- * @LastEditTime: 2021-05-04 15:33:36
+ * @LastEditTime: 2021-05-04 16:31:58
  * @LastEditors: yuyang
  */
 module.exports = {
@@ -79,6 +79,11 @@ module.exports = {
     'max-len': ['error', { code: 200 }],
     'implicit-arrow-linebreak': ['off'],
     'import/prefer-default-export': ['off'],
+    "import/extensions": ['error', "never", {
+      "png": "always",
+      "jpg": "always",
+      "svg": "always",
+    }]
   },
   settings: {
     react: { version: 'detect' },
