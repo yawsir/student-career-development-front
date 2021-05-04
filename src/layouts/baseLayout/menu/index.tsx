@@ -1,7 +1,7 @@
 /*
  * @Author: yuyang
  * @Date: 2021-03-27 14:20:18
- * @LastEditTime: 2021-04-29 23:42:09
+ * @LastEditTime: 2021-05-04 15:43:38
  * @LastEditors: yuyang
  */
 import React from 'react';
@@ -23,14 +23,12 @@ const MenuContent: React.FunctionComponent<BasicLayoutProps> = (props: BasicLayo
   const { menusData } = props;
   const location = useLocation();
 
-  const renderTitle = (title: string, icon?: ComponentType) => {
-    return (
-      <div style={{ display: 'flex', alignItems: 'center' }}>
-        {icon && <Icon component={icon} />}
-        <span>{title}</span>
-      </div>
-    );
-  };
+  const renderTitle = (title: string, icon?: ComponentType) => (
+    <div style={{ display: 'flex', alignItems: 'center' }}>
+      {icon && <Icon component={icon} />}
+      <span>{title}</span>
+    </div>
+  );
   function renderMenu(data: any = [], isInside = false) {
     const rows = Array.isArray(data) ? data : [];
     return rows.map((row) => {
@@ -59,7 +57,13 @@ const MenuContent: React.FunctionComponent<BasicLayoutProps> = (props: BasicLayo
   const { openKey, selectKey } = queryKeysByPath(location.pathname);
 
   return (
-    <Menu selectedKeys={[selectKey || '']} defaultOpenKeys={[openKey]} mode="horizontal" theme="light" className={styles.menuwrap}>
+    <Menu
+      selectedKeys={[selectKey || '']}
+      defaultOpenKeys={[openKey]}
+      mode="horizontal"
+      theme="light"
+      className={styles.menuwrap}
+    >
       {renderMenu(menusData)}
     </Menu>
   );

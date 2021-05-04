@@ -7,46 +7,58 @@
     "postinstall": "umi generate tmp",
     "prettier": "prettier --write '**/*.{js,jsx,tsx,ts,less,md,json}'",
     "test": "umi-test",
-    "test:coverage": "umi-test --coverage"
-  },
-  "gitHooks": {
-    "pre-commit": "lint-staged"
+    "test:coverage": "umi-test --coverage",
+    "prepare": "husky install",
+    "lint": "eslint --ext .tsx --ext .ts",
+    "prepublishOnly": "pinst --disable",
+    "postpublish": "pinst --enable"
   },
   "lint-staged": {
-    "*.{js,jsx,less,md,json}": [
-      "prettier --write"
+    "*.{js,jsx}": [
+      "eslint --ext .jsx --ext .js"
     ],
-    "*.ts?(x)": [
-      "prettier --parser=typescript --write"
+    "*.{ts,tsx}": [
+      "eslint --ext .tsx --ext .ts"
     ]
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
   },
   "dependencies": {
     "@ant-design/icons": "^4.6.2",
-    "@ant-design/pro-layout": "^6.5.0",
+    "@ant-design/pro-layout": "^6.17.1",
     "@umijs/preset-react": "1.x",
-    "antd": "^4.14.1",
+    "antd": "^4.15.4",
     "axios": "^0.21.1",
     "react": "^17.0.2",
     "react-dom": "17.x",
-    "umi": "^3.4.7"
+    "umi": "^3.4.14"
   },
   "devDependencies": {
-    "@types/react": "^17.0.0",
-    "@types/react-dom": "^17.0.0",
-    "@umijs/test": "^3.4.7",
-    "eslint": "^7.17.0",
-    "eslint-config-airbnb": "^18.2.0",
-    "eslint-config-airbnb-typescript-prettier": "^4.1.0",
-    "eslint-config-prettier": "^6.11.0",
-    "eslint-import-resolver-typescript": "^2.3.0",
-    "eslint-plugin-import": "^2.22.0",
-    "eslint-plugin-jsx-a11y": "^6.3.1",
-    "eslint-plugin-prettier": "^3.3.1",
-    "eslint-plugin-react": "^7.20.6",
-    "eslint-plugin-react-hooks": "^4.1.2",
-    "lint-staged": "^10.0.7",
-    "prettier": "^2.2.0",
-    "typescript": "^4.1.2",
+    "@commitlint/cli": "^12.1.1",
+    "@commitlint/config-conventional": "^12.1.1",
+    "@typescript-eslint/eslint-plugin": "~4.22.0",
+    "@typescript-eslint/parser": "~4.22.0",
+    "cz-conventional-changelog": "^3.3.0",
+    "cz-customizable": "^6.3.0",
+    "@types/react": "^17.0.4",
+    "@types/react-dom": "^17.0.3",
+    "@umijs/test": "^3.4.14",
+    "eslint": "^7.25.0",
+    "eslint-config-airbnb-typescript": "^12.3.1",
+    "eslint-config-airbnb-typescript-prettier": "^4.2.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-import-resolver-typescript": "^2.4.0",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-jsx-a11y": "^6.4.1",
+    "eslint-plugin-react": "^7.23.2",
+    "eslint-plugin-react-hooks": "^4.2.0",
+    "husky": "^6.0.0",
+    "lint-staged": "^10.5.4",
+    "prettier": "^2.2.1",
+    "typescript": "^4.2.4",
     "yorkie": "^2.0.0"
   }
 }

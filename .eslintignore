@@ -5,3 +5,6 @@
 .umirc.pro.ts
 .umirc.test.ts
 .umirc.ts
+changelog.config.js
+commitlint.config.js
+.eslintrc.js
