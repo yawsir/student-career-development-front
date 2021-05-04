@@ -1,7 +1,7 @@
 /*
  * @Author: yuyang
- * @Date: 2021-03-27 14:21:21
- * @LastEditTime: 2021-03-27 14:35:42
+ * @Date: 2021-02-03 10:09:10
+ * @LastEditTime: 2021-05-04 15:33:36
  * @LastEditors: yuyang
  */
 module.exports = {
@@ -11,11 +11,9 @@ module.exports = {
   },
   extends: [
     'plugin:react/recommended',
-    'airbnb',
+    'airbnb-typescript',
     'plugin:@typescript-eslint/eslint-recommended',
     'plugin:@typescript-eslint/recommended',
-    'prettier/react',
-    'plugin:prettier/recommended',
   ],
   parser: '@typescript-eslint/parser',
   parserOptions: {
@@ -24,6 +22,7 @@ module.exports = {
     },
     ecmaVersion: 2020,
     sourceType: 'module',
+    project: './tsconfig.json',
   },
   plugins: ['react', '@typescript-eslint'],
   rules: {
@@ -37,6 +36,7 @@ module.exports = {
         allowSingleExtends: false,
       },
     ],
+    '@typescript-eslint/indent': ['error', 2],
     'react/jsx-filename-extension': [
       1,
       {
@@ -55,7 +55,7 @@ module.exports = {
     'react/state-in-constructor': ['off'], // state不需要放到constructor
     'jsx-a11y/click-events-have-key-events': ['off'], // 取消点击事件必须加key事件
     'jsx-a11y/no-noninteractive-element-interactions': ['off'], // 取消非互动元素必须添加role属性
-    'jsx-a11y/no-static-element-interactions': ['off'], // 取消必须添加role熟悉感
+    'jsx-a11y/no-static-element-interactions': ['off'], // 取消必须添加role
     'jsx-a11y/label-has-associated-control': ['off'],
     'jsx-a11y/control-has-associated-label': ['off'],
     'import/extensions': [
@@ -73,8 +73,12 @@ module.exports = {
     'consistent-return': ['off'],
     'react/jsx-boolean-value': ['off'],
     'react/prop-types': ['off'],
-    'no-use-before-define': ['off'],
+    'no-use-before-define': ['off', { functions: false, classes: false, variables: false }],
+    '@typescript-eslint/no-unused-vars': ['error'],
     'react/require-default-props': ['off'],
+    'max-len': ['error', { code: 200 }],
+    'implicit-arrow-linebreak': ['off'],
+    'import/prefer-default-export': ['off'],
   },
   settings: {
     react: { version: 'detect' },

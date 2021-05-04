@@ -223,7 +223,7 @@ Promise.myAll = (promiseArr: Promise<any>[], number?: number) =>
     for (let i = 0; i < len; i++) {
       // Promise.resolve将数组中非promise转为promise
       Promise.resolve(promiseArr[i])
-        // eslint-disable-next-line no-loop-func
+        // eslint-disable-next-line @typescript-eslint/no-loop-func
         .then((value) => {
           count++;
           if (value) resArr[i] = value;

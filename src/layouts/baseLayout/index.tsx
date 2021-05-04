@@ -1,7 +1,7 @@
 /*
  * @Author: yuyang
  * @Date: 2021-03-27 14:20:18
- * @LastEditTime: 2021-04-29 22:55:45
+ * @LastEditTime: 2021-05-04 15:26:17
  * @LastEditors: yuyang
  */
 import React from 'react';
@@ -28,7 +28,7 @@ const BaseLayout: React.FunctionComponent = (props: any) => {
           </Col>
         </Row>
       </Header>
-      <Layout style={{ padding: 0 }}>
+      <Layout>
         <Content className={styles.content}>{children}</Content>
       </Layout>
     </Layout>
