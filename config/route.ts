@@ -1,7 +1,7 @@
 /*
  * @Author: yuyang
  * @Date: 2021-03-27 14:36:22
- * @LastEditTime: 2021-04-29 23:49:00
+ * @LastEditTime: 2021-05-04 19:38:21
  * @LastEditors: yuyang
  */
 import type { ComponentType } from 'react';
@@ -23,18 +23,18 @@ const menusData: MenuData[] = [
   },
   {
     title: '平台介绍',
-    link: '/about',
-    key: 'about',
+    link: '/about-us',
+    key: 'about-us',
     children: [
       {
         title: '网站简介',
-        link: '/about/intro',
+        link: '/about-us/intro',
         key: 'intro',
         children: [],
       },
       {
         title: '平台发展大事件',
-        link: '/about/platform-news',
+        link: '/about-us/platform-news',
         key: 'platform-news',
         children: [],
       },
