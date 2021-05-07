@@ -1,0 +1,37 @@
+@keyframes scrollx {
+  0% {
+    transform: translateX(0);
+  }
+  10% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-80%);
+  }
+} 
+
+.broadcast {
+  border: 1px solid #cdcdcd;
+  margin: 16px;
+  width: 100%;
+  .broadcast__wrap {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    overflow: hidden;
+    .broadcast__wrap__prefix {
+      text-align: center;
+      padding: 4px 8px;
+      margin: 0;
+      flex-shrink: 0;
+      background: @white;
+      z-index: 10;
+    }
+    .broadcast__wrap__content {
+      padding: 4px;
+      margin: 0;
+      white-space: nowrap;
+      animation: scrollx 20s linear 0s infinite normal backwards;
+    }
+  }
+}
