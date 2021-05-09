@@ -5,7 +5,7 @@
   left: 0;
   right: 0;
   background: url(../../assets/yay.jpg);
-  .login-form__bg {
+  &__bg {
     opacity: .7;
     background: @background-color;
     width: 100%;
@@ -15,10 +15,113 @@
 }
 
 .login-form__wrap {
-  width: 500px;
+  width: 640px;
+  height: 400px;
+  border: 1px solid #fff;
+  border-radius: 16px;
+  overflow: hidden;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%,-50%);
   background: @white;
+  display: flex;
+  flex-direction: row;
+  z-index: 10;
+  padding: 48px 24px;
+}
+
+.login-form__logo {
+  width: 50%;
+  flex: 1;
+  background-color: @white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  &__image {
+    width: 128px;
+    height: 128px;
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+  &__text {
+    color: @background-color;
+    font-size: 16px;
+    padding: 16px;
+  }
+}
+
+.login-form__content {
+  background-color: @white;
+  width: 50%;
+  flex: 1;
+  &__title {
+    font-size: 18px;
+    color: @background-color;
+    font-weight: 400;
+    border-bottom: 2px solid @background-color;
+    padding-bottom: 8px;
+  }
+  &__form {
+    box-sizing: border-box;
+    padding-top: 24px;
+    &__icon {
+      color: @background-color;
+      font-size: 20px;
+      position: relative;
+      margin-right: 12px;
+      &::after {
+        position: absolute;
+        content: "|";
+        margin-left: 4px;
+        top: 8px;
+        right: -12px;
+        overflow: visible;
+        z-index: 10;
+        opacity: .5;
+        height: 100%;
+      }
+    }
+    &__input {
+      border-radius: 8px;
+      border-color: @background-color !important;
+    }
+    &__btn {
+      width: 100%;
+      color: @white;
+      background-color: @background-color !important;
+      &:link {
+        background-color: @background-color;
+        color: @white;
+      }
+      &:visited {
+        background-color: @background-color;
+        color: @white;
+      }
+      &:hover {
+        background-color: @background-color;
+        color: @white;
+      }
+      &:active {
+        background-color: @background-color;
+        color: @white;
+      }
+    }
+    &__links {
+      display: flex;
+      justify-content: space-between;
+      &__link {
+        font-size: 12px;
+        cursor: pointer;
+        margin: 0 8px;
+      }
+
+      &__spec {
+        color: @background-color;
+      }
+    }
+  }
 }
