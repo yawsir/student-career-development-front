@@ -1,7 +1,7 @@
 /*
  * @Author: yuyang
  * @Date: 2021-03-27 14:20:18
- * @LastEditTime: 2021-05-04 15:26:17
+ * @LastEditTime: 2021-06-15 15:10:40
  * @LastEditors: yuyang
  */
 import React from 'react';
@@ -29,7 +29,11 @@ const BaseLayout: React.FunctionComponent = (props: any) => {
         </Row>
       </Header>
       <Layout>
-        <Content className={styles.content}>{children}</Content>
+        <Row justify="center">
+          <Col xl={16} lg={18} md={18} sm={24} xs={24}>
+            <Content className={styles.content}>{children}</Content>
+          </Col>
+        </Row>
       </Layout>
     </Layout>
   );
