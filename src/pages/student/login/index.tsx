@@ -1,16 +1,18 @@
 /*
  * @Author: yuyang
  * @Date: 2021-05-05 20:04:29
- * @LastEditTime: 2021-05-09 16:33:49
+ * @LastEditTime: 2021-06-23 16:23:17
  * @LastEditors: yuyang
  */
 import React from 'react';
-import { history } from 'umi';
+import { history, useModel } from 'umi';
 import LoginForm, { LoginFormValues, ClientName } from '@/components/LoginForm';
 
 const Login: React.FC = () => {
+  const authModel = useModel<'auth'>('auth');
+
   const handleLogin = (values: LoginFormValues) => {
-    console.log(values);
+    authModel.login(values.username, values.password);
   };
 
   const handleSwitchClient = (currentClient: ClientName) => {

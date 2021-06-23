@@ -1,13 +1,19 @@
 /*
  * @Author: yuyang
  * @Date: 2021-04-28 11:48:18
- * @LastEditTime: 2021-04-29 22:18:47
+ * @LastEditTime: 2021-06-23 14:14:54
  * @LastEditors: yuyang
  */
 
 interface V {
   [k: string]: any;
 }
+
+export const storageKeys = {
+  TOKEN_KEY_NAME: 'FECBB6E8B4699053',
+  IS_LOGED_KEY_NAME: '0802609C14BE1D7B',
+  USERNAME_KEY_NAME: '824EC59323936251',
+};
 
 export default {
   getItem(key: string) {

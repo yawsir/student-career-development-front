@@ -1,11 +1,12 @@
 /*
  * @Author: yuyang
  * @Date: 2021-05-05 20:01:53
- * @LastEditTime: 2021-05-09 16:32:54
+ * @LastEditTime: 2021-06-23 16:44:54
  * @LastEditors: yuyang
  */
 import React from 'react';
 import { Form, Input, Button } from 'antd';
+import { Link } from 'umi';
 import { UserOutlined, KeyOutlined } from '@ant-design/icons';
 import logo from '@/assets/logo.png';
 import styles from './index.less';
@@ -20,12 +21,11 @@ interface LoginFormProps {
   clientName: ClientName;
   onLogin?: (values: LoginFormValues) => void;
   onResetPassword?: () => void;
-  onRegister?: () => void;
   onSwitchClient?: (currentClient: ClientName) => void
 }
 
 const LoginForm: React.FC<LoginFormProps> = (props) => {
-  const { onLogin, clientName, onResetPassword, onRegister, onSwitchClient } = props;
+  const { onLogin, clientName, onResetPassword, onSwitchClient } = props;
   const title = clientName === 'student' ? '学生登录 Student Login' : '教师登录 Teacher Login';
   const switchBtnText = clientName === 'student' ? '教师端切换' : '学生端切换';
   const handleFinish = (values: LoginFormValues) => {
@@ -33,10 +33,6 @@ const LoginForm: React.FC<LoginFormProps> = (props) => {
   };
   const handleResetPassword = () => {
     onResetPassword?.();
-  };
-
-  const handleRegister = () => {
-    onRegister?.();
   };
 
   const handleSwitchClient = () => {
@@ -62,27 +58,41 @@ const LoginForm: React.FC<LoginFormProps> = (props) => {
             >
               <Form.Item
                 name="username"
+                rules={[
+                  {
+                    required: true,
+                    message: '请输入用户名',
+                  },
+                ]}
               >
                 <Input
                   prefix={<UserOutlined className={styles['login-form__content__form__icon']} />}
                   className={styles['login-form__content__form__input']}
+                  placeholder="用户名"
                 />
               </Form.Item>
               <Form.Item
                 name="password"
+                rules={[
+                  {
+                    required: true,
+                    message: '请输入密码',
+                  },
+                ]}
               >
                 <Input.Password
                   prefix={<KeyOutlined className={styles['login-form__content__form__icon']} />}
                   className={styles['login-form__content__form__input']}
+                  placeholder="密码"
                 />
               </Form.Item>
-              <Form.Item
+              {/* <Form.Item
                 name="verifyCode"
               >
                 <Input
                   className={styles['login-form__content__form__input']}
                 />
-              </Form.Item>
+              </Form.Item> */}
               <Form.Item>
                 <Button htmlType="submit" type="primary" className={styles['login-form__content__form__btn']}>登录</Button>
               </Form.Item>
@@ -94,23 +104,21 @@ const LoginForm: React.FC<LoginFormProps> = (props) => {
                       onClick={handleResetPassword}
                     >
                       忘记密码
-
                     </span>
                   </div>
                   <div className={styles['login-form__content__form__links__group']}>
                     <span
                       className={styles['login-form__content__form__links__link']}
-                      onClick={handleRegister}
                     >
-                      立即注册
-
+                      <Link to={`/${clientName}/register`}>
+                        立即注册
+                      </Link>
                     </span>
                     <span
                       className={`${styles['login-form__content__form__links__link']} ${styles['login-form__content__form__links__spec']}`}
                       onClick={handleSwitchClient}
                     >
                       {switchBtnText}
-
                     </span>
                   </div>
                 </div>

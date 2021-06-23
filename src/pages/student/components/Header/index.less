@@ -1,0 +1,32 @@
+.header {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background: @background-color;
+  .platform {
+    display: flex;
+    padding: 0 16px;
+    justify-content: center;
+    align-items: center;
+    .platform__logo {
+      margin-right: 16px;
+      & > img {
+        width: 64px;
+        height: 64px;
+      }
+    }
+    .platform__title {
+      color: @white;
+      font-size: 22px;
+      margin: 0;
+    }
+  }
+
+  .personal {
+    cursor: pointer;
+    &__username {
+      color: @white;
+      font-size: 16px;
+    }
+  }
+}

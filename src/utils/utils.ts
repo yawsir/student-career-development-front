@@ -1,7 +1,7 @@
 /*
  * @Author: yuyang
  * @Date: 2021-03-27 14:48:53
- * @LastEditTime: 2021-04-02 15:22:02
+ * @LastEditTime: 2021-06-23 11:10:06
  * @LastEditors: yuyang
  */
 /**
@@ -11,9 +11,7 @@
 const queryKeysByPath = (pathname: string): { openKey: string; selectKey: string } => {
   const reg = /(^\/*)|(\/*$)/g; // 匹配字符串首尾斜杠
   const path = pathname.replace(reg, '');
-  console.log(path);
   const routes = path.split('/');
-  console.log(routes);
   return { openKey: routes[0], selectKey: routes[1] || routes[0] };
 };
 

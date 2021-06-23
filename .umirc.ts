@@ -1,7 +1,7 @@
 /*
  * @Author: yuyang
  * @Date: 2021-03-27 13:53:04
- * @LastEditTime: 2021-04-24 11:36:39
+ * @LastEditTime: 2021-06-23 11:14:11
  * @LastEditors: yuyang
  */
 import { defineConfig } from 'umi';
@@ -21,4 +21,11 @@ export default defineConfig({
   },
   fastRefresh: {},
   theme,
+  proxy: {
+    '/api': {
+      'target': 'http://backend.huishengedu.cn/',
+      'changeOrigin': true,
+      'pathRewrite': { '^/api' : '' },
+    },
+  },
 });

@@ -1,6 +1,5 @@
 import axios, { AxiosError, AxiosRequestConfig } from 'axios';
 import { notification, message } from 'antd';
-import storage from '@/utils/localStorage';
 import getErrorMessage from '@/utils/get-error-message';
 
 interface ErrorType {
@@ -134,7 +133,6 @@ const axiosGet = async <T = any>(
     headers: {
       Accept: 'application/json',
       'Content-Type': 'application/json',
-      Authorization: storage.getItem('token'),
     },
     ...options,
   });
@@ -161,7 +159,6 @@ const axiosPost = async <T = any>(
     headers: {
       Accept: 'application/json',
       'Content-Type': 'application/json',
-      Authorization: storage.getItem('token'),
     },
     ...options,
   });
@@ -181,7 +178,6 @@ const axiosPut = async <T = any>(url: string, data: object, options?: AxiosReque
     headers: {
       Accept: 'application/json',
       'Content-Type': 'application/json',
-      Authorization: storage.getItem('token'),
     },
     ...options,
   });
@@ -201,39 +197,8 @@ const axiosDelete = async <T = any>(url: string, data: object, options?: AxiosRe
     headers: {
       Accept: 'application/json',
       'Content-Type': 'application/json',
-      Authorization: storage.getItem('token'),
     },
     ...options,
   });
 
-const axiosAll = async (fetch: Promise<any>[], completeNumber?: number): Promise<any> => {
-  const data = await Promise.myAll(fetch, completeNumber).catch(errorHandler);
-  return data;
-};
-
-Promise.myAll = (promiseArr: Promise<any>[], number?: number) =>
-  // 为了让传入的值不是promise也返回promise
-  new Promise((resolve, reject) => {
-    if (!Array.isArray(promiseArr)) {
-      throw new Error('promiseArr必须为数组');
-    }
-    const resArr: Array<Function> = [];
-    const len = promiseArr.length;
-    let count = 0;
-    for (let i = 0; i < len; i++) {
-      // Promise.resolve将数组中非promise转为promise
-      Promise.resolve(promiseArr[i])
-        // eslint-disable-next-line @typescript-eslint/no-loop-func
-        .then((value) => {
-          count++;
-          if (value) resArr[i] = value;
-          if (count === number) {
-            cancel();
-            return resolve(resArr);
-          }
-          resolve(resArr);
-        })
-        .catch((err) => reject(err));
-    }
-  });
-export { axiosGet, axiosPost, axiosPut, axiosDelete, axiosAll, errorHandler, cancel };
+export { axiosGet, axiosPost, axiosPut, axiosDelete, errorHandler, cancel };
