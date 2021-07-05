@@ -1,19 +1,13 @@
 FROM nginx:stable
-FROM node:lts-alpine
+FROM node:lts-alpine as builder
 
-ADD ./**/* /builder/
+ADD . /code
 
-WORKDIR /builder
+WORKDIR /code
 
 RUN yarn config set registry https://registry.npm.taobao.org \
   && yarn install \
   && yarn build
 COPY student-career.conf /etc/nginx/conf.d/default.conf
 COPY ./dist /usr/share/nginx/html
-
-
-
-
-
-
 
