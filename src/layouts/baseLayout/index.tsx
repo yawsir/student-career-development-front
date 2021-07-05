@@ -1,15 +1,15 @@
 /*
  * @Author: yuyang
  * @Date: 2021-03-27 14:20:18
- * @LastEditTime: 2021-06-15 15:10:40
+ * @LastEditTime: 2021-07-05 13:30:01
  * @LastEditors: yuyang
  */
 import React from 'react';
 import { Layout, Row, Col } from 'antd';
 import ToolBar from './ToolBar';
+import MenuContent from './MenuContent';
 import styles from './index.less';
 import { menusData } from '../../../config/route';
-import MenuContent from './Menu';
 
 const { Header, Content } = Layout;
 const BaseLayout: React.FunctionComponent = (props: any) => {
