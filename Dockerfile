@@ -11,4 +11,4 @@ RUN yarn config set registry https://registry.npm.taobao.org \
 
 COPY student-career.conf /etc/nginx/conf.d/default.conf
 
-COPY dist/ /usr/share/nginx/html/
+COPY . /usr/share/nginx/html/

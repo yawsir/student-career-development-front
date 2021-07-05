@@ -1,0 +1,6 @@
+.husky
+config
+mock
+src
+node_modules
+.*
