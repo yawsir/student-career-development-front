@@ -7,7 +7,8 @@ WORKDIR /code
 
 RUN yarn config set registry https://registry.npm.taobao.org \
   && yarn install \
-  && yarn build
+  && yarn build \
+  ls
 COPY student-career.conf /etc/nginx/conf.d/default.conf
-COPY ./dist /usr/share/nginx/html
+COPY dist /usr/share/nginx/html
 
