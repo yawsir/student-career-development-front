@@ -1,4 +1,6 @@
 FROM nginx:stable
+FROM node:lts-alpine
+
 
 RUN yarn config set registry https://registry.npm.taobao.org \
   && yarn install \
