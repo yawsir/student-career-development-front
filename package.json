@@ -1,7 +1,7 @@
 {
   "name": "student-career-development",
   "version": "0.0.0",
-  "private": true,
+  "private": false,
   "scripts": {
     "start": "umi dev",
     "build": "umi build",
