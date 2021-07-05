@@ -1,23 +1,28 @@
 .menuwrap {
   background: transparent;
-  color: @white;
   text-align: center;
   font-size: 18px;
   border: 0;
+  background-color: @primary-color;
 }
 .submenu {
-  color: @white;
+  background-color: @primary-color;
 }
 .menuitem {
   display: flex;
   align-items: center;
-  background: transparent;
-  color: @white;
+  background-color: @primary-color;
 }
 
 .menuitem-inside {
-  color: #000;
+  background-color: @primary-color;
 }
 .menuitem-outside {
-  color: @white;
+  background-color: @primary-color;
+}
+
+:global {
+  .ant-menu.ant-menu-dark, .ant-menu-dark .ant-menu-sub, .ant-menu.ant-menu-dark .ant-menu-sub {
+    background-color: #156E3C;
+  }
 }

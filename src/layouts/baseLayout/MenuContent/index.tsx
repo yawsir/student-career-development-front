@@ -1,7 +1,7 @@
 /*
  * @Author: yuyang
  * @Date: 2021-03-27 14:20:18
- * @LastEditTime: 2021-05-04 15:43:38
+ * @LastEditTime: 2021-07-05 14:43:36
  * @LastEditors: yuyang
  */
 import React from 'react';
@@ -61,7 +61,7 @@ const MenuContent: React.FunctionComponent<BasicLayoutProps> = (props: BasicLayo
       selectedKeys={[selectKey || '']}
       defaultOpenKeys={[openKey]}
       mode="horizontal"
-      theme="light"
+      theme="dark"
       className={styles.menuwrap}
     >
       {renderMenu(menusData)}
