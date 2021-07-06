@@ -30,7 +30,6 @@ pipeline {
       steps {
         script {
           sh "curl -u '${DEPLOY_SECRET}' -X POST -H 'Accept: application/json' -H 'Content-Type: application/json' '${DEPLOY_API}' -k"
-          sh "/usr/local/src/delete-coding-image.sh"
         }
       }
     }
