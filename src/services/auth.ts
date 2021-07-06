@@ -1,20 +1,23 @@
 /*
  * @Author: yuyang
  * @Date: 2021-06-22 09:24:56
- * @LastEditTime: 2021-06-23 13:49:59
+ * @LastEditTime: 2021-07-06 15:35:28
  * @LastEditors: yuyang
  */
 import { axiosPost } from '@/utils/axios';
 import { LoginInfo, RegisterInfo } from './auth.data';
 
-interface LoginParams {
+export interface LoginParams {
   username: string;
   password: string;
 }
 
-interface RegisterParams {
-  name: string;
-  pw: string;
+export interface RegisterParams {
+  email: string;
+	fullname: string;
+	password: string;
+	phone: string;
+	username: string;
 }
 const login = (params: LoginParams) => axiosPost<LoginInfo>('/api/auth/login', params);
 const logout = () => axiosPost('/api/auth/logout', {});

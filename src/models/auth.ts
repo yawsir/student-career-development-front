@@ -1,13 +1,13 @@
 /*
  * @Author: yuyang
  * @Date: 2021-06-22 09:23:32
- * @LastEditTime: 2021-06-23 16:41:09
+ * @LastEditTime: 2021-07-06 16:02:44
  * @LastEditors: yuyang
  */
 import { useState, useCallback } from 'react';
 import { history } from 'umi';
 import storage, { storageKeys } from '@/utils/localStorage';
-import authService from '@/services/auth';
+import authService, { RegisterParams } from '@/services/auth';
 import { message } from 'antd';
 
 export default function useAuthModel() {
@@ -41,13 +41,24 @@ export default function useAuthModel() {
     setLoading(false);
   }, []);
 
-  const register = useCallback(async ({ username, password }) => {
+  const register = useCallback(async ({ username, password, email, fullname, phone }: RegisterParams, cb?: () => void) => {
     setLoading(true);
-    const data = await authService.register({
-      name: username,
-      pw: password,
-    });
-    console.log(data);
+    try {
+      const data = await authService.register({
+        username,
+        password,
+        email,
+        fullname,
+        phone
+      });
+      if (data.active) {
+        message.success('注册成功')
+      }
+      cb?.()
+    } catch (error) {
+      message.error('该用户已存在');
+    }
+    
   }, []);
 
   return {

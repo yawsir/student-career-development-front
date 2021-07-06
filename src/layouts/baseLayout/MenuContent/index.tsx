@@ -1,7 +1,7 @@
 /*
  * @Author: yuyang
  * @Date: 2021-03-27 14:20:18
- * @LastEditTime: 2021-07-05 14:43:36
+ * @LastEditTime: 2021-07-06 15:32:47
  * @LastEditors: yuyang
  */
 import React from 'react';
@@ -9,7 +9,7 @@ import type { ComponentType } from 'react';
 import { Link, useLocation } from 'umi';
 import { Menu } from 'antd';
 import queryKeysByPath from '@/utils/utils';
-import Icon from '@ant-design/icons';
+import Icon, { MenuOutlined } from '@ant-design/icons';
 import { MenuData } from '../../../../config/route';
 import styles from './index.less';
 
@@ -26,7 +26,7 @@ const MenuContent: React.FunctionComponent<BasicLayoutProps> = (props: BasicLayo
   const renderTitle = (title: string, icon?: ComponentType) => (
     <div style={{ display: 'flex', alignItems: 'center' }}>
       {icon && <Icon component={icon} />}
-      <span>{title}</span>
+      <span className={ styles['menuitem-outside']}>{title}</span>
     </div>
   );
   function renderMenu(data: any = [], isInside = false) {
@@ -62,6 +62,7 @@ const MenuContent: React.FunctionComponent<BasicLayoutProps> = (props: BasicLayo
       defaultOpenKeys={[openKey]}
       mode="horizontal"
       theme="dark"
+      overflowedIndicator={<MenuOutlined />}
       className={styles.menuwrap}
     >
       {renderMenu(menusData)}

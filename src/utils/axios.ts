@@ -65,7 +65,8 @@ const commonErrorHandler = (err: AxiosError<ErrorType>, url: string, isAvoidShow
   if (!isAvoidShowError) {
     devModeErrorHandler(err, url);
   }
-  return err.response;
+  // return err.response;
+  throw err
 };
 
 /**

@@ -1,13 +1,13 @@
 /*
  * @Author: yuyang
  * @Date: 2021-06-23 16:05:06
- * @LastEditTime: 2021-06-23 16:48:27
+ * @LastEditTime: 2021-07-06 16:14:21
  * @LastEditors: yuyang
  */
 import React from 'react';
-import { Form, Input, Button } from 'antd';
+import { Form, Input, Button, FormInstance } from 'antd';
 import { Link } from 'umi';
-import { UserOutlined, KeyOutlined } from '@ant-design/icons';
+import { UserOutlined, KeyOutlined, MailOutlined, MobileOutlined, ContactsOutlined, PhoneOutlined } from '@ant-design/icons';
 import logo from '@/assets/logo.png';
 import styles from './index.less';
 
@@ -16,16 +16,20 @@ export interface RegisterFormValues {
   username: string;
   password: string;
   confirmPassword: string;
+  email: string;
+  phone: string;
+  fullname: string;
 }
 interface RegisterProps {
+  form?: FormInstance;
   clientName: ClientName;
   onResetPassword?: () => void;
   onRegister?: (values: RegisterFormValues) => void;
-  onSwitchClient?: (currentClient: ClientName) => void
+  onSwitchClient?: (currentClient: ClientName) => void;
 }
 const Register: React.FC<RegisterProps> = (props) => {
-  const { clientName, onResetPassword, onRegister } = props;
-  const [form] = Form.useForm();
+  const { clientName, onResetPassword, onRegister, form } = props;
+  const formInstance = form || Form.useForm()[0];
   const title = clientName === 'student' ? '学生注册 Student Register' : '教师注册 Teacher Register';
   const handleFinish = (values: RegisterFormValues) => {
     onRegister?.(values);
@@ -48,9 +52,9 @@ const Register: React.FC<RegisterProps> = (props) => {
         <div className={styles['register-form__content']}>
           <h5 className={styles['register-form__content__title']}>{title}</h5>
           <div className={styles['register-form__content__form']}>
-            <Form
+            <Form<RegisterFormValues>
               onFinish={handleFinish}
-              form={form}
+              form={formInstance}
             >
               <Form.Item
                 name="username"
@@ -68,6 +72,59 @@ const Register: React.FC<RegisterProps> = (props) => {
                 />
               </Form.Item>
               <Form.Item
+                name="email"
+                rules={[
+                  {
+                    required: true,
+                    message: '请输入邮箱',
+                  },
+                  {
+                    pattern: /\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*/,
+                    message: '请输入正确的邮箱',
+                  }
+                ]}
+              >
+                <Input
+                  prefix={<MailOutlined className={styles['register-form__content__form__icon']} />}
+                  className={styles['register-form__content__form__input']}
+                  placeholder="邮箱"
+                />
+              </Form.Item>
+              <Form.Item
+                name="phone"
+                rules={[
+                  {
+                    required: true,
+                    message: '请输入手机号',
+                  },
+                  {
+                    pattern: /^(0|86|17951)?(13[0-9]|15[012356789]|166|17[3678]|18[0-9]|14[57]|19[0-9])[0-9]{8}$/,
+                    message: '请输入正确的手机号',
+                  }
+                ]}
+              >
+                <Input
+                  prefix={<PhoneOutlined className={styles['register-form__content__form__icon']} />}
+                  className={styles['register-form__content__form__input']}
+                  placeholder="手机号"
+                />
+              </Form.Item>
+              <Form.Item
+                name="fullname"
+                rules={[
+                  {
+                    required: true,
+                    message: '请输入姓名',
+                  },
+                ]}
+              >
+                <Input
+                  prefix={<ContactsOutlined className={styles['register-form__content__form__icon']} />}
+                  className={styles['register-form__content__form__input']}
+                  placeholder="姓名"
+                />
+              </Form.Item>
+              <Form.Item
                 name="password"
                 rules={[
                   {
@@ -80,7 +137,7 @@ const Register: React.FC<RegisterProps> = (props) => {
                   prefix={<KeyOutlined className={styles['register-form__content__form__icon']} />}
                   className={styles['register-form__content__form__input']}
                   placeholder="密码"
-                  onChange={() => form.validateFields()}
+                  onChange={() => formInstance.validateFields()}
                 />
               </Form.Item>
               <Form.Item

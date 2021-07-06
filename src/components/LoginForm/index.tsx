@@ -1,7 +1,7 @@
 /*
  * @Author: yuyang
  * @Date: 2021-05-05 20:01:53
- * @LastEditTime: 2021-06-23 16:44:54
+ * @LastEditTime: 2021-07-06 16:41:01
  * @LastEditors: yuyang
  */
 import React from 'react';
@@ -86,13 +86,6 @@ const LoginForm: React.FC<LoginFormProps> = (props) => {
                   placeholder="密码"
                 />
               </Form.Item>
-              {/* <Form.Item
-                name="verifyCode"
-              >
-                <Input
-                  className={styles['login-form__content__form__input']}
-                />
-              </Form.Item> */}
               <Form.Item>
                 <Button htmlType="submit" type="primary" className={styles['login-form__content__form__btn']}>登录</Button>
               </Form.Item>

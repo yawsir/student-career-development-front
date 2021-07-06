@@ -1,7 +1,7 @@
 /*
  * @Author: yuyang
  * @Date: 2021-03-27 13:53:04
- * @LastEditTime: 2021-07-05 14:38:34
+ * @LastEditTime: 2021-07-06 18:20:23
  * @LastEditors: yuyang
  */
 import { defineConfig } from 'umi';
@@ -21,6 +21,7 @@ export default defineConfig({
   },
   fastRefresh: {},
   theme,
+  tailwindcss: {},
   proxy: {
     '/api': {
       'target': 'http://backend.huishengedu.cn/',
@@ -28,4 +29,6 @@ export default defineConfig({
       'pathRewrite': { '^/api' : '' },
     },
   },
+  mfsu: {},
+  webpack5: {},
 });

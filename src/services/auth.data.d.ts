@@ -15,8 +15,11 @@ export interface UserRole {
 }
 
 export interface RegisterInfo {
+  id: string;
   username: string;
-  userRoles: UserRole[];
   active: boolean;
-  id: number;
+  fullname: string;
+  phone: string;
+  email: string;
+  userRoles: UserRole[];
 }

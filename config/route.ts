@@ -1,7 +1,7 @@
 /*
  * @Author: yuyang
  * @Date: 2021-03-27 14:36:22
- * @LastEditTime: 2021-05-04 19:38:21
+ * @LastEditTime: 2021-07-06 17:13:45
  * @LastEditors: yuyang
  */
 import type { ComponentType } from 'react';
@@ -47,7 +47,7 @@ const menusData: MenuData[] = [
     children: [],
   },
   {
-    title: '教师',
+    title: '教师社区',
     link: '/teacher',
     key: 'teacher',
     children: [],
@@ -59,72 +59,10 @@ const menusData: MenuData[] = [
     children: [],
   },
   {
-    title: '学校',
-    link: '/school',
-    key: 'school',
-    children: [
-      {
-        title: '学生生涯发展介绍',
-        link: '/school/student-career-development',
-        key: 'student-career-development',
-        children: [],
-      },
-      {
-        title: '生涯发展教育与就业指导原则',
-        link: '/school/education-employment',
-        key: 'education-employment',
-        children: [],
-      },
-      {
-        title: '宣传通知',
-        link: '/school/promotion-notice',
-        key: 'promotion-notice',
-        children: [],
-      },
-      {
-        title: '校企合作资源板块',
-        link: '/school/coop-resource',
-        key: 'coop-resource',
-        children: [],
-      },
-      {
-        title: '影片/视频',
-        link: '/school/school-movies',
-        key: 'school-movies',
-        children: [],
-      },
-    ],
-  },
-  {
-    title: '职业咨询',
-    link: '/career-counseling',
-    key: 'career-counseling',
-    children: [
-      {
-        title: '职业信息库',
-        link: '/career/info-base',
-        key: 'info-base',
-        children: [],
-      },
-      {
-        title: '行业动态',
-        link: '/career/industry-trends',
-        key: 'industry-trends',
-        children: [],
-      },
-      {
-        title: '求职指导',
-        link: '/career/job-guidance',
-        key: 'job-guidance',
-        children: [],
-      },
-      {
-        title: '创业咨讯',
-        link: '/career/business-information',
-        key: 'business-information',
-        children: [],
-      },
-    ],
+    title: '职业信息库',
+    link: '/career',
+    key: 'career',
+    children: [],
   },
   {
     title: '升学咨询',
