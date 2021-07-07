@@ -1,42 +1,32 @@
 /*
  * @Author: yuyang
  * @Date: 2021-05-05 20:01:53
- * @LastEditTime: 2021-07-06 16:41:01
+ * @LastEditTime: 2021-07-07 13:55:11
  * @LastEditors: yuyang
  */
 import React from 'react';
 import { Form, Input, Button } from 'antd';
-import { Link } from 'umi';
 import { UserOutlined, KeyOutlined } from '@ant-design/icons';
 import logo from '@/assets/logo.png';
 import styles from './index.less';
 
-export type ClientName = 'student' | 'teacher';
 export interface LoginFormValues {
   username: string;
   password: string;
   verifyCode: string;
 }
 interface LoginFormProps {
-  clientName: ClientName;
   onLogin?: (values: LoginFormValues) => void;
   onResetPassword?: () => void;
-  onSwitchClient?: (currentClient: ClientName) => void
 }
 
 const LoginForm: React.FC<LoginFormProps> = (props) => {
-  const { onLogin, clientName, onResetPassword, onSwitchClient } = props;
-  const title = clientName === 'student' ? '学生登录 Student Login' : '教师登录 Teacher Login';
-  const switchBtnText = clientName === 'student' ? '教师端切换' : '学生端切换';
+  const { onLogin, onResetPassword } = props;
   const handleFinish = (values: LoginFormValues) => {
     onLogin?.(values);
   };
   const handleResetPassword = () => {
     onResetPassword?.();
-  };
-
-  const handleSwitchClient = () => {
-    onSwitchClient?.(clientName);
   };
 
   return (
@@ -51,7 +41,7 @@ const LoginForm: React.FC<LoginFormProps> = (props) => {
         </div>
 
         <div className={styles['login-form__content']}>
-          <h5 className={styles['login-form__content__title']}>{title}</h5>
+          <h5 className={styles['login-form__content__title']}>登录 Login</h5>
           <div className={styles['login-form__content__form']}>
             <Form
               onFinish={handleFinish}
@@ -97,21 +87,6 @@ const LoginForm: React.FC<LoginFormProps> = (props) => {
                       onClick={handleResetPassword}
                     >
                       忘记密码
-                    </span>
-                  </div>
-                  <div className={styles['login-form__content__form__links__group']}>
-                    <span
-                      className={styles['login-form__content__form__links__link']}
-                    >
-                      <Link to={`/${clientName}/register`}>
-                        立即注册
-                      </Link>
-                    </span>
-                    <span
-                      className={`${styles['login-form__content__form__links__link']} ${styles['login-form__content__form__links__spec']}`}
-                      onClick={handleSwitchClient}
-                    >
-                      {switchBtnText}
                     </span>
                   </div>
                 </div>

@@ -1,11 +1,13 @@
 import axios, { AxiosError, AxiosRequestConfig } from 'axios';
 import { notification, message } from 'antd';
+import { history } from 'umi';
 import getErrorMessage from '@/utils/get-error-message';
+import storage, { storageKeys } from '@/utils/localStorage';
 
 interface ErrorType {
   code?: number;
-  description?: string;
-  error?: string;
+  data?: string;
+  msg?: string;
 }
 
 // 右上角的接口调用错误通知，默认仅在本地开发模式开启;可以在发起请求时，给isAvoidShowError传true以手动开启。
@@ -39,7 +41,7 @@ const devModeErrorHandler = (err: AxiosError<ErrorType>, url: string) => {
     });
   } else {
     const code = err.response?.data.code;
-    const description = err.response?.data.description;
+    const description = err.response?.data.msg;
     notification.error({
       duration: 8,
       message: `${url},请求出错`,
@@ -59,6 +61,10 @@ const devModeErrorHandler = (err: AxiosError<ErrorType>, url: string) => {
  */
 const commonErrorHandler = (err: AxiosError<ErrorType>, url: string, isAvoidShowError: boolean = IS_AVOID_SHOW_ERROR_DEFAULT) => {
   const errCode = err.response?.data.code;
+  if (errCode === 1001) {
+    storage.removeItems([storageKeys.IS_LOGED_KEY_NAME, storageKeys.TOKEN_KEY_NAME, storageKeys.USERNAME_KEY_NAME]);
+    history.replace('/');
+  }
   if (errCode) {
     message.error(getErrorMessage(errCode)); // 统一错误提示
   }
@@ -66,7 +72,7 @@ const commonErrorHandler = (err: AxiosError<ErrorType>, url: string, isAvoidShow
     devModeErrorHandler(err, url);
   }
   // return err.response;
-  throw err
+  throw err;
 };
 
 /**
@@ -112,6 +118,11 @@ const request = async ({ isAvoidShowError, ...option }: AxiosRequestConfig & { i
     cancelQueue.push(c);
   });
   const { data } = await axios({ ...baseConfig, ...option, cancelToken }).catch((err) => errorHandler(err, isAvoidShowError, option!.url));
+  if (data.code === 1001) {
+    message.error('登录失效');
+    storage.removeItems([storageKeys.IS_LOGED_KEY_NAME, storageKeys.TOKEN_KEY_NAME, storageKeys.USERNAME_KEY_NAME]);
+    history.replace('/');
+  }
   return data;
 };
 
@@ -134,6 +145,7 @@ const axiosGet = async <T = any>(
     headers: {
       Accept: 'application/json',
       'Content-Type': 'application/json',
+      Authorization: storage.getItem(storageKeys.TOKEN_KEY_NAME),
     },
     ...options,
   });
@@ -160,6 +172,7 @@ const axiosPost = async <T = any>(
     headers: {
       Accept: 'application/json',
       'Content-Type': 'application/json',
+      Authorization: storage.getItem(storageKeys.TOKEN_KEY_NAME),
     },
     ...options,
   });
@@ -179,6 +192,7 @@ const axiosPut = async <T = any>(url: string, data: object, options?: AxiosReque
     headers: {
       Accept: 'application/json',
       'Content-Type': 'application/json',
+      Authorization: storage.getItem(storageKeys.TOKEN_KEY_NAME),
     },
     ...options,
   });
@@ -198,6 +212,7 @@ const axiosDelete = async <T = any>(url: string, data: object, options?: AxiosRe
     headers: {
       Accept: 'application/json',
       'Content-Type': 'application/json',
+      Authorization: storage.getItem(storageKeys.TOKEN_KEY_NAME),
     },
     ...options,
   });

@@ -18,7 +18,7 @@ const Register: React.FC = () => {
       email: '',
       fullname: '',
       password: '',
-      phone: ''
+      phone: '',
     }));
   };
 

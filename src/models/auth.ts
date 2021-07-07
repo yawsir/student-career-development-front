@@ -1,7 +1,7 @@
 /*
  * @Author: yuyang
  * @Date: 2021-06-22 09:23:32
- * @LastEditTime: 2021-07-06 16:02:44
+ * @LastEditTime: 2021-07-07 16:47:59
  * @LastEditors: yuyang
  */
 import { useState, useCallback } from 'react';
@@ -22,6 +22,7 @@ export default function useAuthModel() {
         storage.setItems({
           [storageKeys.IS_LOGED_KEY_NAME]: 'T',
           [storageKeys.USERNAME_KEY_NAME]: data.username,
+          [storageKeys.TOKEN_KEY_NAME]: data.token,
         });
         history.push('/student');
       }
@@ -36,7 +37,7 @@ export default function useAuthModel() {
   const logout = useCallback(async () => {
     setLoading(true);
     await authService.logout();
-    storage.removeItems([storageKeys.IS_LOGED_KEY_NAME, storageKeys.USERNAME_KEY_NAME]);
+    storage.removeItems([storageKeys.IS_LOGED_KEY_NAME, storageKeys.USERNAME_KEY_NAME, storageKeys.TOKEN_KEY_NAME]);
     history.push('/');
     setLoading(false);
   }, []);
@@ -49,16 +50,15 @@ export default function useAuthModel() {
         password,
         email,
         fullname,
-        phone
+        phone,
       });
       if (data.active) {
-        message.success('注册成功')
+        message.success('注册成功');
       }
-      cb?.()
+      cb?.();
     } catch (error) {
       message.error('该用户已存在');
     }
-    
   }, []);
 
   return {

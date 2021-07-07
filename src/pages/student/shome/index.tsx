@@ -1,79 +1,92 @@
 /*
  * @Author: yuyang
  * @Date: 2021-05-05 20:04:29
- * @LastEditTime: 2021-06-23 15:49:35
+ * @LastEditTime: 2021-07-07 15:46:07
  * @LastEditors: yuyang
  */
 import React from 'react';
-import { Row, Col, Image } from 'antd';
-import { useModel } from 'umi';
+import { useModel, useHistory } from 'umi';
 import BannerImg from '@/assets/yay.jpg';
-import exampleImg from '@/assets/example.jpeg';
+import hollandImg from '@/assets/holland.jpg';
+import valuesImg from '@/assets/values.jpg';
 import Header from '../components/Header';
-import styles from './index.less';
 
-const Img = ({ width = 128, height = 128 }) => (
-  <Image
-    preview={false}
-    src={exampleImg}
-    width={width}
-    height={height}
-  />
-);
+interface TestItemProps {
+  img: string;
+  title?: string;
+  onClick?: () => void;
+}
 
-const ItemName: React.FC = ({ children }) => (
-  <p className={styles.shome__content__list__title}>{children}</p>
-);
+const TestItem: React.FC<TestItemProps> = (props) => {
+  const { img, onClick, title } = props;
+  const handleClick = () => {
+    onClick?.();
+  };
+  return (
+    <div className="w-full 2xl:w-1/5 xl:w-1/4 lg:w-1/3 md:w-1/2 sm:w-full p-2">
+      <div className="border border-solid border-gray-400">
+        <div className="w-full h-72">
+          <img src={img} alt="" className="w-full h-full" />
+        </div>
+        <div>
+          <h5 className="text-base font-bold">{title}</h5>
+          <div className="flex justify-between text-sm text-gray-400">
+            <p>1316人已测</p>
+            <p>预计时间：15min</p>
+          </div>
+        </div>
+        <div
+          className="bg-gray-300 w-full h-8 leading-8 text-center cursor-pointer hover:bg-gray-200 transition-all"
+          role="button"
+          tabIndex={0}
+          onClick={handleClick}
+        >
+          开始测评
+        </div>
+      </div>
+    </div>
+  );
+};
 
 const Shome: React.FC = () => {
   const authModel = useModel('auth');
+  const history = useHistory();
   const handleLogout = () => {
     authModel.logout();
   };
+
+  const goToHolland = () => {
+    history.push('/student/holland');
+  };
+
+  const goToValues = () => {
+    history.push('/student/values');
+  };
   return (
-    <div className={styles.shome}>
+    <div className="container mx-auto">
       <Header
         title="深圳市学生生涯发展支持平台"
         onLogout={handleLogout}
       />
-      <div className={styles.shome__banner}>
-        <img src={BannerImg} alt="" />
+      <div className="w-full h-64">
+        <img src={BannerImg} alt="" className="block w-full h-full" />
       </div>
-      <section className={styles.shome__content}>
-        <h4 className={styles.shome__content__title}>
+      <section>
+        <h4 className="border-0 border-b-2 border-gray-400 border-solid text-xl p-4 text-center">
           学生主页
         </h4>
-        <Row
-          className={styles.shome__content__list}
-          style={{ padding: '0 48px', marginBottom: 24 }}
-        >
-          <Col>
-            <Img />
-            <ItemName>自 我 认 知</ItemName>
-          </Col>
-          <Col>
-            <Img />
-            <ItemName>职 业 探 索</ItemName>
-          </Col>
-          <Col>
-            <Img />
-            <ItemName>生 涯 发 展</ItemName>
-          </Col>
-        </Row>
-        <Row className={styles.shome__content__list}>
-          <Col>
-            <Img width={162} height={162} />
-            <ItemName>霍兰德测评</ItemName>
-          </Col>
-          <Col>
-            <Img width={162} height={162} />
-            <ItemName>价值观测评</ItemName>
-          </Col>
-          <Col>
-            <Img width={162} height={162} />
-            <ItemName>个 人 档 案</ItemName>
-          </Col>
-        </Row>
+        <div className="flex justify-around w-full">
+          <TestItem
+            img={hollandImg}
+            title="中学生霍兰德职业兴趣测评"
+            onClick={goToHolland}
+          />
+          <TestItem
+            img={valuesImg}
+            title="价值观测试"
+            onClick={goToValues}
+          />
+        </div>
       </section>
     </div>
   );
