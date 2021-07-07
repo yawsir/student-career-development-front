@@ -1,7 +1,7 @@
 /*
  * @Author: yuyang
  * @Date: 2021-03-27 14:20:18
- * @LastEditTime: 2021-07-06 15:32:47
+ * @LastEditTime: 2021-07-07 11:30:14
  * @LastEditors: yuyang
  */
 import React from 'react';
@@ -9,9 +9,19 @@ import type { ComponentType } from 'react';
 import { Link, useLocation } from 'umi';
 import { Menu } from 'antd';
 import queryKeysByPath from '@/utils/utils';
-import Icon, { MenuOutlined } from '@ant-design/icons';
+import Icon, { MenuOutlined, createFromIconfontCN } from '@ant-design/icons';
 import { MenuData } from '../../../../config/route';
 import styles from './index.less';
+
+const IconFont = createFromIconfontCN({
+  scriptUrl: ['//at.alicdn.com/t/font_2656812_o3jyrni8fc.js'],
+  extraCommonProps: {
+    style: {
+      marginRight: '4px',
+      fontSize: '16px',
+    },
+  },
+});
 
 const { SubMenu, Item } = Menu;
 
@@ -23,31 +33,37 @@ const MenuContent: React.FunctionComponent<BasicLayoutProps> = (props: BasicLayo
   const { menusData } = props;
   const location = useLocation();
 
-  const renderTitle = (title: string, icon?: ComponentType) => (
+  const renderTitle = (title: string, icon?: ComponentType, iconType?: string) => (
     <div style={{ display: 'flex', alignItems: 'center' }}>
-      {icon && <Icon component={icon} />}
-      <span className={ styles['menuitem-outside']}>{title}</span>
+      <span className={styles['menuitem-outside']}>
+        {icon && <Icon component={icon} />}
+        {iconType && <IconFont type={iconType} />}
+        {title}
+      </span>
     </div>
   );
   function renderMenu(data: any = [], isInside = false) {
     const rows = Array.isArray(data) ? data : [];
     return rows.map((row) => {
       if (row === undefined) return false;
-      const { title, link = '', key, icon, children, ...restState } = row;
+      const { title, link = '', key, icon, iconType, children, ...restState } = row;
 
       if (children && children.length > 0) {
         const subMenu = renderMenu(children, true);
         return (
-          <SubMenu key={key} title={renderTitle(title, icon)} popupClassName={styles.submenu}>
+          <SubMenu key={key} title={renderTitle(title, icon, iconType)} popupClassName={styles.submenu}>
             {subMenu}
           </SubMenu>
         );
       }
       return (
         <Item key={key} title={title}>
-          {icon && <Icon component={icon} />}
           <Link to={{ pathname: link, state: { ...restState, key } }}>
-            <span className={isInside ? styles['menuitem-inside'] : styles['menuitem-outside']}>{title}</span>
+            <span className={isInside ? styles['menuitem-inside'] : styles['menuitem-outside']}>
+              {icon && <Icon component={icon} className={styles.alignMiddle} />}
+              {iconType && <IconFont type={iconType} />}
+              {title}
+            </span>
           </Link>
         </Item>
       );
