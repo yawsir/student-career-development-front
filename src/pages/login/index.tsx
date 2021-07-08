@@ -1,7 +1,7 @@
 /*
  * @Author: yuyang
  * @Date: 2021-05-05 20:04:29
- * @LastEditTime: 2021-07-08 18:01:31
+ * @LastEditTime: 2021-07-08 18:05:13
  * @LastEditors: yuyang
  */
 import React from 'react';
@@ -25,7 +25,7 @@ const Login: React.FC = () => {
 
   return (
     <div className="container h-full mx-auto flex p-2">
-      <div className="flex flex-col p-2">
+      <div className="flex flex-col p-2 flex-1">
         <div>
           <LoginForm
             onLogin={handleLogin}
@@ -35,7 +35,7 @@ const Login: React.FC = () => {
         <div className="bg-red-200 h-96">资讯</div>
         <div className="bg-green-200  h-96">资讯</div>
       </div>
-      <div className="bg-blue-200 h-screen">
+      <div className="bg-blue-200 h-screen flex-1">
         资讯
       </div>
     </div>
