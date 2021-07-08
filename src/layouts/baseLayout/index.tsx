@@ -1,14 +1,14 @@
 /*
  * @Author: yuyang
  * @Date: 2021-03-27 14:20:18
- * @LastEditTime: 2021-07-06 15:14:14
+ * @LastEditTime: 2021-07-08 18:13:04
  * @LastEditors: yuyang
  */
 import React from 'react';
 import { Layout, Row, Col } from 'antd';
-import ToolBar from './ToolBar';
 import MenuContent from './MenuContent';
 import styles from './index.less';
+import Logo from './Logo';
 import { menusData } from '../../../config/route';
 
 const { Header, Content } = Layout;
@@ -17,13 +17,11 @@ const BaseLayout: React.FunctionComponent = (props: any) => {
   return (
     <Layout className={styles.container}>
       <Header className={styles.header}>
-        <Row className={styles.header__toolbar} justify="center" align="middle">
-          <Col xl={20} lg={18} md={18} sm={20} xs={20}>
-            <ToolBar title="深圳市学生生涯发展支持平台" />
-          </Col>
-        </Row>
         <Row className={styles.header__menu} justify="center" align="middle">
-          <Col xl={20} lg={18} md={18} sm={20} xs={20}>
+          <Col xl={5} lg={7} md={7} sm={5} xs={5}>
+            <Logo title="深圳市学生生涯发展支持平台" />
+          </Col>
+          <Col xl={18} lg={16} md={16} sm={18} xs={18}>
             <MenuContent menusData={menusData} />
           </Col>
         </Row>
