@@ -1,14 +1,14 @@
 /*
  * @Author: yuyang
  * @Date: 2021-06-23 14:47:57
- * @LastEditTime: 2021-06-23 16:52:00
+ * @LastEditTime: 2021-07-09 09:40:31
  * @LastEditors: yuyang
  */
 import React from 'react';
 import { Dropdown, Menu } from 'antd';
+import Logo from '@/components/Logo';
 import { UserOutlined, DownOutlined, PoweroffOutlined } from '@ant-design/icons';
 import storege, { storageKeys } from '@/utils/localStorage';
-import logo from '@/assets/logo.png';
 import styles from './index.less';
 
 interface HeaderProps {
@@ -32,12 +32,7 @@ const Header: React.FC<HeaderProps> = (props) => {
   );
   return (
     <div className={styles.header}>
-      <div className={styles.platform}>
-        <div className={styles.platform__logo}>
-          <img src={logo} alt="" />
-        </div>
-        <h2 className={styles.platform__title}>{title}</h2>
-      </div>
+      <Logo title={title} />
 
       <Dropdown
         overlay={menu}

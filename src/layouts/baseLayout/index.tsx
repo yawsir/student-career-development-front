@@ -1,14 +1,16 @@
 /*
  * @Author: yuyang
  * @Date: 2021-03-27 14:20:18
- * @LastEditTime: 2021-07-08 18:13:04
+ * @LastEditTime: 2021-07-09 11:26:31
  * @LastEditors: yuyang
  */
 import React from 'react';
-import { Layout, Row, Col } from 'antd';
+import { Layout, Row, Col, BackTop } from 'antd';
+import { ArrowUpOutlined } from '@ant-design/icons';
+import Logo from '@/components/Logo';
 import MenuContent from './MenuContent';
+import FooterContent from './FooterContent';
 import styles from './index.less';
-import Logo from './Logo';
 import { menusData } from '../../../config/route';
 
 const { Header, Content } = Layout;
@@ -18,20 +20,26 @@ const BaseLayout: React.FunctionComponent = (props: any) => {
     <Layout className={styles.container}>
       <Header className={styles.header}>
         <Row className={styles.header__menu} justify="center" align="middle">
-          <Col xl={5} lg={7} md={7} sm={5} xs={5}>
+          <Col xl={5} lg={7} md={10} sm={19} xs={20}>
             <Logo title="深圳市学生生涯发展支持平台" />
           </Col>
-          <Col xl={18} lg={16} md={16} sm={18} xs={18}>
+          <Col xl={18} lg={16} md={12} sm={4} xs={3}>
             <MenuContent menusData={menusData} />
           </Col>
         </Row>
       </Header>
       <Layout>
         <Row justify="center">
-          <Col xl={16} lg={18} md={18} sm={24} xs={24}>
+          <Col xl={24} lg={24} md={24} sm={24} xs={24}>
             <Content className={styles.content}>{children}</Content>
+            <FooterContent />
           </Col>
         </Row>
+        <BackTop>
+          <div className="h-10 w-10 leading-10 rounded text-white bg-blue-500 text-center text-sm">
+            <ArrowUpOutlined />
+          </div>
+        </BackTop>
       </Layout>
     </Layout>
   );
