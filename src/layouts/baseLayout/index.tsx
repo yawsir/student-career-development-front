@@ -1,7 +1,7 @@
 /*
  * @Author: yuyang
  * @Date: 2021-03-27 14:20:18
- * @LastEditTime: 2021-07-09 11:26:31
+ * @LastEditTime: 2021-08-25 11:39:30
  * @LastEditors: yuyang
  */
 import React from 'react';
@@ -17,13 +17,15 @@ const { Header, Content } = Layout;
 const BaseLayout: React.FunctionComponent = (props: any) => {
   const { children } = props;
   return (
-    <Layout className={styles.container}>
+    <Layout className="w-full mx-auto" style={{ minWidth: 1440 }}>
       <Header className={styles.header}>
-        <Row className={styles.header__menu} justify="center" align="middle">
-          <Col xl={5} lg={7} md={10} sm={19} xs={20}>
-            <Logo title="深圳市学生生涯发展支持平台" />
+        <Row className="w-full" justify="start" align="middle">
+          <Col span={24}>
+            <div className="flex justify-items-start">
+              <Logo title="深圳市学生生涯发展支持平台" />
+            </div>
           </Col>
-          <Col xl={18} lg={16} md={12} sm={4} xs={3}>
+          <Col span={24}>
             <MenuContent menusData={menusData} />
           </Col>
         </Row>

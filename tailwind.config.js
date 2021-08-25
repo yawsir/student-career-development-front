@@ -1,7 +1,7 @@
 /*
  * @Author: yuyang
  * @Date: 2021-07-06 14:54:43
- * @LastEditTime: 2021-07-09 10:28:15
+ * @LastEditTime: 2021-08-25 10:51:38
  * @LastEditors: yuyang
  */
 module.exports = {
@@ -10,7 +10,8 @@ module.exports = {
     theme: {
       backgroundColor: theme => ({
         ...theme('colors'),
-        'primary': '#156E3C',
+        'primary': '#009999',
+        'custom-gray': '#808080'
       })
     },
     variants: {

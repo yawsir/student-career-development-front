@@ -1,7 +1,7 @@
 /*
  * @Author: yuyang
  * @Date: 2021-05-04 15:25:51
- * @LastEditTime: 2021-07-07 11:05:15
+ * @LastEditTime: 2021-08-25 11:30:40
  * @LastEditors: yuyang
  */
 import React from 'react';
@@ -11,7 +11,6 @@ import news1 from '@/assets/news1.jpg';
 import news2 from '@/assets/news2.jpg';
 import news3 from '@/assets/news3.jpg';
 import Journalism from './components/Journalism';
-import styles from './index.less';
 
 const Home: React.FC = () => {
   const [activeKey, setActiveKey] = React.useState<string>('j1');
@@ -19,18 +18,18 @@ const Home: React.FC = () => {
     setActiveKey(name);
   };
   return (
-    <div className={styles.home}>
+    <div className="w-full">
       <section
-        className={styles.home__slider}
+        className="w-full"
       >
         <SlideShow />
       </section>
-      <div className={styles.home__notification}>
+      <div className="w-4/5 mx-auto my-0">
         <Broadcast>
           2019年10月29日至11月3日，在深圳市教育科学研究院高中教学研究中心带领下，由市教科院9大学科教研员、各区教研中心代表、各市直属高中学校代表组成的学习团队，赴北京参加人民教育出版社组织的系统研修活动。
         </Broadcast>
       </div>
-      <div className={styles.home__journalism}>
+      <div>
         <Journalism
           title="新 闻 动 态 / j o u r n a l i s m"
           activeKey={activeKey}

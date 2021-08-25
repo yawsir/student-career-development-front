@@ -1,35 +1,50 @@
 /*
  * @Author: yuyang
  * @Date: 2021-05-04 16:25:33
- * @LastEditTime: 2021-07-06 17:05:49
+ * @LastEditTime: 2021-08-25 14:19:30
  * @LastEditors: yuyang
  */
-import React from 'react';
+import React, { useRef } from 'react';
 import { Carousel } from 'antd';
-import slider1 from '@/assets/sliders/slider1.jpeg';
+import slider1 from '@/assets/sliders/slider1.jpg';
 import slider2 from '@/assets/sliders/slider2.jpg';
-import slider3 from '@/assets/sliders/slider3.jpeg';
-import slider4 from '@/assets/sliders/slider4.jpg';
-import slider5 from '@/assets/sliders/slider5.jpg';
+import slider3 from '@/assets/sliders/slider3.jpg';
 import styles from './index.less';
 
 const Home: React.FC = () => {
-  const images = [slider1, slider2, slider3, slider4, slider5];
+  const images = [slider1, slider2, slider3];
+  const carouselRef = useRef<any>();
   return (
-    <Carousel
-      autoplay
-      dots={{
-        className: styles.dots,
-      }}
-    >
-      {
-        images.map((img) => (
-          <div key={img} className={styles.imagewrap}>
-            <img src={img} alt="" className={styles.image} />
-          </div>
-        ))
-      }
-    </Carousel>
+    <div className="flex justify-center" style={{ height: 518 }}>
+      <div
+        className="h-full bg-custom-gray flex-1 text-5xl text-center text-white align-middle flex justify-center items-center cursor-pointer"
+        onClick={() => carouselRef.current.prev()}
+      >
+        &lt;
+      </div>
+      <Carousel
+        autoplay
+        dots={{
+          className: styles.dots,
+        }}
+        className={styles.imagewrap}
+        ref={carouselRef}
+      >
+        {
+          images.map((img) => (
+            <div key={img}>
+              <img src={img} alt="" />
+            </div>
+          ))
+        }
+      </Carousel>
+      <div
+        className="h-full bg-custom-gray flex-1 text-5xl text-center text-white align-middle flex justify-center items-center cursor-pointer"
+        onClick={() => carouselRef.current.next()}
+      >
+        &gt;
+      </div>
+    </div>
   );
 };
 
