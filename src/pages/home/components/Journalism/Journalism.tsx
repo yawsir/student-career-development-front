@@ -1,11 +1,10 @@
 /*
  * @Author: yuyang
  * @Date: 2021-05-08 08:49:24
- * @LastEditTime: 2021-07-07 09:45:23
+ * @LastEditTime: 2021-08-27 15:08:47
  * @LastEditors: yuyang
  */
 import React, { useContext, createContext } from 'react';
-import styles from './index.less';
 
 interface JournalismProps {
   activeKey?: string;
@@ -48,13 +47,13 @@ const Journalism: React.FC<JournalismProps> = (props) => {
     renderDefault,
   };
   return (
-    <div className={styles.journalism}>
-      <h5 className={styles.journalism__title}>
-        <span className={styles.journalism__title__deco} />
+    <div className="w-full">
+      <h5 className="w-4/5 my-0 mx-auto text-2xl">
+        <span className="w-1/6 h-2 block bg-primary" />
         {title}
       </h5>
       <Provider value={provideValue}>
-        <div className={styles['home__journalism__description-wrap']}>
+        <div className="w-4/5 mt-2 mx-auto mb-0 flex">
           {children}
         </div>
         {content}
@@ -66,7 +65,7 @@ const Journalism: React.FC<JournalismProps> = (props) => {
 interface DescriptionProps {
   date: string;
   name: string;
-  description: string;
+  description: React.ReactNode;
 }
 
 export const Description: React.FC<DescriptionProps> = (props) => {
@@ -91,24 +90,24 @@ export const Description: React.FC<DescriptionProps> = (props) => {
   };
 
   return (
-    <>
+    <div className="w-1/3 bg-transparent py-0 px-4">
       <div
-        className={`${styles.journalism__description} ${isActive ? styles['journalism__description--active'] : ''}`}
+        className={`w-full rounded flex box-border items-center py-0 bg-transparent cursor-pointer transition delay-75 ${isActive ? 'bg-primary' : 'bg-white'}`}
         onClick={handleClick}
       >
-        <div className={styles.journalism__description__date}>
-          <p className={styles.journalism__description__date__day}>{day}</p>
-          <p className={styles.journalism__description__date__year}>
+        <div className=" bg-custom-gray-2 flex-shrink-0 p-2">
+          <p className="text-center text-2xl font-bold m-0">{day}</p>
+          <p className="text-center text-xl font-bold m-0">
             {year}
             -
             {month}
           </p>
         </div>
-        <div className={styles.journalism__description__text}>
+        <div className={`h-56 p-2 ${isActive ? 'text-white' : ''} `} style={{ flex: 4 }}>
           {description}
         </div>
       </div>
-    </>
+    </div>
   );
 };
 

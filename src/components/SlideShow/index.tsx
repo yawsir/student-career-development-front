@@ -1,7 +1,7 @@
 /*
  * @Author: yuyang
  * @Date: 2021-05-04 16:25:33
- * @LastEditTime: 2021-08-25 14:19:30
+ * @LastEditTime: 2021-08-27 15:39:19
  * @LastEditors: yuyang
  */
 import React, { useRef } from 'react';
@@ -33,7 +33,7 @@ const Home: React.FC = () => {
         {
           images.map((img) => (
             <div key={img}>
-              <img src={img} alt="" />
+              <img src={img} alt="" className="object-cover object-center" />
             </div>
           ))
         }
