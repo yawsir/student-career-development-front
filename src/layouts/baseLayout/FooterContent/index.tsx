@@ -1,7 +1,7 @@
 /*
  * @Author: yuyang
  * @Date: 2021-07-09 09:45:43
- * @LastEditTime: 2021-08-27 18:19:47
+ * @LastEditTime: 2021-08-28 16:01:11
  * @LastEditors: yuyang
  */
 import React from 'react';
@@ -23,7 +23,7 @@ const infos = ['粤ICP备XXXXXXXX号', '主办单位：深圳市教育科学研�
 const FooterContent: React.FC = () => (
   <div className="w-full">
     <div className="p-8 bg-primary flex justify-around text-white">
-      <div className="w-1/3 box-border flex flex-wrap justify-start p-8 border-0 border-r-2 border-green-300 border-solid border-opacity-25">
+      <div className="w-3/5 box-border flex flex-wrap justify-start p-8 border-0 border-r-2 border-green-300 border-solid border-opacity-25">
         {
           infos.map((item) => (
             <p className="py-2 px-4 text-left" style={{ minWidth: '50%' }} key={item}>
@@ -32,7 +32,7 @@ const FooterContent: React.FC = () => (
           ))
         }
       </div>
-      <div className="w-1/3 box-border flex flex-wrap justify-start items-start p-8 border-0 border-r-2 border-green-300 border-solid border-opacity-25">
+      <div className="w-1/5 box-border flex flex-wrap justify-start items-start p-8 border-0 border-r-2 border-green-300 border-solid border-opacity-25">
         <p className="py-2 px-4 text-left" style={{ minWidth: '100%' }}>快速链接</p>
         <p className="py-2 px-4 text-left" style={{ minWidth: '50%' }}>
           <A href="/" target="_blank">深圳市教育科学研究院</A>
@@ -41,7 +41,7 @@ const FooterContent: React.FC = () => (
           <A href="/" target="_blank">深圳市教育局</A>
         </p>
       </div>
-      <div className="w-1/3 box-border flex flex-col-reverse items-start pl-8">
+      <div className="w-1/5 box-border flex flex-col-reverse items-start pl-8">
         <p>
           <Tooltip title="13311112222">
             <WechatOutlined className="text-3xl" />

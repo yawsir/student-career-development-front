@@ -1,17 +1,16 @@
 /*
  * @Author: yuyang
  * @Date: 2021-05-04 15:25:51
- * @LastEditTime: 2021-08-27 19:07:05
+ * @LastEditTime: 2021-08-28 11:19:17
  * @LastEditors: yuyang
  */
 import React from 'react';
-import Calendar from 'react-calendar';
 import SlideShow from '@/components/SlideShow';
-import Broadcast from '@/components/Broadcast';
 import news1 from '@/assets/news1.jpg';
 import news2 from '@/assets/news2.jpg';
 import news3 from '@/assets/news3.jpg';
 import journalismBg from '@/assets/bgs/journalism.png';
+import BigEvent from './components/BigEvent';
 import Journalism from './components/Journalism';
 
 const Home: React.FC = () => {
@@ -26,20 +25,8 @@ const Home: React.FC = () => {
       >
         <SlideShow />
       </section>
-      <section className="w-full my-0 bg-custom-white2">
-        <div className="w-4/5 mx-auto p-4">
-          <Broadcast>
-            2019年10月29日至11月3日，在深圳市教育科学研究院高中教学研究中心带领下，由市教科院9大学科教研员、各区教研中心代表、各市直属高中学校代表组成的学习团队，赴北京参加人民教育出版社组织的系统研修活动。
-          </Broadcast>
-          <div className="flex p-8">
-            <div className="w-60 bg-primary">
-              <Calendar
-                formatDay={(_, date) => date.getDate().toString()}
-              />
-            </div>
-            <div>21321321</div>
-          </div>
-        </div>
+      <section className="w-full my-0 py-2 bg-custom-white2">
+        <BigEvent />
       </section>
       <section className="px-16 py-8 bg-cover bg-center" style={{ background: `url(${journalismBg})` }}>
         <Journalism

@@ -26,20 +26,7 @@ const menusData: MenuData[] = [
     title: '平台介绍',
     link: '/about-us',
     key: 'about-us',
-    children: [
-      {
-        title: '网站简介',
-        link: '/about-us/intro',
-        key: 'intro',
-        children: [],
-      },
-      {
-        title: '平台发展大事件',
-        link: '/about-us/platform-news',
-        key: 'platform-news',
-        children: [],
-      },
-    ],
+    children: [],
   },
   {
     title: '学生',
