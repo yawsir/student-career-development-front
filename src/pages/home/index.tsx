@@ -1,7 +1,7 @@
 /*
  * @Author: yuyang
  * @Date: 2021-05-04 15:25:51
- * @LastEditTime: 2021-08-28 11:19:17
+ * @LastEditTime: 2021-08-29 18:08:02
  * @LastEditors: yuyang
  */
 import React from 'react';
@@ -28,7 +28,7 @@ const Home: React.FC = () => {
       <section className="w-full my-0 py-2 bg-custom-white2">
         <BigEvent />
       </section>
-      <section className="px-16 py-8 bg-cover bg-center" style={{ background: `url(${journalismBg})` }}>
+      <section className="px-0 lg:px-16 py-8 bg-cover bg-center bg-no-repeat" style={{ background: `url(${journalismBg})` }}>
         <Journalism
           title="新闻动态/journalism"
           activeKey={activeKey}

@@ -1,7 +1,7 @@
 /*
  * @Author: yuyang
  * @Date: 2021-08-28 10:10:58
- * @LastEditTime: 2021-08-28 16:36:07
+ * @LastEditTime: 2021-08-29 18:13:01
  * @LastEditors: yuyang
  */
 import React from 'react';
@@ -21,29 +21,29 @@ const BigEvent: React.FC<BigEventProps> = () => {
     setPitchDate(d);
   };
   return (
-    <div className="w-full mx-auto px-40">
+    <div className="w-full mx-auto px-0 lg:px-40">
       <div className="w-full p-4">
         <Broadcast>
           2019年10月29日至11月3日，在深圳市教育科学研究院高中教学研究中心带领下，由市教科院9大学科教研员、各区教研中心代表、各市直属高中学校代表组成的学习团队，赴北京参加人民教育出版社组织的系统研修活动。
         </Broadcast>
       </div>
-      <div className="w-full flex py-4 items-center justify-center">
-        <div className=" shadow-hs">
+      <div className="w-full flex flex-wrap py-4 items-center justify-center">
+        <div className="w-full xl:w-auto bg-transparent my-4" style={{ minWidth: 128 }}>
           <Calendar
             formatDay={(_, date) => date.getDate().toString()}
             onChange={handleChangeDate}
-            className="w-full bg-primary"
+            className="w-full bg-transparent shadow-hs text-center mx-auto"
             defaultValue={pitchDate}
             showFixedNumberOfWeeks
           />
         </div>
-        <div className="flex-1 mx-16 p-0 shadow-hs">
+        <div className="w-full xl:w-auto flex-1 mx-0 lg:mx-16 p-0 shadow-hs">
           <h3 className="text-3xl text-white bg-primary p-4 m-0">
             <span className="px-4 text-4xl">{pitchDate?.getDate()}</span>
             2021普通高中新课程新教材实施生涯教育研讨活动
           </h3>
           <div className="bg-white px-4">
-            <div className="text-center mx-auto" style={{ width: 560, height: 260 }}>
+            <div className="text-center mx-auto w-full" style={{ height: 260 }}>
               <img src={BigeventImage} alt="" className="w-full h-full object-cover object-center" />
             </div>
             <p className="text-lg py-4 m-0" style={{ textIndent: '2em' }}>

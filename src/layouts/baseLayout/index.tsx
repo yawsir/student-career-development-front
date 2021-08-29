@@ -1,7 +1,7 @@
 /*
  * @Author: yuyang
  * @Date: 2021-03-27 14:20:18
- * @LastEditTime: 2021-08-28 14:53:18
+ * @LastEditTime: 2021-08-29 18:17:31
  * @LastEditors: yuyang
  */
 import React from 'react';
@@ -17,7 +17,7 @@ const { Header, Content } = Layout;
 const BaseLayout: React.FunctionComponent = (props: any) => {
   const { children } = props;
   return (
-    <Layout className="w-full mx-auto" style={{ minWidth: 1400 }}>
+    <Layout className="w-full mx-auto">
       <Header className={styles.header}>
         <Row className="w-full" justify="start" align="middle">
           <Col span={24}>

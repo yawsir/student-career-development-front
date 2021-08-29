@@ -1,7 +1,7 @@
 /*
  * @Author: yuyang
  * @Date: 2021-07-06 14:54:43
- * @LastEditTime: 2021-08-28 16:34:15
+ * @LastEditTime: 2021-08-29 16:25:52
  * @LastEditors: yuyang
  */
 module.exports = {
@@ -15,6 +15,7 @@ module.exports = {
         'custom-gray-2': '#D7D7D7',
         'custom-gray-3': '#545454',
         'custom-gray-4': '#D6D6D6',
+        'custom-gray-5': '#F2f2f2',
         'custom-white': '#E8F0F2',
         'custom-white2': '#E7F0F2',
       }),
@@ -30,7 +31,15 @@ module.exports = {
         focus: '0 0 0 3px rgba(66, 153, 225, 0.5)',
         none: 'none',
         hs: '8px 10px 25px rgb(0 0 0 / 35%)',
-      }
+      },
+      textColor: theme => ({
+        ...theme('colors'),
+        'primary': '#009999',
+       }),
+      borderColor: theme => ({
+        ...theme('colors'),
+        'primary': '#009999',
+       })
     },
     variants: {
       extend: {},

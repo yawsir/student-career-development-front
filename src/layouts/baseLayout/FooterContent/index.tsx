@@ -1,12 +1,13 @@
 /*
  * @Author: yuyang
  * @Date: 2021-07-09 09:45:43
- * @LastEditTime: 2021-08-28 16:01:11
+ * @LastEditTime: 2021-08-29 18:20:36
  * @LastEditors: yuyang
  */
 import React from 'react';
-import { Tooltip } from 'antd';
+import { Tooltip, Menu } from 'antd';
 import Logo from '@/components/Logo';
+import '../MenuContent/index.less';
 import { WechatOutlined } from '@ant-design/icons';
 
 interface AProps {
@@ -22,43 +23,58 @@ const infos = ['粤ICP备XXXXXXXX号', '主办单位：深圳市教育科学研�
 
 const FooterContent: React.FC = () => (
   <div className="w-full">
-    <div className="p-8 bg-primary flex justify-around text-white">
-      <div className="w-3/5 box-border flex flex-wrap justify-start p-8 border-0 border-r-2 border-green-300 border-solid border-opacity-25">
+    <div className="w-full p-8 bg-primary flex flex-wrap justify-around text-white">
+      <div className="w-full lg:w-3/5  box-border flex flex-wrap justify-start p-8 border-0 border-b-2 lg:border-r-2 lg:border-b-0 border-green-300 border-solid border-opacity-25">
         {
           infos.map((item) => (
-            <p className="py-2 px-4 text-left" style={{ minWidth: '50%' }} key={item}>
+            <p className="py-2 px-4 box-border text-left" style={{ minWidth: '50%' }} key={item}>
               <span>{item}</span>
             </p>
           ))
         }
       </div>
-      <div className="w-1/5 box-border flex flex-wrap justify-start items-start p-8 border-0 border-r-2 border-green-300 border-solid border-opacity-25">
-        <p className="py-2 px-4 text-left" style={{ minWidth: '100%' }}>快速链接</p>
-        <p className="py-2 px-4 text-left" style={{ minWidth: '50%' }}>
+      <div className="w-full lg:w-1/5  box-border flex flex-wrap justify-start p-8 border-0 border-b-2 lg:border-r-2 lg:border-b-0 border-green-300 border-solid border-opacity-25">
+        <p className="py-2 px-4 m-0 box-border text-left" style={{ minWidth: '100%' }}>快速链接</p>
+        <p className="py-2 px-4 m-0 box-border text-left" style={{ minWidth: '50%' }}>
           <A href="/" target="_blank">深圳市教育科学研究院</A>
         </p>
-        <p className="py-2 px-4 text-left" style={{ minWidth: '50%' }}>
+        <p className="py-2 px-4 m-0 box-border text-left" style={{ minWidth: '50%' }}>
           <A href="/" target="_blank">深圳市教育局</A>
         </p>
       </div>
-      <div className="w-1/5 box-border flex flex-col-reverse items-start pl-8">
-        <p>
+      <div className="w-full lg:w-1/5  box-border flex flex-col-reverse items-start pl-8">
+        <p className="py-4">
           <Tooltip title="13311112222">
             <WechatOutlined className="text-3xl" />
           </Tooltip>
         </p>
       </div>
     </div>
-    <div className="bg-custom-gray-3 flex justify-between px-24">
+    <div className="w-full bg-custom-gray-3 flex justify-between px-24">
       <Logo title="深圳市学生生涯发展平台" />
-      <ul className="list-none flex justify-start items-center text-white m-0">
-        <li><A href="/" className="p-2 m-1">关于我们</A></li>
-        <li><A href="/" className="p-2 m-1">新闻资讯</A></li>
-        <li><A href="/" className="p-2 m-1">产品中心</A></li>
-        <li><A href="/" className="p-2 m-1">技术支持</A></li>
-        <li><A href="/" className="p-2 m-1">招贤纳士</A></li>
-        <li><A href="/" className="p-2 m-1">联系我们</A></li>
-      </ul>
+      <Menu
+        mode="horizontal"
+        theme="dark"
+      >
+        <Menu.Item key="1">
+          关于我们
+        </Menu.Item>
+        <Menu.Item key="2">
+          新闻资讯
+        </Menu.Item>
+        <Menu.Item key="3">
+          产品中心
+        </Menu.Item>
+        <Menu.Item key="4">
+          技术支持
+        </Menu.Item>
+        <Menu.Item key="5">
+          招贤纳士
+        </Menu.Item>
+        <Menu.Item key="6">
+          联系我们
+        </Menu.Item>
+      </Menu>
     </div>
   </div>
 );

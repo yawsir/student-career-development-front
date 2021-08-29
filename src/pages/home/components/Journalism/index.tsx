@@ -1,10 +1,11 @@
 /*
  * @Author: yuyang
  * @Date: 2021-05-08 08:42:16
- * @LastEditTime: 2021-07-06 17:32:54
+ * @LastEditTime: 2021-08-29 17:35:28
  * @LastEditors: yuyang
  */
-import InternalJournalism, { Description } from './Journalism';
+import InternalJournalism from './Journalism';
+import Description from './Description';
 import Content from './Content';
 
 type InternalJournalismType = typeof InternalJournalism;
