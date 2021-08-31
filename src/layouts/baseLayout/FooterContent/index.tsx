@@ -1,13 +1,12 @@
 /*
  * @Author: yuyang
  * @Date: 2021-07-09 09:45:43
- * @LastEditTime: 2021-08-29 18:20:36
+ * @LastEditTime: 2021-08-30 13:51:36
  * @LastEditors: yuyang
  */
 import React from 'react';
-import { Tooltip, Menu } from 'antd';
+import { Tooltip } from 'antd';
 import Logo from '@/components/Logo';
-import '../MenuContent/index.less';
 import { WechatOutlined } from '@ant-design/icons';
 
 interface AProps {
@@ -52,29 +51,14 @@ const FooterContent: React.FC = () => (
     </div>
     <div className="w-full bg-custom-gray-3 flex justify-between px-24">
       <Logo title="深圳市学生生涯发展平台" />
-      <Menu
-        mode="horizontal"
-        theme="dark"
-      >
-        <Menu.Item key="1">
-          关于我们
-        </Menu.Item>
-        <Menu.Item key="2">
-          新闻资讯
-        </Menu.Item>
-        <Menu.Item key="3">
-          产品中心
-        </Menu.Item>
-        <Menu.Item key="4">
-          技术支持
-        </Menu.Item>
-        <Menu.Item key="5">
-          招贤纳士
-        </Menu.Item>
-        <Menu.Item key="6">
-          联系我们
-        </Menu.Item>
-      </Menu>
+      <ul className="list-none flex justify-start items-center text-white m-0">
+        <li><A href="/" className="p-2 m-1">关于我们</A></li>
+        <li><A href="/" className="p-2 m-1">新闻资讯</A></li>
+        <li><A href="/" className="p-2 m-1">产品中心</A></li>
+        <li><A href="/" className="p-2 m-1">技术支持</A></li>
+        <li><A href="/" className="p-2 m-1">招贤纳士</A></li>
+        <li><A href="/" className="p-2 m-1">联系我们</A></li>
+      </ul>
     </div>
   </div>
 );

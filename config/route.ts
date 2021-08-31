@@ -1,7 +1,7 @@
 /*
  * @Author: yuyang
  * @Date: 2021-03-27 14:36:22
- * @LastEditTime: 2021-08-25 11:02:19
+ * @LastEditTime: 2021-08-31 17:26:59
  * @LastEditors: yuyang
  */
 import type { ComponentType } from 'react';
@@ -31,13 +31,19 @@ const menusData: MenuData[] = [
   {
     title: '学生',
     link: '/student',
-    key: '/student',
+    key: 'student',
     children: [],
   },
   {
     title: '教师社区',
     link: '/teacher',
     key: 'teacher',
+    children: [],
+  },
+  {
+    title: '学校',
+    link: '/school',
+    key: 'school',
     children: [],
   },
   {
