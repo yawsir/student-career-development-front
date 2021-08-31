@@ -24,4 +24,22 @@ export function adaptRem() {
   document.documentElement.style.fontSize = `${(window.innerWidth / BASE) * 100}px`;
 }
 
+export function formatDate(date: Date | string) {
+  let tempDate: Date;
+  if (typeof date === 'string') {
+    tempDate = new Date(date);
+  } else {
+    tempDate = date;
+  }
+  const y = tempDate.getFullYear();
+  const m = (tempDate.getMonth() + 1).toString().padStart(2, '0');
+  const d = (tempDate.getDate() + 1).toString().padStart(2, '0');
+  return `${y}-${m}-${d}`;
+}
+
+export function isEqualDate(date1: Date | string, date2: Date | string) {
+  const fd1 = formatDate(date1);
+  const fd2 = formatDate(date2);
+  return fd1 === fd2;
+}
 export default queryKeysByPath;

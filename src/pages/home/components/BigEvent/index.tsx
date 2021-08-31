@@ -1,24 +1,31 @@
 /*
  * @Author: yuyang
  * @Date: 2021-08-28 10:10:58
- * @LastEditTime: 2021-08-29 18:13:01
+ * @LastEditTime: 2021-08-31 18:25:17
  * @LastEditors: yuyang
  */
 import React from 'react';
 import Broadcast from '@/components/Broadcast';
 import Calendar from 'react-calendar';
 import 'react-calendar/dist/Calendar.css';
+import { isEqualDate } from '@/utils/utils';
 import './overwrite.less';
-import BigeventImage from '@/assets/bigevent.jpg';
+import bigEventInfos, { BigEventInfoType } from './big-event-info';
 
 interface BigEventProps {
 
 }
 const BigEvent: React.FC<BigEventProps> = () => {
   React.useEffect(() => {}, []);
-  const [pitchDate, setPitchDate] = React.useState<Date>(new Date('2021-04-29'));
+  const [eventInfo, setEventInfo] = React.useState<Partial<BigEventInfoType>>({});
   const handleChangeDate = (d: Date) => {
-    setPitchDate(d);
+    for (let i = 0; i < bigEventInfos.length; i++) {
+      if (isEqualDate(d, bigEventInfos[i].date)) {
+        setEventInfo(bigEventInfos[i]);
+        return;
+      }
+    }
+    setEventInfo({});
   };
   return (
     <div className="w-full mx-auto px-0 lg:px-40">
@@ -33,21 +40,25 @@ const BigEvent: React.FC<BigEventProps> = () => {
             formatDay={(_, date) => date.getDate().toString()}
             onChange={handleChangeDate}
             className="w-full bg-transparent shadow-hs text-center mx-auto"
-            defaultValue={pitchDate}
+            defaultActiveStartDate={new Date(bigEventInfos[0].date)}
             showFixedNumberOfWeeks
           />
         </div>
         <div className="w-full xl:w-auto flex-1 mx-0 lg:mx-16 p-0 shadow-hs">
           <h3 className="text-3xl text-white bg-primary p-4 m-0">
-            <span className="px-4 text-4xl">{pitchDate?.getDate()}</span>
-            2021普通高中新课程新教材实施生涯教育研讨活动
+            {
+              eventInfo.date && (
+                <span className="px-4 text-4xl">{new Date(eventInfo.date).getDate()}</span>
+              )
+            }
+            {eventInfo.title}
           </h3>
           <div className="bg-white px-4">
             <div className="text-center mx-auto w-full" style={{ height: 260 }}>
-              <img src={BigeventImage} alt="" className="w-full h-full object-cover object-center" />
+              <img src={eventInfo.image} alt="" className="w-full h-full object-cover object-center" />
             </div>
             <p className="text-lg py-4 m-0" style={{ textIndent: '2em' }}>
-              为分享普通高中生涯规划课程建设经验，提升学科生涯渗透教育教学水平，推动普通高中育人方式变革，全面提升育人质量，4月29日，深圳市教育科学研究院在龙岗区横岗高级中学举行了深圳市2021年普通高中“新课程新教材实施生涯教育”研讨活动。
+              {eventInfo.content}
             </p>
           </div>
         </div>
