@@ -1,13 +1,13 @@
 /*
  * @Author: yuyang
  * @Date: 2021-08-28 10:10:58
- * @LastEditTime: 2021-08-31 18:25:17
+ * @LastEditTime: 2021-09-06 10:17:03
  * @LastEditors: yuyang
  */
 import React from 'react';
 import Broadcast from '@/components/Broadcast';
-import Calendar from 'react-calendar';
-import 'react-calendar/dist/Calendar.css';
+import DayPicker from 'react-day-picker';
+import 'react-day-picker/lib/style.css';
 import { isEqualDate } from '@/utils/utils';
 import './overwrite.less';
 import bigEventInfos, { BigEventInfoType } from './big-event-info';
@@ -15,10 +15,19 @@ import bigEventInfos, { BigEventInfoType } from './big-event-info';
 interface BigEventProps {
 
 }
+
+const MONTHS = ['一月', '二月', '三月', '四月', '五月', '六月', '七月', '八月', '九月', '十月', '十一月', '十二月'];
+const WEEKDAYS_SHORT = ['日', '一', '二', '三', '四', '五', '六'];
+
 const BigEvent: React.FC<BigEventProps> = () => {
-  React.useEffect(() => {}, []);
-  const [eventInfo, setEventInfo] = React.useState<Partial<BigEventInfoType>>({});
+  const [eventInfo, setEventInfo] = React.useState<Partial<BigEventInfoType>>(bigEventInfos[0]);
+  const [selectedDate, setSelectedDate] = React.useState<Date[]>([new Date()]);
+  const [clickedDate, setClickedDate] = React.useState<Date>();
+  React.useEffect(() => {
+    setSelectedDate(bigEventInfos.map((item) => new Date(item.date)));
+  }, []);
   const handleChangeDate = (d: Date) => {
+    setClickedDate(d);
     for (let i = 0; i < bigEventInfos.length; i++) {
       if (isEqualDate(d, bigEventInfos[i].date)) {
         setEventInfo(bigEventInfos[i]);
@@ -36,12 +45,14 @@ const BigEvent: React.FC<BigEventProps> = () => {
       </div>
       <div className="w-full flex flex-wrap py-4 items-center justify-center">
         <div className="w-full xl:w-auto bg-transparent my-4" style={{ minWidth: 128 }}>
-          <Calendar
-            formatDay={(_, date) => date.getDate().toString()}
-            onChange={handleChangeDate}
+          <DayPicker
+            selectedDays={[...selectedDate, clickedDate]}
+            onDayClick={handleChangeDate}
+            fixedWeeks
+            months={MONTHS}
+            weekdaysShort={WEEKDAYS_SHORT}
+            initialMonth={new Date(bigEventInfos[0].date)}
             className="w-full bg-transparent shadow-hs text-center mx-auto"
-            defaultActiveStartDate={new Date(bigEventInfos[0].date)}
-            showFixedNumberOfWeeks
           />
         </div>
         <div className="w-full xl:w-auto flex-1 mx-0 lg:mx-16 p-0 shadow-hs">
@@ -55,7 +66,9 @@ const BigEvent: React.FC<BigEventProps> = () => {
           </h3>
           <div className="bg-white px-4">
             <div className="text-center mx-auto w-full" style={{ height: 260 }}>
-              <img src={eventInfo.image} alt="" className="w-full h-full object-cover object-center" />
+              {
+                eventInfo.image && <img src={eventInfo.image} alt="" className="w-full h-full object-cover object-center" />
+              }
             </div>
             <p className="text-lg py-4 m-0" style={{ textIndent: '2em' }}>
               {eventInfo.content}
