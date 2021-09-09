@@ -1,7 +1,7 @@
 /*
  * @Author: yuyang
  * @Date: 2021-05-04 15:25:51
- * @LastEditTime: 2021-08-29 18:08:02
+ * @LastEditTime: 2021-09-09 16:50:40
  * @LastEditors: yuyang
  */
 import React from 'react';
@@ -9,7 +9,7 @@ import SlideShow from '@/components/SlideShow';
 import news1 from '@/assets/news1.jpg';
 import news2 from '@/assets/news2.jpg';
 import news3 from '@/assets/news3.jpg';
-import journalismBg from '@/assets/bgs/journalism.png';
+import journalismBg from '@/assets/bgs/journalism.jpg';
 import BigEvent from './components/BigEvent';
 import Journalism from './components/Journalism';
 
