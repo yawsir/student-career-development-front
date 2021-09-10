@@ -1,7 +1,7 @@
 /*
  * @Author: yuyang
  * @Date: 2021-07-06 14:54:43
- * @LastEditTime: 2021-08-29 16:25:52
+ * @LastEditTime: 2021-09-10 15:20:32
  * @LastEditors: yuyang
  */
 module.exports = {
@@ -11,6 +11,7 @@ module.exports = {
       backgroundColor: theme => ({
         ...theme('colors'),
         'primary': '#009999',
+        'secondary': '#0DAFC0',
         'custom-gray': '#808080',
         'custom-gray-2': '#D7D7D7',
         'custom-gray-3': '#545454',

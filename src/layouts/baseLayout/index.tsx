@@ -1,7 +1,7 @@
 /*
  * @Author: yuyang
  * @Date: 2021-03-27 14:20:18
- * @LastEditTime: 2021-08-29 18:31:48
+ * @LastEditTime: 2021-09-10 09:14:28
  * @LastEditors: yuyang
  */
 import React from 'react';
@@ -21,7 +21,7 @@ const BaseLayout: React.FunctionComponent = (props: any) => {
       <Header className={styles.header}>
         <Row className="w-full" justify="start" align="middle">
           <Col span={24}>
-            <div className="flex justify-items-start">
+            <div className="flex justify-items-start pl-32 text-3xl">
               <Logo title="深圳市学生生涯发展支持平台" />
             </div>
           </Col>
