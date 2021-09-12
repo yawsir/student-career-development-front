@@ -1,7 +1,7 @@
 /*
  * @Author: yuyang
  * @Date: 2021-05-05 20:01:53
- * @LastEditTime: 2021-09-12 10:39:16
+ * @LastEditTime: 2021-09-12 15:25:44
  * @LastEditors: yuyang
  */
 import React from 'react';
@@ -29,7 +29,7 @@ const Index: React.FC = () => (
           <h3 className="border-0 border-b border-solid border-gray-400 text-center pb-8">
             <span className="inline-block px-8 py-2 border-0 border-b-2 border-solid border-primary">高考资讯类</span>
           </h3>
-          <div className="w-ful">
+          <div className="w-full">
             <NewsList listStyle="square" tabs={tabs3} showDate />
           </div>
         </div>

@@ -15,6 +15,7 @@
     "@umijs/preset-react": "1.x",
     "antd": "^4.16.6",
     "axios": "^0.21.1",
+    "braft-editor": "^2.3.9",
     "react": "^17.0.2",
     "react-calendar": "^3.4.0",
     "react-day-picker": "^7.4.10",

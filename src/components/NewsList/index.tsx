@@ -1,11 +1,11 @@
 /*
  * @Author: yuyang
  * @Date: 2021-09-10 16:21:40
- * @LastEditTime: 2021-09-12 10:45:06
+ * @LastEditTime: 2021-09-12 18:19:40
  * @LastEditors: yuyang
  */
 import React from 'react';
-import { Tabs } from 'antd';
+import { Tabs, Typography, TabsProps } from 'antd';
 import { Link } from 'umi';
 
 export interface NewsType {
@@ -24,6 +24,8 @@ interface NewsListProps {
   tabs: TabType[];
   listStyle?: 'square' | 'circle';
   showDate?: boolean;
+  renderTabBar?: TabsProps['renderTabBar'];
+  tabBarStyle?: React.CSSProperties;
 }
 
 interface NewsItemProps extends NewsType {
@@ -42,9 +44,9 @@ const Square = () => (
 const NewsItem: React.FC<NewsItemProps> = (props) => {
   const { id, title, date, listStyle, showDate } = props;
   return (
-    <Link to={`/article/${id}`}>
+    <Link to={`/article/${id}`} className="text-center">
       <p className="text-xl text-black hover:text-blue-400 transition flex justify-between">
-        <span className="whitespace-nowrap overflow-hidden overflow-ellipsis">
+        <Typography.Text ellipsis>
           {
             listStyle
               && (listStyle === 'circle'
@@ -52,10 +54,10 @@ const NewsItem: React.FC<NewsItemProps> = (props) => {
                 : <Square />)
           }
           {title}
-        </span>
+        </Typography.Text>
         {
           showDate
-          && <span className="">{date}</span>
+          && <span className="block w-64 text-right">{date}</span>
         }
       </p>
     </Link>
@@ -63,7 +65,7 @@ const NewsItem: React.FC<NewsItemProps> = (props) => {
 };
 
 const NewsList: React.FC<NewsListProps> = (props) => {
-  const { tabs, listStyle, showDate = false } = props;
+  const { tabs, listStyle, showDate = false, renderTabBar, tabBarStyle } = props;
   if (tabs.length && tabs.length === 1) {
     return (
       <div>
@@ -76,7 +78,7 @@ const NewsList: React.FC<NewsListProps> = (props) => {
     );
   }
   return (
-    <Tabs>
+    <Tabs renderTabBar={renderTabBar} tabBarStyle={tabBarStyle}>
       {
         tabs.map(({ newsList, tabKey, tabTitle }) => (
           <Tabs.TabPane key={tabKey} tab={tabTitle}>

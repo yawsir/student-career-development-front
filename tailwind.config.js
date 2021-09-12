@@ -1,7 +1,7 @@
 /*
  * @Author: yuyang
  * @Date: 2021-07-06 14:54:43
- * @LastEditTime: 2021-09-10 15:20:32
+ * @LastEditTime: 2021-09-12 15:58:27
  * @LastEditors: yuyang
  */
 module.exports = {
@@ -12,6 +12,7 @@ module.exports = {
         ...theme('colors'),
         'primary': '#009999',
         'secondary': '#0DAFC0',
+        'third': '#10AEBF',
         'custom-gray': '#808080',
         'custom-gray-2': '#D7D7D7',
         'custom-gray-3': '#545454',
@@ -40,6 +41,8 @@ module.exports = {
       borderColor: theme => ({
         ...theme('colors'),
         'primary': '#009999',
+        'secondary': '#0DAFC0',
+        'third': '#10AEBF',
        })
     },
     variants: {
