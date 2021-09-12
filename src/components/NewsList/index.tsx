@@ -1,11 +1,11 @@
 /*
  * @Author: yuyang
  * @Date: 2021-09-10 16:21:40
- * @LastEditTime: 2021-09-12 18:19:40
+ * @LastEditTime: 2021-09-12 22:00:36
  * @LastEditors: yuyang
  */
 import React from 'react';
-import { Tabs, Typography, TabsProps } from 'antd';
+import { Tabs, TabsProps } from 'antd';
 import { Link } from 'umi';
 
 export interface NewsType {
@@ -26,11 +26,15 @@ interface NewsListProps {
   showDate?: boolean;
   renderTabBar?: TabsProps['renderTabBar'];
   tabBarStyle?: React.CSSProperties;
+  barCentered?: boolean;
+  textCentered?: boolean;
+  tabBarGutter?: number;
 }
 
 interface NewsItemProps extends NewsType {
   listStyle?: 'square' | 'circle';
   showDate: boolean;
+  textCentered: boolean;
 }
 
 const Circle = () => (
@@ -42,11 +46,14 @@ const Square = () => (
 );
 
 const NewsItem: React.FC<NewsItemProps> = (props) => {
-  const { id, title, date, listStyle, showDate } = props;
+  const { id, title, date, listStyle, showDate, textCentered } = props;
   return (
-    <Link to={`/article/${id}`} className="text-center">
-      <p className="text-xl text-black hover:text-blue-400 transition flex justify-between">
-        <Typography.Text ellipsis>
+    <Link to={`/article/${id}`}>
+      <p
+        className="w-full text-xl text-black hover:text-blue-400 transition flex justify-between"
+        style={{ paddingLeft: textCentered ? '23%' : '0' }}
+      >
+        <span className="whitespace-nowrap overflow-hidden overflow-ellipsis">
           {
             listStyle
               && (listStyle === 'circle'
@@ -54,7 +61,7 @@ const NewsItem: React.FC<NewsItemProps> = (props) => {
                 : <Square />)
           }
           {title}
-        </Typography.Text>
+        </span>
         {
           showDate
           && <span className="block w-64 text-right">{date}</span>
@@ -65,26 +72,37 @@ const NewsItem: React.FC<NewsItemProps> = (props) => {
 };
 
 const NewsList: React.FC<NewsListProps> = (props) => {
-  const { tabs, listStyle, showDate = false, renderTabBar, tabBarStyle } = props;
+  const { tabs, listStyle, showDate = false, renderTabBar, tabBarStyle,
+    barCentered = false, textCentered = false, tabBarGutter } = props;
   if (tabs.length && tabs.length === 1) {
     return (
       <div>
         {
           tabs[0].newsList.map((news) => (
-            <NewsItem key={news.id} listStyle={listStyle} showDate={showDate} {...news} />
+            <NewsItem key={news.id} listStyle={listStyle} textCentered={textCentered} showDate={showDate} {...news} />
           ))
         }
       </div>
     );
   }
   return (
-    <Tabs renderTabBar={renderTabBar} tabBarStyle={tabBarStyle}>
+    <Tabs
+      renderTabBar={renderTabBar}
+      tabBarStyle={tabBarStyle}
+      centered={barCentered}
+      tabBarGutter={tabBarGutter}
+    >
       {
         tabs.map(({ newsList, tabKey, tabTitle }) => (
-          <Tabs.TabPane key={tabKey} tab={tabTitle}>
+          <Tabs.TabPane
+            key={tabKey}
+            tab={(
+              <div className="text-xl">{tabTitle}</div>
+            )}
+          >
             {
               newsList.map((news) => (
-                <NewsItem key={news.id} listStyle={listStyle} showDate={showDate} {...news} />
+                <NewsItem key={news.id} listStyle={listStyle} textCentered={textCentered} showDate={showDate} {...news} />
               ))
             }
           </Tabs.TabPane>

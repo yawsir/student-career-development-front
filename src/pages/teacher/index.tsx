@@ -1,7 +1,7 @@
 /*
  * @Author: yuyang
  * @Date: 2021-05-05 20:01:53
- * @LastEditTime: 2021-09-12 18:19:24
+ * @LastEditTime: 2021-09-12 21:42:23
  * @LastEditors: yuyang
  */
 import React from 'react';
@@ -40,10 +40,9 @@ const Teacher: React.FC = () => (
             <NewsList
               listStyle="square"
               tabs={tabs3}
-              showDate
-              tabBarStyle={{
-                width: '33%',
-              }}
+              barCentered
+              textCentered
+              tabBarGutter={64}
             />
           </div>
         </h3>
