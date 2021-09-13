@@ -3,7 +3,7 @@
 /*
  * @Author: yuyang
  * @Date: 2021-09-12 15:32:43
- * @LastEditTime: 2021-09-12 18:06:11
+ * @LastEditTime: 2021-09-13 22:45:19
  * @LastEditors: yuyang
  */
 export interface ArticleType {
@@ -16,8 +16,17 @@ export interface Articles {
   [id: string]: ArticleType;
 }
 
+export interface ArticleTableDataType {
+  id: string;
+  title: string;
+  issueNumber: string;
+  createdDate: string;
+  publishDate: string;
+}
+
 // student: 1-36
 // teacher 37-62
+// school 63
 export default {
   1: {
     title: '教育部等六部门关于加强新时代高校教师队伍建设改革的指导意见',

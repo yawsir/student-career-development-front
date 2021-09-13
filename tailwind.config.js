@@ -1,11 +1,19 @@
 /*
  * @Author: yuyang
  * @Date: 2021-07-06 14:54:43
- * @LastEditTime: 2021-09-12 15:58:27
+ * @LastEditTime: 2021-09-13 23:45:12
  * @LastEditors: yuyang
  */
 module.exports = {
-    purge: ['./src/**/*.html', './src/**/*.tsx', './src/**/*.ts'],
+    purge: {
+      content: ['./src/**/*.html', './src/**/*.tsx', './src/**/*.ts'],
+      options: {
+        safelist: [
+          'table-odd-column',
+          'table-even-column',
+        ],
+      }
+    },
     darkMode: false, // or 'media' or 'class'
     theme: {
       backgroundColor: theme => ({
@@ -20,6 +28,8 @@ module.exports = {
         'custom-gray-5': '#F2f2f2',
         'custom-white': '#E8F0F2',
         'custom-white2': '#E7F0F2',
+        'table-odd-column': '#D5E3E8',
+        'table-even-column': '#BDDFF1',
       }),
       boxShadow: {
         sm: '0 1px 2px 0 rgba(0, 0, 0, 0.05)',

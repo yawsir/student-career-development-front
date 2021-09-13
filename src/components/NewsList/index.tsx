@@ -1,7 +1,7 @@
 /*
  * @Author: yuyang
  * @Date: 2021-09-10 16:21:40
- * @LastEditTime: 2021-09-12 22:00:36
+ * @LastEditTime: 2021-09-13 23:10:11
  * @LastEditors: yuyang
  */
 import React from 'react';
@@ -35,6 +35,7 @@ interface NewsItemProps extends NewsType {
   listStyle?: 'square' | 'circle';
   showDate: boolean;
   textCentered: boolean;
+  className?: string;
 }
 
 const Circle = () => (
@@ -45,13 +46,17 @@ const Square = () => (
   <span className="mr-1 w-2 h-4 bg-primary inline-block" />
 );
 
-const NewsItem: React.FC<NewsItemProps> = (props) => {
-  const { id, title, date, listStyle, showDate, textCentered } = props;
+const textCenteredStyle: React.CSSProperties = {
+  paddingLeft: '25%',
+  transform: 'translateX(-12.5%)',
+};
+export const NewsItem: React.FC<NewsItemProps> = (props) => {
+  const { id, title, date, listStyle, showDate, textCentered, className } = props;
   return (
     <Link to={`/article/${id}`}>
       <p
-        className="w-full text-xl text-black hover:text-blue-400 transition flex justify-between"
-        style={{ paddingLeft: textCentered ? '23%' : '0' }}
+        className={`w-full text-lg text-black hover:text-blue-400 transition flex justify-between ${className}`}
+        style={textCentered ? textCenteredStyle : {}}
       >
         <span className="whitespace-nowrap overflow-hidden overflow-ellipsis">
           {
