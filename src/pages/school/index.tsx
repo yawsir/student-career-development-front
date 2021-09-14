@@ -1,7 +1,7 @@
 /*
  * @Author: yuyang
  * @Date: 2021-08-31 17:24:02
- * @LastEditTime: 2021-09-14 00:15:52
+ * @LastEditTime: 2021-09-14 17:53:30
  * @LastEditors: yuyang
  */
 import React from 'react';
@@ -10,6 +10,7 @@ import NewsContainer from '@/components/NewsContainer';
 import NewsList from '@/components/NewsList';
 import { Table, TableProps } from 'antd';
 import { tabs1, articleTableData, ArticleTableDataType } from './news-list';
+import styles from './index.less';
 
 interface SchoolProps {
 
@@ -28,7 +29,6 @@ const columns: TableProps<ArticleTableDataType>['columns'] = [
     title: <TableTitle>标题</TableTitle>,
     dataIndex: 'title',
     width: 256,
-    align: 'center',
     className: 'bg-table-even-column',
     render: (_, record) => (
       <Link className="text-black text-left" to={`/article/${record.id}`}>
@@ -77,6 +77,7 @@ const School: React.FC<SchoolProps> = () => (
           dataSource={articleTableData}
           rowKey="id"
           bordered
+          className={styles['no-hover']}
         />
       </div>
     </div>

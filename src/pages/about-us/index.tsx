@@ -1,7 +1,7 @@
 /*
  * @Author: yuyang
  * @Date: 2021-05-04 19:36:25
- * @LastEditTime: 2021-08-30 13:43:26
+ * @LastEditTime: 2021-09-14 18:22:21
  * @LastEditors: yuyang
  */
 import React from 'react';
@@ -15,7 +15,7 @@ const AboutUs: React.FC = () => (
     <Row justify="center" align="top">
       <Col xxl={20} xl={20} lg={20} md={24} className="relative">
         <img src={banner} alt="" className="w-full h-96 object-cover object-center" />
-        <h3 className="absolute left-0 top-1/2 transform translate-y-1/2 text-white bg-primary py-4 pr-16 pl-2">平台介绍</h3>
+        <h3 className="absolute left-0 top-1/2 transform -translate-y-1/2 rounded-r-lg text-white text-4xl bg-primary py-4 pr-16 pl-2">平台介绍</h3>
       </Col>
     </Row>
     <div className="w-full box-border px-0 lg:px-12 py-4">
