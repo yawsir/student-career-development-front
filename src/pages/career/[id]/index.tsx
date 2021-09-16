@@ -1,7 +1,7 @@
 /*
  * @Author: yuyang
  * @Date: 2021-08-29 11:59:52
- * @LastEditTime: 2021-09-16 13:58:15
+ * @LastEditTime: 2021-09-16 22:53:06
  * @LastEditors: yuyang
  */
 import React from 'react';
@@ -43,7 +43,7 @@ const CareerDetail: React.FC<CareerDetailProps> = (props) => {
             返回
           </Button>
         </div>
-        <div className="w-3/4 mx-auto border-8 border-third border-solid p-12 bg-white">
+        <div className="w-4/5 mx-auto border-8 border-third border-solid p-12 bg-white">
           <h3 className="text-center text-primary text-4xl mb-14">
             <span className="pb-2 px-28 border-0 border-b-2 border-third border-solid">{career.name}</span>
           </h3>
@@ -67,7 +67,7 @@ const CareerDetail: React.FC<CareerDetailProps> = (props) => {
                 {
                   career?.jobs?.map((item) => (
                     <MultiPane.Item name={item.id}>
-                      <div>
+                      <div className="animate-appear">
                         <h4 className="text-primary text-2xl text-center font-bold">
                           {item.jobName}
                           (

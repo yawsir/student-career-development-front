@@ -1,7 +1,7 @@
 /*
  * @Author: yuyang
  * @Date: 2021-09-14 18:18:32
- * @LastEditTime: 2021-09-14 23:46:52
+ * @LastEditTime: 2021-09-16 22:22:21
  * @LastEditors: yuyang
  */
 import React from 'react';
@@ -9,6 +9,8 @@ import NewsContainer from '@/components/NewsContainer';
 import { Row, Col } from 'antd';
 import banner from '@/assets/parent_banner.jpg';
 import List from './components/List';
+import TipModal from './components/TipModal';
+import styles from './index.less';
 
 interface ParentsProps {
 
@@ -18,7 +20,13 @@ const Parents: React.FC<ParentsProps> = () => (
     <Row justify="center" align="top">
       <Col xxl={20} xl={20} lg={20} md={24} className="relative">
         <img src={banner} alt="" className="w-full h-96 object-cover object-center" />
-        <h3 className="absolute left-0 top-1/2 transform -translate-y-1/2 rounded-r-lg text-white bg-primary text-4xl py-4 pr-16 pl-2">家校合作</h3>
+        <TipModal modalTitle={<div className="text-gray-500 text-xl">温馨提示</div>}>
+          <h3
+            className={`${styles.square} absolute left-0 top-1/2 transform -translate-y-1/2 rounded-r-lg text-white bg-secondary text-4xl py-4 pr-16 pl-2`}
+          >
+            家校合作
+          </h3>
+        </TipModal>
       </Col>
     </Row>
     <div className="container mx-auto text-4xl bg-white py-2 my-4">

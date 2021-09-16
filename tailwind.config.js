@@ -1,7 +1,7 @@
 /*
  * @Author: yuyang
  * @Date: 2021-07-06 14:54:43
- * @LastEditTime: 2021-09-16 13:59:04
+ * @LastEditTime: 2021-09-16 22:56:56
  * @LastEditors: yuyang
  */
 module.exports = {
@@ -54,7 +54,18 @@ module.exports = {
         'primary': '#009999',
         'secondary': '#0DAFC0',
         'third': '#10AEBF',
-       })
+       }),
+       extend: {
+        keyframes: {
+          'el-appear': {
+            '0%': { opacity: 0 },
+            '100%': { opacity: 1 },
+          }
+        },
+        animation: {
+          'appear': 'el-appear 1s cubic-bezier(0.19, 1, 0.22, 1);',
+         }
+       }
     },
     variants: {
       extend: {},
