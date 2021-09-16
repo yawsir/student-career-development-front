@@ -1,12 +1,12 @@
 /*
  * @Author: yuyang
  * @Date: 2021-03-27 14:20:18
- * @LastEditTime: 2021-09-16 10:18:43
+ * @LastEditTime: 2021-09-16 10:42:45
  * @LastEditors: yuyang
  */
 import React from 'react';
 import type { ComponentType } from 'react';
-import { Link, useLocation } from 'umi';
+import { Link, useLocation, history } from 'umi';
 import { Menu } from 'antd';
 import queryKeysByPath from '@/utils/utils';
 import Icon, { MenuOutlined, createFromIconfontCN } from '@ant-design/icons';
@@ -33,9 +33,9 @@ const MenuContent: React.FunctionComponent<BasicLayoutProps> = (props: BasicLayo
   const { menusData } = props;
   const location = useLocation();
 
-  const renderTitle = (title: string, icon?: ComponentType, iconType?: string) => (
+  const renderTitle = (title: string, icon?: ComponentType, iconType?: string, link?: string) => (
     <div style={{ display: 'flex', alignItems: 'center' }}>
-      <span className={styles['menuitem-outside']}>
+      <span className={styles['menuitem-outside']} onClick={() => link && history.push(link)}>
         {icon && <Icon component={icon} />}
         {iconType && <IconFont type={iconType} />}
         {title}
@@ -51,7 +51,7 @@ const MenuContent: React.FunctionComponent<BasicLayoutProps> = (props: BasicLayo
       if (children && children.length > 0) {
         const subMenu = renderMenu(children, true);
         return (
-          <SubMenu key={key} title={renderTitle(title, icon, iconType)} popupClassName={styles.submenu}>
+          <SubMenu key={key} title={renderTitle(title, icon, iconType, link)} popupClassName={styles.submenu}>
             {subMenu}
           </SubMenu>
         );
