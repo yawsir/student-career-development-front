@@ -1,7 +1,7 @@
 /*
  * @Author: yuyang
  * @Date: 2021-07-06 14:54:43
- * @LastEditTime: 2021-09-13 23:45:12
+ * @LastEditTime: 2021-09-16 13:59:04
  * @LastEditors: yuyang
  */
 module.exports = {
@@ -21,6 +21,7 @@ module.exports = {
         'primary': '#009999',
         'secondary': '#0DAFC0',
         'third': '#10AEBF',
+        'active': '#5685CB',
         'custom-gray': '#808080',
         'custom-gray-2': '#D7D7D7',
         'custom-gray-3': '#545454',
