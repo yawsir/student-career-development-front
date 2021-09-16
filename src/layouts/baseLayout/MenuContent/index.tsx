@@ -1,7 +1,7 @@
 /*
  * @Author: yuyang
  * @Date: 2021-03-27 14:20:18
- * @LastEditTime: 2021-07-07 11:30:14
+ * @LastEditTime: 2021-09-16 10:18:43
  * @LastEditors: yuyang
  */
 import React from 'react';
@@ -46,7 +46,7 @@ const MenuContent: React.FunctionComponent<BasicLayoutProps> = (props: BasicLayo
     const rows = Array.isArray(data) ? data : [];
     return rows.map((row) => {
       if (row === undefined) return false;
-      const { title, link = '', key, icon, iconType, children, ...restState } = row;
+      const { title, link = '', key, icon, iconType, children, outLink, ...restState } = row;
 
       if (children && children.length > 0) {
         const subMenu = renderMenu(children, true);
@@ -58,13 +58,27 @@ const MenuContent: React.FunctionComponent<BasicLayoutProps> = (props: BasicLayo
       }
       return (
         <Item key={key} title={title}>
-          <Link to={{ pathname: link, state: { ...restState, key } }}>
-            <span className={isInside ? styles['menuitem-inside'] : styles['menuitem-outside']}>
-              {icon && <Icon component={icon} className={styles.alignMiddle} />}
-              {iconType && <IconFont type={iconType} />}
-              {title}
-            </span>
-          </Link>
+          {
+            outLink
+              ? (
+                <a href={link} target="_blank" rel="noreferrer">
+                  <span className={isInside ? styles['menuitem-inside'] : styles['menuitem-outside']}>
+                    {icon && <Icon component={icon} className={styles.alignMiddle} />}
+                    {iconType && <IconFont type={iconType} />}
+                    {title}
+                  </span>
+                </a>
+              )
+              : (
+                <Link to={{ pathname: link, state: { ...restState, key } }}>
+                  <span className={isInside ? styles['menuitem-inside'] : styles['menuitem-outside']}>
+                    {icon && <Icon component={icon} className={styles.alignMiddle} />}
+                    {iconType && <IconFont type={iconType} />}
+                    {title}
+                  </span>
+                </Link>
+              )
+          }
         </Item>
       );
     });

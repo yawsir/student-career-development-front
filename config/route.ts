@@ -1,7 +1,7 @@
 /*
  * @Author: yuyang
  * @Date: 2021-03-27 14:36:22
- * @LastEditTime: 2021-08-31 17:26:59
+ * @LastEditTime: 2021-09-16 10:12:29
  * @LastEditors: yuyang
  */
 import type { ComponentType } from 'react';
@@ -12,6 +12,7 @@ interface MenuData {
   key: string;
   icon?: ComponentType;
   iconType?: string;
+  outLink?: boolean;
   children: MenuData[] | [];
 }
 
@@ -32,7 +33,15 @@ const menusData: MenuData[] = [
     title: '学生',
     link: '/student',
     key: 'student',
-    children: [],
+    children: [
+      {
+        title: '个人测评',
+        link: 'http://measure.huishengedu.cn/',
+        key: 'measure',
+        outLink: true,
+        children: [],
+      },
+    ],
   },
   {
     title: '教师社区',
