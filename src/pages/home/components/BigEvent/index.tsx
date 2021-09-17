@@ -1,11 +1,11 @@
 /*
  * @Author: yuyang
  * @Date: 2021-08-28 10:10:58
- * @LastEditTime: 2021-09-11 18:57:07
+ * @LastEditTime: 2021-09-17 10:02:07
  * @LastEditors: yuyang
  */
 import React from 'react';
-import DayPicker from 'react-day-picker';
+import DayPicker, { DayPickerProps } from 'react-day-picker';
 import Broadcast from '@/components/Broadcast';
 import 'react-day-picker/lib/style.css';
 import { isEqualDate } from '@/utils/utils';
@@ -15,26 +15,27 @@ import bigEventInfos, { BigEventInfoType } from './big-event-info';
 interface BigEventProps {
 
 }
-
+const modifiersStyles = {
+  eventDate: {
+    color: '#ffc107',
+    backgroundColor: '#fffdee',
+  },
+};
 const MONTHS = ['一月', '二月', '三月', '四月', '五月', '六月', '七月', '八月', '九月', '十月', '十一月', '十二月'];
 const WEEKDAYS_SHORT = ['日', '一', '二', '三', '四', '五', '六'];
 
 const BigEvent: React.FC<BigEventProps> = () => {
   const [eventInfo, setEventInfo] = React.useState<Partial<BigEventInfoType>>(bigEventInfos[0]);
-  const [selectedDate, setSelectedDate] = React.useState<Date[]>([new Date()]);
-  const [clickedDate, setClickedDate] = React.useState<Date>();
-  React.useEffect(() => {
-    setSelectedDate(bigEventInfos.map((item) => new Date(item.date)));
-  }, []);
+  const modifiers: DayPickerProps['modifiers'] = {
+    eventDate: bigEventInfos.map((item) => new Date(item.date)),
+  };
   const handleChangeDate = (d: Date) => {
-    setClickedDate(d);
     for (let i = 0; i < bigEventInfos.length; i++) {
       if (isEqualDate(d, bigEventInfos[i].date)) {
         setEventInfo(bigEventInfos[i]);
         return;
       }
     }
-    setEventInfo({});
   };
   return (
     <div className="w-full mx-auto px-0 lg:px-40">
@@ -46,8 +47,9 @@ const BigEvent: React.FC<BigEventProps> = () => {
       <div className="w-full flex flex-wrap py-4 items-center justify-center">
         <div className="w-full xl:w-auto bg-transparent my-4" style={{ minWidth: 128 }}>
           <DayPicker
-            selectedDays={[...selectedDate, clickedDate]}
             onDayClick={handleChangeDate}
+            modifiers={modifiers}
+            modifiersStyles={modifiersStyles}
             fixedWeeks
             months={MONTHS}
             weekdaysShort={WEEKDAYS_SHORT}
