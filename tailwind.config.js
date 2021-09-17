@@ -1,7 +1,7 @@
 /*
  * @Author: yuyang
  * @Date: 2021-07-06 14:54:43
- * @LastEditTime: 2021-09-16 22:56:56
+ * @LastEditTime: 2021-09-17 09:42:43
  * @LastEditors: yuyang
  */
 module.exports = {
@@ -29,6 +29,7 @@ module.exports = {
         'custom-gray-5': '#F2f2f2',
         'custom-white': '#E8F0F2',
         'custom-white2': '#E7F0F2',
+        'custom-white3': '#ECF5F4',
         'table-odd-column': '#D5E3E8',
         'table-even-column': '#BDDFF1',
       }),

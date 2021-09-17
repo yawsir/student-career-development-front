@@ -1,17 +1,16 @@
 /*
  * @Author: yuyang
  * @Date: 2021-05-04 19:36:25
- * @LastEditTime: 2021-09-14 18:22:21
+ * @LastEditTime: 2021-09-17 09:44:09
  * @LastEditors: yuyang
  */
 import React from 'react';
 import banner from '@/assets/platform_banner.jpg';
-import bgImg from '@/assets/bgs/about.jpg';
 import platformIntroImg from '@/assets/platform_intro.png';
 import { Row, Col } from 'antd';
 
 const AboutUs: React.FC = () => (
-  <div className="w-full bg-center bg-cover" style={{ backgroundImage: `url(${bgImg})` }}>
+  <div className="w-full bg-center bg-cover bg-custom-white3">
     <Row justify="center" align="top">
       <Col xxl={20} xl={20} lg={20} md={24} className="relative">
         <img src={banner} alt="" className="w-full h-96 object-cover object-center" />
