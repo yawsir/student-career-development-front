@@ -1,7 +1,7 @@
 /*
  * @Author: yuyang
  * @Date: 2021-05-05 20:01:53
- * @LastEditTime: 2021-09-12 15:25:44
+ * @LastEditTime: 2021-09-18 14:03:46
  * @LastEditors: yuyang
  */
 import React from 'react';
@@ -19,10 +19,10 @@ const Index: React.FC = () => (
         </div>
         <div className="p-8 w-full flex justify-center items-start">
           <div className="w-1/2 border-0 border-r border-solid border-gray-400 p-8 pb-0">
-            <NewsList listStyle="circle" tabs={tabs1} />
+            <NewsList listStyle="circle" barCentered tabs={tabs1} />
           </div>
           <div className="w-1/2 p-8">
-            <NewsList listStyle="square" tabs={tabs2} />
+            <NewsList listStyle="square" barCentered tabs={tabs2} />
           </div>
         </div>
         <div className="w-3/4 mx-auto p-4 border-2 border-solid border-gray-400">
