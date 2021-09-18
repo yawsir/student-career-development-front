@@ -1,7 +1,7 @@
 /*
  * @Author: yuyang
  * @Date: 2021-08-29 11:59:52
- * @LastEditTime: 2021-09-16 22:53:06
+ * @LastEditTime: 2021-09-18 12:55:26
  * @LastEditors: yuyang
  */
 import React from 'react';
@@ -47,7 +47,7 @@ const CareerDetail: React.FC<CareerDetailProps> = (props) => {
           <h3 className="text-center text-primary text-4xl mb-14">
             <span className="pb-2 px-28 border-0 border-b-2 border-third border-solid">{career.name}</span>
           </h3>
-          <div className="flex justify-center items-start">
+          <div className="flex justify-start items-start">
             <div className="px-8">
               <ul className="list-none">
                 {

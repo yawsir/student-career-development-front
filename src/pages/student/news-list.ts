@@ -1,7 +1,7 @@
 /*
  * @Author: yuyang
  * @Date: 2021-09-12 09:53:33
- * @LastEditTime: 2021-09-12 10:06:14
+ * @LastEditTime: 2021-09-17 11:15:37
  * @LastEditors: yuyang
  */
 import type { TabType } from '@/components/NewsList';
@@ -34,36 +34,6 @@ export const tabs1: TabType[] = [
       {
         id: '6',
         title: '深圳市教育局关于开展2020年深圳市中小学生羽毛球比赛的通知',
-      },
-    ],
-  },
-  {
-    tabKey: 'question',
-    tabTitle: '常见问题',
-    newsList: [
-      {
-        id: '7',
-        title: '深圳市2021年义务教育阶段新生招生问答',
-      },
-      {
-        id: '8',
-        title: '高中阶段应尽早开展职业生涯规划',
-      },
-      {
-        id: '9',
-        title: '学籍的主要功能是什么？',
-      },
-      {
-        id: '10',
-        title: '全国中小学生学籍信息管理系统多久会发布正式学籍号',
-      },
-      {
-        id: '11',
-        title: '全国中小学生学籍信息管理系统以“G”字头正式学籍的“姓名”怎样修改？',
-      },
-      {
-        id: '12',
-        title: '全国中小学生学籍信息管理系统什么时候可以发启转学业务？',
       },
     ],
   },

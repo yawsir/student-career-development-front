@@ -46,7 +46,7 @@ const MenuContent: React.FunctionComponent<BasicLayoutProps> = (props: BasicLayo
     const rows = Array.isArray(data) ? data : [];
     return rows.map((row) => {
       if (row === undefined) return false;
-      const { title, link = '', key, icon, iconType, children, outLink, ...restState } = row;
+      const { title, link = '', key, icon, iconType, children, outLink, target = '_blank', ...restState } = row;
 
       if (children && children.length > 0) {
         const subMenu = renderMenu(children, true);
@@ -61,7 +61,7 @@ const MenuContent: React.FunctionComponent<BasicLayoutProps> = (props: BasicLayo
           {
             outLink
               ? (
-                <a href={link} target="_blank" rel="noreferrer">
+                <a href={link} target={target} rel="noreferrer">
                   <span className={isInside ? styles['menuitem-inside'] : styles['menuitem-outside']}>
                     {icon && <Icon component={icon} className={styles.alignMiddle} />}
                     {iconType && <IconFont type={iconType} />}

@@ -1,7 +1,7 @@
 /*
  * @Author: yuyang
  * @Date: 2021-03-27 14:36:22
- * @LastEditTime: 2021-09-16 10:12:29
+ * @LastEditTime: 2021-09-18 12:53:36
  * @LastEditors: yuyang
  */
 import type { ComponentType } from 'react';
@@ -13,6 +13,7 @@ interface MenuData {
   icon?: ComponentType;
   iconType?: string;
   outLink?: boolean;
+  target?: string;
   children: MenuData[] | [];
 }
 
