@@ -3,7 +3,7 @@
 /*
  * @Author: yuyang
  * @Date: 2021-09-12 15:32:43
- * @LastEditTime: 2021-09-13 22:45:19
+ * @LastEditTime: 2021-09-22 16:12:23
  * @LastEditors: yuyang
  */
 export interface ArticleType {
@@ -19,9 +19,9 @@ export interface Articles {
 export interface ArticleTableDataType {
   id: string;
   title: string;
-  issueNumber: string;
-  createdDate: string;
-  publishDate: string;
+  issueNumber?: string;
+  createdDate?: string;
+  publishDate?: string;
 }
 
 // student: 1-36

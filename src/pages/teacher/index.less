@@ -1,0 +1,102 @@
+@keyframes zhuanquanquan {
+  0% {
+		transform: rotate(360deg);
+	}
+
+	12% {
+		transform: rotate(320deg);
+	}
+
+	24% {
+		transform: rotate(202deg);
+	}
+
+	36% {
+		transform: rotate(7deg);
+	}
+
+	54% {
+		transform: rotate(90deg);
+	}
+
+	74% {
+		transform: rotate(7deg);
+	}
+
+	82% {
+		transform: rotate(22deg);
+	}
+
+	92% {
+		transform: rotate(4deg);
+	}
+
+	96% {
+		transform: rotate(7deg);
+	}
+
+	100% {
+		transform: rotate(0);
+	}
+
+}
+
+@keyframes appear {
+  from {
+    transform: translateX(100%);
+    display: block;
+  }
+  to {
+    transform: translateX(0);
+    display: block;
+  }
+}
+
+@keyframes disappear {
+  0% {
+    display: none;
+  }
+  1% {
+    transform: translateX(0);
+    display: block;
+    position: absolute;
+  }
+  99% {
+    transform: translateX(-100%);
+    display: block;
+    position: absolute;
+  }
+  100% {
+    display: none;
+  }
+}
+
+.switcher {
+  width: 150px;
+  height: 150px;
+  padding: 8px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 20px;
+  font-weight: bold;
+  font-style: normal;
+  transform: rotate(360deg);
+}
+.switcher-active {
+  border: 5px solid @secondary-color;
+  animation: zhuanquanquan 1.2s linear;
+  color: @secondary-color;
+}
+
+.listshow {
+  animation: appear .8s cubic-bezier(0.22, 1, 0.36, 1);
+  animation-fill-mode: forwards;
+
+}
+
+.listhidden {
+  display: none;
+}

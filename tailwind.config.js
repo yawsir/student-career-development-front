@@ -1,7 +1,7 @@
 /*
  * @Author: yuyang
  * @Date: 2021-07-06 14:54:43
- * @LastEditTime: 2021-09-17 09:42:43
+ * @LastEditTime: 2021-09-22 16:09:35
  * @LastEditors: yuyang
  */
 module.exports = {
@@ -49,6 +49,7 @@ module.exports = {
       textColor: theme => ({
         ...theme('colors'),
         'primary': '#009999',
+        'secondary': '#0DAFC0',
        }),
       borderColor: theme => ({
         ...theme('colors'),

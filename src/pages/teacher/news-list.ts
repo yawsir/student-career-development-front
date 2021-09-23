@@ -1,14 +1,85 @@
 /*
  * @Author: yuyang
  * @Date: 2021-09-12 09:53:33
- * @LastEditTime: 2021-09-12 16:51:43
+ * @LastEditTime: 2021-09-23 23:04:04
  * @LastEditors: yuyang
  */
 import type { TabType } from '@/components/NewsList';
 
 export const tabs1: TabType[] = [
   {
-    tabKey: 'careerCoach',
+    tabKey: 't3',
+    tabTitle: '学科渗透生涯支持（学科融合）',
+    newsList: [
+      {
+        id: '52',
+        title: '《学案-高中地理融合生涯教育-以 《水循环》为例》',
+      },
+    ],
+  },
+];
+
+export const tabs2: TabType[] = [
+  {
+    tabKey: 't4',
+    tabTitle: '生涯活动案例库',
+    newsList: [
+      {
+        id: '53',
+        title: '《红岭中学+专题活动类+走出校园扩视野 成长至上-红岭中学暑期社会实践》',
+      },
+      {
+        id: '54',
+        title: '《龙岗区-华中师范大学龙岗附属中学-专题活动类》',
+      },
+      {
+        id: '55',
+        title: '《一面之缘 探索自我---梅林中学模拟面试活动方案》',
+      },
+      {
+        id: '56',
+        title: '《坪山高级中学-专题活动设计案例-“生涯杯”演讲比赛与相关培训》',
+      },
+      {
+        id: '57',
+        title: '《深圳第二外国语学校+专题活动设计类+高中生生涯规划大赛》',
+      },
+      {
+        id: '58',
+        title: '《深圳市龙华中学+主题班会+拼的是现在，比的是将来》',
+      },
+      {
+        id: '59',
+        title: '《深圳中学+专题活动设计案例+生涯探索星际之旅》',
+      },
+      {
+        id: '60',
+        title: '《育才中学专题活动设计案列《遇见未来的自己》职业生涯专业探索》',
+      },
+    ],
+  },
+];
+
+export const tabs3: TabType[] = [
+  {
+    tabKey: 't5',
+    tabTitle: '生涯教育基础知识',
+    newsList: [
+      {
+        id: '61',
+        title: '《何为生涯规划》',
+      },
+      {
+        id: '62',
+        title: '《生涯规划 的三个元素》',
+      },
+    ],
+  },
+];
+
+export const tabs4: TabType[] = [
+  {
+    tabKey: 't1',
     tabTitle: '生涯辅导（咨询类）专栏',
     newsList: [
       {
@@ -35,9 +106,9 @@ export const tabs1: TabType[] = [
   },
 ];
 
-export const tabs2: TabType[] = [
+export const tabs5: TabType[] = [
   {
-    tabKey: 'themeDesign',
+    tabKey: 't2',
     tabTitle: '主题课程设计类专栏',
     newsList: [
       {
@@ -79,71 +150,6 @@ export const tabs2: TabType[] = [
       {
         id: '51',
         title: '《深圳第二外国语学校+主题课程设计类+时空穿梭的人生',
-      },
-    ],
-  },
-];
-
-export const tabs3: TabType[] = [
-  {
-    tabKey: 'k1',
-    tabTitle: '学科渗透生涯支持（学科融合）',
-    newsList: [
-      {
-        id: '52',
-        title: '《学案-高中地理融合生涯教育-以 《水循环》为例》',
-      },
-    ],
-  },
-  {
-    tabKey: 'k2',
-    tabTitle: '生涯活动案例库',
-    newsList: [
-      {
-        id: '53',
-        title: '《红岭中学+专题活动类+走出校园扩视野 成长至上-红岭中学暑期社会实践》',
-      },
-      {
-        id: '54',
-        title: '《龙岗区-华中师范大学龙岗附属中学-专题活动类》',
-      },
-      {
-        id: '55',
-        title: '《一面之缘 探索自我---梅林中学模拟面试活动方案》',
-      },
-      {
-        id: '56',
-        title: '《坪山高级中学-专题活动设计案例-“生涯杯”演讲比赛与相关培训》',
-      },
-      {
-        id: '57',
-        title: '《深圳第二外国语学校+专题活动设计类+高中生生涯规划大赛》',
-      },
-      {
-        id: '58',
-        title: '《深圳市龙华中学+主题班会+拼的是现在，比的是将来》',
-      },
-      {
-        id: '59',
-        title: '《深圳中学+专题活动设计案例+生涯探索星际之旅》',
-      },
-      {
-        id: '60',
-        title: '《育才中学专题活动设计案列《遇见未来的自己》职业生涯专业探索》',
-      },
-    ],
-  },
-  {
-    tabKey: 'k3',
-    tabTitle: '生涯教育基础知识',
-    newsList: [
-      {
-        id: '61',
-        title: '《何为生涯规划》',
-      },
-      {
-        id: '62',
-        title: '《生涯规划 的三个元素》',
       },
     ],
   },

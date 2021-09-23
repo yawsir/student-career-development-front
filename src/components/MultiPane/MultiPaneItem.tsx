@@ -1,7 +1,7 @@
 /*
  * @Author: yuyang
  * @Date: 2021-05-08 08:30:40
- * @LastEditTime: 2021-05-08 08:33:44
+ * @LastEditTime: 2021-09-23 22:37:20
  * @LastEditors: yuyang
  */
 import React, { useContext } from 'react';
@@ -13,14 +13,17 @@ interface MultiPaneItemProps {
    * @description 面板的名字
    */
   name: string;
+  visibleClassName?: string;
+  invisibleClassName?: string;
 }
 
 const MultiPaneItem: React.FC<MultiPaneItemProps> = (props) => {
-  const { children, name } = props;
+  const { children, name, visibleClassName, invisibleClassName } = props;
   const current = useContext(multiPaneContext);
   const visible = name === current;
+  const cn = visible ? (visibleClassName || styles['multipane__item--show']) : (invisibleClassName || styles['multipane__item--hide']);
   return (
-    <div className={`${visible ? styles['multipane__item--show'] : styles['multipane__item--hide']}`}>
+    <div className={cn}>
       {children}
     </div>
   );

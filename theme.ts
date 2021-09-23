@@ -1,11 +1,12 @@
 /*
  * @Author: 'yuyang
  * @Date: '2021-04-24 11:35:39
- * @LastEditTime: 2021-08-25 10:49:33
+ * @LastEditTime: 2021-09-23 21:21:03
  * @LastEditors: yuyang
  */
 export default {
   '@primary-color': '#009999',
+  '@secondary-color': '#0DAFC0',
   '@white': '#FFFFFF',
   '@link-color': '#1890ff', // 链接色
   '@success-color': '#52c41a', // 成功色

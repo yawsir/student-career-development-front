@@ -1,7 +1,7 @@
 /*
  * @Author: yuyang
  * @Date: 2021-09-12 09:53:33
- * @LastEditTime: 2021-09-13 22:58:41
+ * @LastEditTime: 2021-09-22 16:17:57
  * @LastEditors: yuyang
  */
 import type { TabType } from '@/components/NewsList';
@@ -36,7 +36,7 @@ export const tabs1: TabType[] = [
   },
 ];
 
-export const articleTableData: ArticleTableDataType[] = [
+export const articleTableData1: ArticleTableDataType[] = [
   {
     id: '68',
     title: '国务院办公厅关于全面加强乡村小规模学校和乡镇寄宿制学校建设的指导意见',
@@ -106,6 +106,59 @@ export const articleTableData: ArticleTableDataType[] = [
     issueNumber: '国办发〔2012〕53号',
     createdDate: '2012年10月22日',
     publishDate: '2012年10月29日',
+  },
+];
+
+export const articleTableData2: ArticleTableDataType[] = [
+  {
+    id: '78',
+    title: '《广东省学士学位授权与授予管理实施细则》解读',
+    publishDate: '2021年09月02日',
+  },
+  {
+    id: '79',
+    title: '《广东省教育厅关于民办高等学校年度检查实施办法》《广东省教育厅关于民办高等学校年度检查指标体系》的解读',
+    publishDate: '2021年03月26日',
+  },
+  {
+    id: '80',
+    title: '《关于加强残疾儿童少年义务教育阶段随班就读工作的实施细则（试行）》解读',
+    publishDate: '2021年01月08日',
+  },
+  {
+    id: '81',
+    title: '《广东省教育厅广东省财政厅关于进一步健全学生资助政策体系的意见》解读',
+    publishDate: '2020年12月27日',
+  },
+  {
+    id: '82',
+    title: '《关于公费定向培养粤东粤西粤北地区中小学教师的实施办法》政策解读',
+    publishDate: '2020年12月25日',
+  },
+  {
+    id: '83',
+    title: '广东省普通高中课程实施方案（2020年修订）政策解读',
+    publishDate: '2020年10月28日',
+  },
+  {
+    id: '84',
+    title: '推进中小学幼儿园集团化办学政策解读',
+    publishDate: '2020年09月21日',
+  },
+  {
+    id: '85',
+    title: '《广东省中小学“百千万人才培养工程”培养项目实施办法》解读',
+    publishDate: '2020年08月19日',
+  },
+  {
+    id: '86',
+    title: '《广东省教育厅关于进一步规范普通中小学招生入学工作的指导意见》政策解读',
+    publishDate: '2020年03月13日',
+  },
+  {
+    id: '87',
+    title: '《广东省高等教育学分认定和转换 工作的实施意见（试行）》政策解读',
+    publishDate: '2020年02月17日',
   },
 ];
 
