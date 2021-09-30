@@ -1,6 +1,10 @@
+.gradientBg {
+  background: @primary-color !important;
+  background: linear-gradient(to right, @primary-color , @secondary-color) !important;
+}
   /***系统头部***/
   .header {
-    background: @primary-color;
+    .gradientBg();
     display: flex;
     flex-direction: column;
     justify-content: flex-start;

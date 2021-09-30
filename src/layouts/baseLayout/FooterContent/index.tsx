@@ -1,7 +1,7 @@
 /*
  * @Author: yuyang
  * @Date: 2021-07-09 09:45:43
- * @LastEditTime: 2021-08-30 13:51:36
+ * @LastEditTime: 2021-09-30 15:03:01
  * @LastEditors: yuyang
  */
 import React from 'react';
@@ -15,14 +15,14 @@ interface AProps {
   className?: string;
 }
 
-const A: React.FC<AProps> = ({ children, href, target, className }) => <a href={href} target={target} className={`text-white ${className}`}>{children}</a>;
+const A: React.FC<AProps> = ({ children, href, target, className }) => <a href={href} target={target} className={`text-title ${className}`}>{children}</a>;
 
 const infos = ['粤ICP备XXXXXXXX号', '主办单位：深圳市教育科学研究院', '版权所有：深圳市教育科学研究院',
   '邮编：518001', '地址：深圳市罗湖区泥岗西路1068号', '电话：0755-82661331', '传真：0755-881', '网站标识码：4403000007', '粤公网安备：44030402001169号', '技术维护：深圳市慧生教育科技有限公司'];
 
 const FooterContent: React.FC = () => (
   <div className="w-full">
-    <div className="w-full p-8 bg-primary flex flex-wrap justify-around text-white">
+    <div className="w-full p-8 bg-gradient-to-r from-bg-1 to-bg-2 flex flex-wrap justify-around text-title">
       <div className="w-full lg:w-3/5  box-border flex flex-wrap justify-start p-8 border-0 border-b-2 lg:border-r-2 lg:border-b-0 border-green-300 border-solid border-opacity-25">
         {
           infos.map((item) => (
@@ -48,17 +48,10 @@ const FooterContent: React.FC = () => (
           </Tooltip>
         </p>
       </div>
-    </div>
-    <div className="w-full bg-custom-gray-3 flex justify-between px-24">
-      <Logo title="深圳市学生生涯发展平台" />
-      <ul className="list-none flex justify-start items-center text-white m-0">
-        <li><A href="/" className="p-2 m-1">关于我们</A></li>
-        <li><A href="/" className="p-2 m-1">新闻资讯</A></li>
-        <li><A href="/" className="p-2 m-1">产品中心</A></li>
-        <li><A href="/" className="p-2 m-1">技术支持</A></li>
-        <li><A href="/" className="p-2 m-1">招贤纳士</A></li>
-        <li><A href="/" className="p-2 m-1">联系我们</A></li>
-      </ul>
+      <div className="w-full">
+        <Logo title="深圳市学生生涯发展平台" />
+        <p className="text-center text-title text-base my-6">Copyright © 2021.Company name All rights reserved</p>
+      </div>
     </div>
   </div>
 );

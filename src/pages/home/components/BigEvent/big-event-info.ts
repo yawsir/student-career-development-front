@@ -1,7 +1,7 @@
 /*
  * @Author: yuyang
  * @Date: 2021-08-31 17:50:14
- * @LastEditTime: 2021-08-31 18:00:33
+ * @LastEditTime: 2021-09-30 14:27:39
  * @LastEditors: yuyang
  */
 import BigeventImage from '@/assets/bigevent.jpg';
@@ -24,10 +24,17 @@ const BigEventInfos: BigEventInfoType[] = [
   },
   {
     id: 2,
-    date: '2021-05-30',
+    date: '2021-05-01',
     image: BigeventImage,
-    title: '2021普通高中新课程新教材实施',
-    content: '为分享普通高中生涯规划课程建设经验，提升',
+    title: '2021-05-01的事件标题',
+    content: '2021-05-01的事件内容',
+  },
+  {
+    id: 3,
+    date: '2021-05-02',
+    image: BigeventImage,
+    title: '2021-05-02的事件标题',
+    content: '2021-05-02的事件内容',
   },
 ];
 

@@ -1,7 +1,7 @@
 /*
  * @Author: yuyang
  * @Date: 2021-08-29 17:33:40
- * @LastEditTime: 2021-09-06 10:27:33
+ * @LastEditTime: 2021-09-30 15:12:43
  * @LastEditors: yuyang
  */
 import React, { useContext } from 'react';
@@ -37,7 +37,7 @@ const Description: React.FC<DescriptionProps> = (props) => {
   return (
     <div className="w-full px-0 lg:px-4 box-border lg:w-1/3 my-2 lg:my-0 bg-transparent py-0 overflow-hidden">
       <div
-        className={`w-full rounded flex flex-wrap box-border items-center py-0 bg-transparent cursor-pointer transition delay-75 ${isActive ? 'bg-primary' : 'bg-white'}`}
+        className={`w-full rounded flex flex-wrap box-border items-center py-0 bg-transparent cursor-pointer transition delay-75 ${isActive ? 'bg-primary' : 'bg-custom-white2'}`}
         onClick={handleClick}
       >
         <div className="w-full lg:w-auto bg-custom-gray-2 flex-shrink-0 p-2">

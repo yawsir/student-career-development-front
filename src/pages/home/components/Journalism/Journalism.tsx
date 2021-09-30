@@ -1,10 +1,10 @@
 /*
  * @Author: yuyang
  * @Date: 2021-05-08 08:49:24
- * @LastEditTime: 2021-08-29 17:48:36
+ * @LastEditTime: 2021-09-30 13:54:36
  * @LastEditors: yuyang
  */
-import React, { createContext } from 'react';
+import React, { createContext, useState } from 'react';
 
 interface JournalismProps {
   activeKey?: string;
@@ -27,7 +27,7 @@ export const descriptionContext = createContext<ContextType>({
 
 const Journalism: React.FC<JournalismProps> = (props) => {
   const { children, activeKey = '', defaultActive, title = '', onClick } = props;
-  const [content, setContent] = React.useState<React.ReactNode>();
+  const [content, setContent] = useState<React.ReactNode>();
   const { Provider } = descriptionContext;
 
   const handleClick = (name: string, reactChildren: React.ReactNode) => {

@@ -1,7 +1,7 @@
 /*
  * @Author: yuyang
  * @Date: 2021-03-27 14:20:18
- * @LastEditTime: 2021-09-14 00:04:26
+ * @LastEditTime: 2021-09-30 11:27:36
  * @LastEditors: yuyang
  */
 import React from 'react';
@@ -20,12 +20,12 @@ const BaseLayout: React.FunctionComponent = (props: any) => {
     <Layout className="w-full mx-auto overflow-x-hidden" style={{ minWidth: '1200px' }}>
       <Header className={styles.header}>
         <Row className="w-full" justify="start" align="middle">
-          <Col span={24}>
+          <Col span={8}>
             <div className="flex justify-items-start pl-32 text-3xl">
-              <Logo title="深圳市学生生涯发展支持平台" />
+              <Logo title="" />
             </div>
           </Col>
-          <Col span={24}>
+          <Col span={16}>
             <MenuContent menusData={menusData} />
           </Col>
         </Row>

@@ -1,7 +1,7 @@
 /*
  * @Author: yuyang
  * @Date: 2021-07-06 14:54:43
- * @LastEditTime: 2021-09-22 16:09:35
+ * @LastEditTime: 2021-09-30 14:36:17
  * @LastEditors: yuyang
  */
 module.exports = {
@@ -18,8 +18,8 @@ module.exports = {
     theme: {
       backgroundColor: theme => ({
         ...theme('colors'),
-        'primary': '#009999',
-        'secondary': '#0DAFC0',
+        'primary': '#FEA554',
+        'secondary': '#FCF16D',
         'third': '#10AEBF',
         'active': '#5685CB',
         'custom-gray': '#808080',
@@ -48,13 +48,14 @@ module.exports = {
       },
       textColor: theme => ({
         ...theme('colors'),
-        'primary': '#009999',
-        'secondary': '#0DAFC0',
+        'primary': '#000000',
+        'secondary': '#000000',
+        'title': '#302E72'
        }),
       borderColor: theme => ({
         ...theme('colors'),
-        'primary': '#009999',
-        'secondary': '#0DAFC0',
+        'primary': '#FEA554',
+        'secondary': '#FCF16D',
         'third': '#10AEBF',
        }),
        extend: {
@@ -66,6 +67,10 @@ module.exports = {
         },
         animation: {
           'appear': 'el-appear 1s cubic-bezier(0.19, 1, 0.22, 1);',
+         },
+         colors: {
+           'bg-1': '#FEA554',
+           'bg-2': '#FCF16D',
          }
        }
     },

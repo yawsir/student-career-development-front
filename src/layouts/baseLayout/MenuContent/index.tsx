@@ -1,7 +1,7 @@
 /*
  * @Author: yuyang
  * @Date: 2021-03-27 14:20:18
- * @LastEditTime: 2021-09-16 10:42:45
+ * @LastEditTime: 2021-09-30 11:26:45
  * @LastEditors: yuyang
  */
 import React from 'react';
@@ -91,7 +91,6 @@ const MenuContent: React.FunctionComponent<BasicLayoutProps> = (props: BasicLayo
       selectedKeys={[selectKey || '']}
       defaultOpenKeys={[openKey]}
       mode="horizontal"
-      theme="dark"
       overflowedIndicator={<MenuOutlined />}
       className={styles.menuwrap}
     >
