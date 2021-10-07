@@ -1,22 +1,23 @@
 /*
  * @Author: yuyang
  * @Date: 2021-05-05 20:01:53
- * @LastEditTime: 2021-09-18 14:03:46
+ * @LastEditTime: 2021-10-07 15:58:48
  * @LastEditors: yuyang
  */
 import React from 'react';
 import NewsContainer from '@/components/NewsContainer';
 import NewsList from '@/components/NewsList';
+import studengBg from '@/assets/bgs/student_bg.png';
 import SliderNews from './components/SliderNews';
 import { tabs1, tabs2, tabs3 } from './news-list';
 
 const Index: React.FC = () => (
   <div className="w-full text-4xl">
-    <NewsContainer>
+    <NewsContainer background={studengBg}>
+      <div className="w-full">
+        <SliderNews />
+      </div>
       <div className="container mx-auto bg-white py-2">
-        <div className="p-8 w-full">
-          <SliderNews />
-        </div>
         <div className="p-8 w-full flex justify-center items-start">
           <div className="w-1/2 border-0 border-r border-solid border-gray-400 p-8 pb-0">
             <NewsList listStyle="circle" barCentered tabs={tabs1} />

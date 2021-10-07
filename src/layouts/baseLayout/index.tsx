@@ -20,12 +20,12 @@ const BaseLayout: React.FunctionComponent = (props: any) => {
     <Layout className="w-full mx-auto overflow-x-hidden" style={{ minWidth: '1200px' }}>
       <Header className={styles.header}>
         <Row className="w-full" justify="start" align="middle">
-          <Col span={8}>
+          <Col span={6}>
             <div className="flex justify-items-start pl-32 text-3xl">
               <Logo title="" />
             </div>
           </Col>
-          <Col span={16}>
+          <Col span={18}>
             <MenuContent menusData={menusData} />
           </Col>
         </Row>

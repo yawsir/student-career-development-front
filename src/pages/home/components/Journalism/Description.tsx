@@ -1,7 +1,7 @@
 /*
  * @Author: yuyang
  * @Date: 2021-08-29 17:33:40
- * @LastEditTime: 2021-09-30 15:12:43
+ * @LastEditTime: 2021-10-07 15:27:54
  * @LastEditors: yuyang
  */
 import React, { useContext } from 'react';
@@ -37,8 +37,8 @@ const Description: React.FC<DescriptionProps> = (props) => {
   return (
     <div className="w-full px-0 lg:px-4 box-border lg:w-1/3 my-2 lg:my-0 bg-transparent py-0 overflow-hidden">
       <div
-        className={`w-full rounded flex flex-wrap box-border items-center py-0 bg-transparent cursor-pointer transition delay-75 ${isActive ? 'bg-primary' : 'bg-custom-white2'}`}
-        onClick={handleClick}
+        className={`w-full rounded flex flex-wrap box-border items-center py-0 bg-transparent cursor-pointer transition ${isActive ? 'bg-primary' : 'bg-custom-white2'}`}
+        onMouseEnter={handleClick}
       >
         <div className="w-full lg:w-auto bg-custom-gray-2 flex-shrink-0 p-2">
           <p className="text-center text-2xl font-bold m-0">{day}</p>
@@ -48,7 +48,7 @@ const Description: React.FC<DescriptionProps> = (props) => {
             {month}
           </p>
         </div>
-        <div className={`w-full lg:w-auto h-56 p-2 ${isActive ? 'text-white' : ''} `} style={{ flex: 4 }}>
+        <div className={`w-full lg:w-auto h-40 p-2 ${isActive ? 'text-white' : ''} `} style={{ flex: 4 }}>
           {description}
         </div>
       </div>

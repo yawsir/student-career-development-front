@@ -1,7 +1,7 @@
 /*
  * @Author: yuyang
  * @Date: 2021-07-06 14:54:43
- * @LastEditTime: 2021-09-30 14:36:17
+ * @LastEditTime: 2021-10-07 15:39:11
  * @LastEditors: yuyang
  */
 module.exports = {
@@ -32,6 +32,7 @@ module.exports = {
         'custom-white3': '#ECF5F4',
         'table-odd-column': '#D5E3E8',
         'table-even-column': '#BDDFF1',
+        'slide': '#E7F0F2',
       }),
       boxShadow: {
         sm: '0 1px 2px 0 rgba(0, 0, 0, 0.05)',
