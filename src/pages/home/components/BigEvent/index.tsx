@@ -1,7 +1,7 @@
 /*
  * @Author: yuyang
  * @Date: 2021-08-28 10:10:58
- * @LastEditTime: 2021-09-30 14:26:18
+ * @LastEditTime: 2021-10-09 19:16:38
  * @LastEditors: yuyang
  */
 import React from 'react';
@@ -31,7 +31,7 @@ const BigEvent: React.FC<BigEventProps> = () => {
     }
   };
   return (
-    <div className="w-full mx-auto px-0 lg:px-40">
+    <div className="w-full mx-auto px-0 lg:px-16">
       <div className="w-full flex flex-wrap py-4 items-center justify-center">
         <div className="w-full xl:w-auto bg-transparent my-4" style={{ minWidth: 128 }}>
           <DayPicker
@@ -44,22 +44,29 @@ const BigEvent: React.FC<BigEventProps> = () => {
             className="w-full bg-transparent shadow-hs text-center mx-auto"
           />
         </div>
-        <div className="w-full xl:w-auto flex-1 mx-0 lg:mx-16 p-0 shadow-hs">
-          <h3 className="text-3xl text-white bg-primary p-4 m-0">
+        <div className="w-full xl:w-auto flex-1 mx-0 lg:mx-16 px-4 py-8 shadow-hs">
+          <h3 className="flex justify-center items-center text-center p-4 m-0">
             {
               eventInfo.date && (
-                <span className="px-4 text-4xl">{new Date(eventInfo.date).getDate()}</span>
+                <span className="mr-4 w-16 h-16 flex flex-col justify-center items-center bg-primary text-white ">
+                  <p className="text-center text-sm m-0">{new Date(eventInfo.date).getDate()}</p>
+                  <p className="text-center text-sm m-0">
+                    {new Date(eventInfo.date).getFullYear()}
+                    -
+                    {new Date(eventInfo.date).getMonth() + 1}
+                  </p>
+                </span>
               )
             }
-            {eventInfo.title}
+            <span>{eventInfo.title}</span>
           </h3>
-          <div className="bg-white px-4">
-            <div className="text-center mx-auto w-full" style={{ height: 260 }}>
+          <div className="bg-white flex justify-between items-center">
+            <div className="text-center mr-4 w-80 h-56 flex-shrink-0 rounded-lg overflow-hidden transform origin-top-left scale-90 hover:scale-100 transition-all duration-300" style={{ height: 260 }}>
               {
                 eventInfo.image && <img src={eventInfo.image} alt="" className="w-full h-full object-cover object-center" />
               }
             </div>
-            <p className="text-lg py-4 m-0" style={{ textIndent: '2em' }}>
+            <p className="text-base font-sans leading-relaxed py-4 m-0" style={{ textIndent: '2em' }}>
               {eventInfo.content}
             </p>
           </div>

@@ -1,10 +1,10 @@
 /*
  * @Author: yuyang
  * @Date: 2021-08-31 17:50:14
- * @LastEditTime: 2021-09-30 14:27:39
+ * @LastEditTime: 2021-10-09 19:09:15
  * @LastEditors: yuyang
  */
-import BigeventImage from '@/assets/bigevent.jpg';
+import BigeventImage from '@/assets/bigevent.svg';
 
 export interface BigEventInfoType {
   id: number;
@@ -17,21 +17,21 @@ export interface BigEventInfoType {
 const BigEventInfos: BigEventInfoType[] = [
   {
     id: 1,
-    date: '2021-04-29',
+    date: '2021-10-01',
     image: BigeventImage,
-    title: '2021普通高中新课程新教材实施生涯教育研讨活动',
-    content: '为分享普通高中生涯规划课程建设经验，提升学科生涯渗透教育教学水平，推动普通高中育人方式变革，全面提升育人质量，4月29日，深圳市教育科学研究院在龙岗区横岗高级中学举行了深圳市2021年普通高中“新课程新教材实施生涯教育”研讨活动。',
+    title: '南科大隆重举行国庆升旗仪式',
+    content: '2021年10月1日，我校在松禾体育场隆重举行2021年国庆升旗仪式。校党委书记李凤亮，校长薛其坤等领导班子成员、学校有关部门负责人，教师代表，各书院学生代表及研究生代表参加了升旗仪式。仪式由学生工作部部长薛铮主持。',
   },
   {
     id: 2,
-    date: '2021-05-01',
+    date: '2021-10-30',
     image: BigeventImage,
     title: '2021-05-01的事件标题',
     content: '2021-05-01的事件内容',
   },
   {
     id: 3,
-    date: '2021-05-02',
+    date: '2021-10-31',
     image: BigeventImage,
     title: '2021-05-02的事件标题',
     content: '2021-05-02的事件内容',

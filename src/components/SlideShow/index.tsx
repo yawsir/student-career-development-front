@@ -8,13 +8,14 @@
 import React, { useRef } from 'react';
 import { Carousel } from 'antd';
 import { LeftOutlined, RightOutlined } from '@ant-design/icons';
-import slider1 from '@/assets/sliders/slider1.jpg';
-import slider2 from '@/assets/sliders/slider2.jpg';
-import slider3 from '@/assets/sliders/slider3.jpg';
+import slider1 from '@/assets/sliders/slider1.png';
+import slider2 from '@/assets/sliders/slider2.png';
+import slider3 from '@/assets/sliders/slider3.png';
+import slider4 from '@/assets/sliders/slider4.png';
 import styles from './index.less';
 
 const Home: React.FC = () => {
-  const images = [slider1, slider2, slider3];
+  const images = [slider1, slider2, slider3, slider4];
   const carouselRef = useRef<any>();
   return (
     <div className="flex w-full justify-center relative" style={{ height: 518 }}>

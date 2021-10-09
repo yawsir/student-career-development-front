@@ -1,7 +1,7 @@
 /*
  * @Author: yuyang
  * @Date: 2021-05-08 08:49:24
- * @LastEditTime: 2021-09-30 13:54:36
+ * @LastEditTime: 2021-10-09 18:45:17
  * @LastEditors: yuyang
  */
 import React, { createContext, useState } from 'react';
@@ -53,11 +53,11 @@ const Journalism: React.FC<JournalismProps> = (props) => {
         {title}
       </h5>
       <Provider value={provideValue}>
-        <div className="flex flex-wrap items-center">
-          <div className="w-1/3 lg:w-4/5 box-border mt-2 mx-auto mb-0 flex flex-wrap">
+        <div className="flex flex-wrap items-start">
+          <div className="w-1/3 box-border mt-2 mx-auto mb-0 flex flex-wrap">
             {children}
           </div>
-          <div className="w-2/3 lg:w-full box-border">
+          <div className="w-2/3 box-border">
             {content}
           </div>
         </div>

@@ -1,7 +1,7 @@
 /*
  * @Author: yuyang
  * @Date: 2021-07-06 14:54:43
- * @LastEditTime: 2021-10-07 15:39:11
+ * @LastEditTime: 2021-10-08 15:33:46
  * @LastEditors: yuyang
  */
 module.exports = {
@@ -20,7 +20,7 @@ module.exports = {
         ...theme('colors'),
         'primary': '#FEA554',
         'secondary': '#FCF16D',
-        'third': '#10AEBF',
+        'third': '#F75F1D',
         'active': '#5685CB',
         'custom-gray': '#808080',
         'custom-gray-2': '#D7D7D7',

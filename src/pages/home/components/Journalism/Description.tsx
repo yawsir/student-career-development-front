@@ -1,7 +1,7 @@
 /*
  * @Author: yuyang
  * @Date: 2021-08-29 17:33:40
- * @LastEditTime: 2021-10-07 15:27:54
+ * @LastEditTime: 2021-10-09 18:45:44
  * @LastEditors: yuyang
  */
 import React, { useContext } from 'react';
@@ -35,20 +35,20 @@ const Description: React.FC<DescriptionProps> = (props) => {
   };
 
   return (
-    <div className="w-full px-0 lg:px-4 box-border lg:w-1/3 my-2 lg:my-0 bg-transparent py-0 overflow-hidden">
+    <div className="w-full px-0 box-border my-4 bg-transparent py-0 overflow-hidden shadow-hs transform transition hover:-translate-y-2">
       <div
-        className={`w-full rounded flex flex-wrap box-border items-center py-0 bg-transparent cursor-pointer transition ${isActive ? 'bg-primary' : 'bg-custom-white2'}`}
+        className={`w-full rounded flex flex-wrap box-border items-start py-4 bg-transparent cursor-pointer transition ${isActive ? 'bg-primary' : 'bg-custom-white2'}`}
         onMouseEnter={handleClick}
       >
-        <div className="w-full lg:w-auto bg-custom-gray-2 flex-shrink-0 p-2">
-          <p className="text-center text-2xl font-bold m-0">{day}</p>
-          <p className="text-center text-xl font-bold m-0">
+        <div className="w-16 h-16 flex flex-col justify-center items-center bg-third text-white ">
+          <p className="text-center text-sm m-0">{day}</p>
+          <p className="text-center text-sm m-0">
             {year}
             -
             {month}
           </p>
         </div>
-        <div className={`w-full lg:w-auto h-40 p-2 ${isActive ? 'text-white' : ''} `} style={{ flex: 4 }}>
+        <div className="w-auto h-16 p-2 " style={{ flex: 4 }}>
           {description}
         </div>
       </div>

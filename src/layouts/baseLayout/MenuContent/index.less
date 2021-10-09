@@ -3,21 +3,25 @@
   text-align: center;
   border: 0;
   justify-content: center;
-  color: #302E72 !important;
+  // color: #fff !important;
+  // text-shadow: 2px 2px 2px rgb(0 0 0 / 65%) !important;
 }
 .submenu {
   background: transparent !important;
-  color: #302E72 !important;
+  // color: #fff !important;
+  // text-shadow: 2px 2px 2px rgb(0 0 0 / 65%) !important;
 }
 
 .menuitem-inside {
-  background: transparent !important;
-  color: #302E72 !important;
+  color: #fff !important;
+  text-shadow: 2px 2px 2px rgb(0 0 0 / .65);
+  
 }
 .menuitem-outside {
   background: transparent !important;
   margin: 0 16px;
-  color: #302E72 !important;
+  color: #fff !important;
+  text-shadow: 2px 2px 2px rgb(0 0 0 / .65);
 }
 .alignMiddle {
   vertical-align: middle !important;
@@ -26,6 +30,16 @@
 :global {
   li[title='个人测评'] {
     margin: 0 !important;
-    background-color: @secondary-color !important;
+    background-color:rgba(48, 46, 114, 0.35) !important;
+    opacity: .7;
+  }
+  .ant-menu-item,.ant-menu-submenu {
+    &::after {
+      border: 0 !important;
+    }
+  }
+  .ant-menu-item-active,.ant-menu-item-selected,.ant-menu-submenu-selected{
+    background-color:rgba(48, 46, 114, 0.35) !important;
+    opacity: .7;
   }
 }
