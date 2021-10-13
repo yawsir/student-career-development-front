@@ -1,7 +1,7 @@
 /*
  * @Author: yuyang
  * @Date: 2021-08-29 17:33:40
- * @LastEditTime: 2021-10-09 18:45:44
+ * @LastEditTime: 2021-10-13 11:23:43
  * @LastEditors: yuyang
  */
 import React, { useContext } from 'react';
@@ -35,7 +35,7 @@ const Description: React.FC<DescriptionProps> = (props) => {
   };
 
   return (
-    <div className="w-full px-0 box-border my-4 bg-transparent py-0 overflow-hidden shadow-hs transform transition hover:-translate-y-2">
+    <div className="w-full px-0 box-border my-8 bg-transparent py-0 overflow-hidden shadow-hs transform transition hover:-translate-y-2">
       <div
         className={`w-full rounded flex flex-wrap box-border items-start py-4 bg-transparent cursor-pointer transition ${isActive ? 'bg-primary' : 'bg-custom-white2'}`}
         onMouseEnter={handleClick}

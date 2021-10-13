@@ -1,7 +1,7 @@
 /*
  * @Author: yuyang
  * @Date: 2021-07-06 14:54:43
- * @LastEditTime: 2021-10-08 15:33:46
+ * @LastEditTime: 2021-10-13 13:35:18
  * @LastEditors: yuyang
  */
 module.exports = {
@@ -11,6 +11,8 @@ module.exports = {
         safelist: [
           'table-odd-column',
           'table-even-column',
+          'text-lg',
+          'leading-loose',
         ],
       }
     },

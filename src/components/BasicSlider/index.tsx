@@ -2,23 +2,38 @@
 /*
  * @Author: yuyang
  * @Date: 2021-05-04 16:25:33
- * @LastEditTime: 2021-10-07 15:20:19
+ * @LastEditTime: 2021-10-13 11:45:50
  * @LastEditors: yuyang
  */
 import React, { useRef } from 'react';
-import { Carousel } from 'antd';
+import { Carousel, CarouselProps } from 'antd';
 import { LeftOutlined, RightOutlined } from '@ant-design/icons';
-import slider1 from '@/assets/sliders/slider1.png';
-import slider2 from '@/assets/sliders/slider2.png';
-import slider3 from '@/assets/sliders/slider3.png';
-import slider4 from '@/assets/sliders/slider4.png';
 import styles from './index.less';
 
-const Home: React.FC = () => {
-  const images = [slider1, slider2, slider3, slider4];
+export interface BasicSliderProps extends CarouselProps{
+  reverse?: boolean;
+}
+
+const BasicSlider: React.FC<BasicSliderProps> = (props) => {
+  const { children, reverse = false, ...rest } = props;
   const carouselRef = useRef<any>();
+  const handlePrev = () => {
+    if (reverse) {
+      carouselRef.current.next();
+    } else {
+      carouselRef.current.prev();
+    }
+  };
+
+  const handleNext = () => {
+    if (reverse) {
+      carouselRef.current.prev();
+    } else {
+      carouselRef.current.next();
+    }
+  };
   return (
-    <div className="flex w-full justify-center relative" style={{ height: 518 }}>
+    <>
       <div className="w-full">
         <Carousel
           autoplay
@@ -27,30 +42,27 @@ const Home: React.FC = () => {
           }}
           className={styles.imagewrap}
           ref={carouselRef}
+          {...rest}
         >
           {
-            images.map((img) => (
-              <div key={img}>
-                <img src={img} alt="" className="w-full object-cover object-center" style={{ height: 518 }} />
-              </div>
-            ))
+            children
           }
         </Carousel>
       </div>
       <div
         className="absolute left-8 top-1/2 transform -translate-y-1/2 text-4xl bg-black text-center text-white align-middle flex justify-center items-center cursor-pointer rounded-3xl opacity-50 w-14 h-24"
-        onClick={() => carouselRef.current.prev()}
+        onClick={handlePrev}
       >
         <LeftOutlined />
       </div>
       <div
         className="absolute right-8 top-1/2 transform -translate-y-1/2 text-4xl bg-black flex-1 text-center text-white align-middle flex justify-center items-center cursor-pointer rounded-3xl opacity-50 w-14 h-24"
-        onClick={() => carouselRef.current.next()}
+        onClick={handleNext}
       >
         <RightOutlined />
       </div>
-    </div>
+    </>
   );
 };
 
-export default Home;
+export default BasicSlider;

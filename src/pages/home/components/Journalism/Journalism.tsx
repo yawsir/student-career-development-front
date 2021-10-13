@@ -1,7 +1,7 @@
 /*
  * @Author: yuyang
  * @Date: 2021-05-08 08:49:24
- * @LastEditTime: 2021-10-09 18:45:17
+ * @LastEditTime: 2021-10-13 13:24:45
  * @LastEditors: yuyang
  */
 import React, { createContext, useState } from 'react';
@@ -48,8 +48,8 @@ const Journalism: React.FC<JournalismProps> = (props) => {
   };
   return (
     <div className="w-full">
-      <h5 className="w-4/5 my-0 mx-auto text-2xl">
-        <span className="w-1/6 h-2 block bg-primary" />
+      <h5 className="inline-block my-0 mx-auto text-3xl">
+        <span className="h-2 block bg-gradient-to-r from-bg-1 to-bg-2" />
         {title}
       </h5>
       <Provider value={provideValue}>

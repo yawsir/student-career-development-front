@@ -1,7 +1,8 @@
+/* eslint-disable react/no-danger */
 /*
  * @Author: yuyang
  * @Date: 2021-08-28 10:10:58
- * @LastEditTime: 2021-10-09 19:16:38
+ * @LastEditTime: 2021-10-13 14:50:47
  * @LastEditors: yuyang
  */
 import React from 'react';
@@ -32,12 +33,12 @@ const BigEvent: React.FC<BigEventProps> = () => {
   };
   return (
     <div className="w-full mx-auto px-0 lg:px-16">
-      <div className="w-full flex flex-wrap py-4 items-center justify-center">
+      <div className="w-full flex flex-wrap py-4 items-start justify-center">
         <div className="w-full xl:w-auto bg-transparent my-4" style={{ minWidth: 128 }}>
           <DayPicker
             onDayClick={handleChangeDate}
+            onDayMouseEnter={handleChangeDate}
             modifiers={modifiers}
-            fixedWeeks
             months={MONTHS}
             weekdaysShort={WEEKDAYS_SHORT}
             initialMonth={new Date(bigEventInfos[0].date)}
@@ -66,9 +67,7 @@ const BigEvent: React.FC<BigEventProps> = () => {
                 eventInfo.image && <img src={eventInfo.image} alt="" className="w-full h-full object-cover object-center" />
               }
             </div>
-            <p className="text-base font-sans leading-relaxed py-4 m-0" style={{ textIndent: '2em' }}>
-              {eventInfo.content}
-            </p>
+            <div className="text-base font-sans leading-relaxed py-4 m-0" style={{ textIndent: '2em' }} dangerouslySetInnerHTML={{ __html: eventInfo?.content ?? '' }} />
           </div>
         </div>
       </div>
