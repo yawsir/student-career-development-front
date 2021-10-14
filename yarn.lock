@@ -455,7 +455,7 @@
 
 "@eslint/eslintrc@^0.4.3":
   version "0.4.3"
-  resolved "https://registry.npmmirror.com/@eslint/eslintrc/download/@eslint/eslintrc-0.4.3.tgz?cache=0&sync_timestamp=1633811110754&other_urls=https%3A%2F%2Fregistry.npmmirror.com%2F%40eslint%2Feslintrc%2Fdownload%2F%40eslint%2Feslintrc-0.4.3.tgz#9e42981ef035beb3dd49add17acb96e8ff6f394c"
+  resolved "https://registry.npmmirror.com/@eslint/eslintrc/download/@eslint/eslintrc-0.4.3.tgz?cache=0&other_urls=https%3A%2F%2Fregistry.npmmirror.com%2F%40eslint%2Feslintrc%2Fdownload%2F%40eslint%2Feslintrc-0.4.3.tgz#9e42981ef035beb3dd49add17acb96e8ff6f394c"
   integrity sha1-nkKYHvA1vrPdSa3ResuW6P9vOUw=
   dependencies:
     ajv "^6.12.4"
@@ -826,7 +826,7 @@
   dependencies:
     "@sinonjs/commons" "^1.7.0"
 
-"@tailwindcss/postcss7-compat@latest":
+"@tailwindcss/postcss7-compat@latest", "tailwindcss@npm:@tailwindcss/postcss7-compat":
   version "2.2.17"
   resolved "https://registry.npmmirror.com/@tailwindcss/postcss7-compat/download/@tailwindcss/postcss7-compat-2.2.17.tgz#dc78f3880a2af84163150ff426a39e42b9ae8922"
   integrity sha1-3HjziAoq+EFjFQ/0JqOeQrmuiSI=
@@ -1141,7 +1141,7 @@
 
 "@typescript-eslint/eslint-plugin@^4.7.0":
   version "4.33.0"
-  resolved "https://registry.npmmirror.com/@typescript-eslint/eslint-plugin/download/@typescript-eslint/eslint-plugin-4.33.0.tgz#c24dc7c8069c7706bc40d99f6fa87edcb2005276"
+  resolved "https://registry.npmmirror.com/@typescript-eslint/eslint-plugin/download/@typescript-eslint/eslint-plugin-4.33.0.tgz?cache=0&sync_timestamp=1634191246541&other_urls=https%3A%2F%2Fregistry.npmmirror.com%2F%40typescript-eslint%2Feslint-plugin%2Fdownload%2F%40typescript-eslint%2Feslint-plugin-4.33.0.tgz#c24dc7c8069c7706bc40d99f6fa87edcb2005276"
   integrity sha1-wk3HyAacdwa8QNmfb6h+3LIAUnY=
   dependencies:
     "@typescript-eslint/experimental-utils" "4.33.0"
@@ -1155,7 +1155,7 @@
 
 "@typescript-eslint/experimental-utils@4.33.0":
   version "4.33.0"
-  resolved "https://registry.npmmirror.com/@typescript-eslint/experimental-utils/download/@typescript-eslint/experimental-utils-4.33.0.tgz?cache=0&sync_timestamp=1633978467370&other_urls=https%3A%2F%2Fregistry.npmmirror.com%2F%40typescript-eslint%2Fexperimental-utils%2Fdownload%2F%40typescript-eslint%2Fexperimental-utils-4.33.0.tgz#6f2a786a4209fa2222989e9380b5331b2810f7fd"
+  resolved "https://registry.npmmirror.com/@typescript-eslint/experimental-utils/download/@typescript-eslint/experimental-utils-4.33.0.tgz?cache=0&sync_timestamp=1634191243353&other_urls=https%3A%2F%2Fregistry.npmmirror.com%2F%40typescript-eslint%2Fexperimental-utils%2Fdownload%2F%40typescript-eslint%2Fexperimental-utils-4.33.0.tgz#6f2a786a4209fa2222989e9380b5331b2810f7fd"
   integrity sha1-byp4akIJ+iIimJ6TgLUzGygQ9/0=
   dependencies:
     "@types/json-schema" "^7.0.7"
@@ -1167,7 +1167,7 @@
 
 "@typescript-eslint/parser@^4.4.1", "@typescript-eslint/parser@^4.7.0":
   version "4.33.0"
-  resolved "https://registry.npmmirror.com/@typescript-eslint/parser/download/@typescript-eslint/parser-4.33.0.tgz#dfe797570d9694e560528d18eecad86c8c744899"
+  resolved "https://registry.npmmirror.com/@typescript-eslint/parser/download/@typescript-eslint/parser-4.33.0.tgz?cache=0&sync_timestamp=1634191248535&other_urls=https%3A%2F%2Fregistry.npmmirror.com%2F%40typescript-eslint%2Fparser%2Fdownload%2F%40typescript-eslint%2Fparser-4.33.0.tgz#dfe797570d9694e560528d18eecad86c8c744899"
   integrity sha1-3+eXVw2WlOVgUo0Y7srYbIx0SJk=
   dependencies:
     "@typescript-eslint/scope-manager" "4.33.0"
@@ -1177,7 +1177,7 @@
 
 "@typescript-eslint/scope-manager@4.33.0":
   version "4.33.0"
-  resolved "https://registry.npmmirror.com/@typescript-eslint/scope-manager/download/@typescript-eslint/scope-manager-4.33.0.tgz#d38e49280d983e8772e29121cf8c6e9221f280a3"
+  resolved "https://registry.npmmirror.com/@typescript-eslint/scope-manager/download/@typescript-eslint/scope-manager-4.33.0.tgz?cache=0&sync_timestamp=1634191242153&other_urls=https%3A%2F%2Fregistry.npmmirror.com%2F%40typescript-eslint%2Fscope-manager%2Fdownload%2F%40typescript-eslint%2Fscope-manager-4.33.0.tgz#d38e49280d983e8772e29121cf8c6e9221f280a3"
   integrity sha1-045JKA2YPody4pEhz4xukiHygKM=
   dependencies:
     "@typescript-eslint/types" "4.33.0"
@@ -1185,12 +1185,12 @@
 
 "@typescript-eslint/types@4.33.0":
   version "4.33.0"
-  resolved "https://registry.npmmirror.com/@typescript-eslint/types/download/@typescript-eslint/types-4.33.0.tgz#a1e59036a3b53ae8430ceebf2a919dc7f9af6d72"
+  resolved "https://registry.npmmirror.com/@typescript-eslint/types/download/@typescript-eslint/types-4.33.0.tgz?cache=0&sync_timestamp=1634191240516&other_urls=https%3A%2F%2Fregistry.npmmirror.com%2F%40typescript-eslint%2Ftypes%2Fdownload%2F%40typescript-eslint%2Ftypes-4.33.0.tgz#a1e59036a3b53ae8430ceebf2a919dc7f9af6d72"
   integrity sha1-oeWQNqO1OuhDDO6/KpGdx/mvbXI=
 
 "@typescript-eslint/typescript-estree@4.33.0":
   version "4.33.0"
-  resolved "https://registry.npmmirror.com/@typescript-eslint/typescript-estree/download/@typescript-eslint/typescript-estree-4.33.0.tgz?cache=0&sync_timestamp=1633978470134&other_urls=https%3A%2F%2Fregistry.npmmirror.com%2F%40typescript-eslint%2Ftypescript-estree%2Fdownload%2F%40typescript-eslint%2Ftypescript-estree-4.33.0.tgz#0dfb51c2908f68c5c08d82aefeaf166a17c24609"
+  resolved "https://registry.npmmirror.com/@typescript-eslint/typescript-estree/download/@typescript-eslint/typescript-estree-4.33.0.tgz?cache=0&sync_timestamp=1634191245615&other_urls=https%3A%2F%2Fregistry.npmmirror.com%2F%40typescript-eslint%2Ftypescript-estree%2Fdownload%2F%40typescript-eslint%2Ftypescript-estree-4.33.0.tgz#0dfb51c2908f68c5c08d82aefeaf166a17c24609"
   integrity sha1-DftRwpCPaMXAjYKu/q8WahfCRgk=
   dependencies:
     "@typescript-eslint/types" "4.33.0"
@@ -1203,7 +1203,7 @@
 
 "@typescript-eslint/visitor-keys@4.33.0":
   version "4.33.0"
-  resolved "https://registry.npmmirror.com/@typescript-eslint/visitor-keys/download/@typescript-eslint/visitor-keys-4.33.0.tgz#2a22f77a41604289b7a186586e9ec48ca92ef1dd"
+  resolved "https://registry.npmmirror.com/@typescript-eslint/visitor-keys/download/@typescript-eslint/visitor-keys-4.33.0.tgz?cache=0&sync_timestamp=1634191241496&other_urls=https%3A%2F%2Fregistry.npmmirror.com%2F%40typescript-eslint%2Fvisitor-keys%2Fdownload%2F%40typescript-eslint%2Fvisitor-keys-4.33.0.tgz#2a22f77a41604289b7a186586e9ec48ca92ef1dd"
   integrity sha1-KiL3ekFgQom3oYZYbp7EjKku8d0=
   dependencies:
     "@typescript-eslint/types" "4.33.0"
@@ -2376,9 +2376,9 @@ camelcase@^6.0.0:
   integrity sha1-kkr4gcnVJaydh/QNlk5c6pgqGAk=
 
 caniuse-lite@^1.0.30000981, caniuse-lite@^1.0.30001109, caniuse-lite@^1.0.30001265:
-  version "1.0.30001265"
-  resolved "https://registry.npmmirror.com/caniuse-lite/download/caniuse-lite-1.0.30001265.tgz?cache=0&sync_timestamp=1633496161326&other_urls=https%3A%2F%2Fregistry.npmmirror.com%2Fcaniuse-lite%2Fdownload%2Fcaniuse-lite-1.0.30001265.tgz#0613c9e6c922e422792e6fcefdf9a3afeee4f8c3"
-  integrity sha1-BhPJ5ski5CJ5Lm/O/fmjr+7k+MM=
+  version "1.0.30001267"
+  resolved "https://registry.npmmirror.com/caniuse-lite/download/caniuse-lite-1.0.30001267.tgz#b1cf2937175afc0570e4615fc2d2f9069fa0ed30"
+  integrity sha1-sc8pNxda/AVw5GFfwtL5Bp+g7TA=
 
 capture-exit@^2.0.0:
   version "2.0.0"
@@ -3557,7 +3557,7 @@ eslint-visitor-keys@^2.0.0:
 
 eslint@^7.17.0:
   version "7.32.0"
-  resolved "https://registry.npmmirror.com/eslint/download/eslint-7.32.0.tgz?cache=0&sync_timestamp=1633813344431&other_urls=https%3A%2F%2Fregistry.npmmirror.com%2Feslint%2Fdownload%2Feslint-7.32.0.tgz#c6d328a14be3fb08c8d1d21e12c02fdb7a2a812d"
+  resolved "https://registry.npmmirror.com/eslint/download/eslint-7.32.0.tgz?cache=0&sync_timestamp=1634180146443&other_urls=https%3A%2F%2Fregistry.npmmirror.com%2Feslint%2Fdownload%2Feslint-7.32.0.tgz#c6d328a14be3fb08c8d1d21e12c02fdb7a2a812d"
   integrity sha1-xtMooUvj+wjI0dIeEsAv23oqgS0=
   dependencies:
     "@babel/code-frame" "7.12.11"

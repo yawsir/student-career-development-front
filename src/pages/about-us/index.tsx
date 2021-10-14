@@ -1,7 +1,7 @@
 /*
  * @Author: yuyang
  * @Date: 2021-05-04 19:36:25
- * @LastEditTime: 2021-10-13 16:05:29
+ * @LastEditTime: 2021-10-14 09:38:12
  * @LastEditors: yuyang
  */
 import React from 'react';
@@ -26,7 +26,7 @@ const AboutUs: React.FC = () => (
               <img src={platformIntroImg} alt="" className="w-full h-full object-center object-cover" />
             </div>
             <div className="w-full xl:w-1/2 flex flex-col justify-start items-center">
-              <div className="relative bg-custom-gray-4 p-2 pl-4 text-xl shadow-hs">
+              <div className="relative bg-custom-gray-4 p-2 pl-4 text-xl shadow-hs transform hover:-translate-y-2 transition duration-200 ">
                 <p>
                   深圳学生生涯发展支持平台将以网站和微信公众号形式同步呈现,网站的主要用户包括学生、教师、家长、内容运营人员以及网站管理人员。网站管理人员可以网站进行初始化操作、用户人员管理、日常维护操作等。内容运营人员负责平台内容的创建与维护。学生、教师、家长作为终端用户可以在网站访问相应的内容,在公众号访问有限的内容。内容运营人员和网站管理员只可通过网站进行维护管理。
                 </p>
