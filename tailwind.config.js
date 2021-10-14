@@ -1,7 +1,7 @@
 /*
  * @Author: yuyang
  * @Date: 2021-07-06 14:54:43
- * @LastEditTime: 2021-10-14 15:47:00
+ * @LastEditTime: 2021-10-14 18:00:36
  * @LastEditors: yuyang
  */
 module.exports = {
@@ -36,6 +36,7 @@ module.exports = {
         'table-odd-column': '#D5E3E8',
         'table-even-column': '#BDDFF1',
         'slide': '#E7F0F2',
+        'teacherBg':'#fea552b0',
       }),
       boxShadow: {
         sm: '0 1px 2px 0 rgba(0, 0, 0, 0.05)',
