@@ -1,8 +1,8 @@
 /*
  * @Author: yuyang
  * @Date: 2021-07-06 14:54:43
- * @LastEditTime: 2021-10-13 13:35:18
- * @LastEditors: yuyang
+ * @LastEditTime: 2021-10-14 15:58:08
+ * @LastEditors: haoyh
  */
 module.exports = {
     purge: {
@@ -35,6 +35,7 @@ module.exports = {
         'table-odd-column': '#D5E3E8',
         'table-even-column': '#BDDFF1',
         'slide': '#E7F0F2',
+        'teacherBg':'#fea552b0',
       }),
       boxShadow: {
         sm: '0 1px 2px 0 rgba(0, 0, 0, 0.05)',
@@ -53,7 +54,8 @@ module.exports = {
         ...theme('colors'),
         'primary': '#000000',
         'secondary': '#000000',
-        'title': '#302E72'
+        'title': '#302E72',
+        'teacherTitle': '#302E72',
        }),
       borderColor: theme => ({
         ...theme('colors'),

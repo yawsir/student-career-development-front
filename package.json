@@ -12,6 +12,7 @@
   "dependencies": {
     "@ant-design/icons": "^4.6.2",
     "@ant-design/pro-layout": "^6.5.0",
+    "@tailwindcss/postcss7-compat": "^2.2.16",
     "@umijs/preset-react": "1.x",
     "antd": "^4.16.6",
     "axios": "^0.21.1",
@@ -20,6 +21,7 @@
     "react-calendar": "^3.4.0",
     "react-day-picker": "^7.4.10",
     "react-dom": "17.x",
+    "tailwindcss": "npm:@tailwindcss/postcss7-compat",
     "umi": "^3.5.3"
   },
   "devDependencies": {
