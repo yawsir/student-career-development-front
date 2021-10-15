@@ -1,7 +1,7 @@
 /*
  * @Author: yuyang
  * @Date: 2021-09-10 16:21:40
- * @LastEditTime: 2021-09-13 23:10:11
+ * @LastEditTime: 2021-10-14 14:46:14
  * @LastEditors: yuyang
  */
 import React from 'react';
@@ -29,6 +29,7 @@ interface NewsListProps {
   barCentered?: boolean;
   textCentered?: boolean;
   tabBarGutter?: number;
+  verticalCentered?: boolean;
 }
 
 interface NewsItemProps extends NewsType {
@@ -53,7 +54,7 @@ const textCenteredStyle: React.CSSProperties = {
 export const NewsItem: React.FC<NewsItemProps> = (props) => {
   const { id, title, date, listStyle, showDate, textCentered, className } = props;
   return (
-    <Link to={`/article/${id}`}>
+    <Link to={`/article/${id}`} className="w-full block">
       <p
         className={`w-full text-lg text-black hover:text-blue-400 transition flex justify-between ${className}`}
         style={textCentered ? textCenteredStyle : {}}
@@ -78,10 +79,10 @@ export const NewsItem: React.FC<NewsItemProps> = (props) => {
 
 const NewsList: React.FC<NewsListProps> = (props) => {
   const { tabs, listStyle, showDate = false, renderTabBar, tabBarStyle,
-    barCentered = false, textCentered = false, tabBarGutter } = props;
+    barCentered = false, textCentered = false, tabBarGutter, verticalCentered = false } = props;
   if (tabs.length && tabs.length === 1) {
     return (
-      <div>
+      <div className={`flex flex-wrap ${verticalCentered ? 'items-center' : 'items-start'}`}>
         {
           tabs[0].newsList.map((news) => (
             <NewsItem key={news.id} listStyle={listStyle} textCentered={textCentered} showDate={showDate} {...news} />

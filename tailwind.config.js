@@ -1,8 +1,7 @@
 /*
  * @Author: yuyang
  * @Date: 2021-07-06 14:54:43
- * @LastEditTime: 2021-10-14 15:58:08
- * @LastEditors: haoyh
+ * @LastEditTime: 2021-10-14 17:57:04
  */
 module.exports = {
     purge: {
@@ -23,6 +22,7 @@ module.exports = {
         'primary': '#FEA554',
         'secondary': '#FCF16D',
         'third': '#F75F1D',
+        'forth': 'rgba(254, 165, 83, 0.5)',
         'active': '#5685CB',
         'custom-gray': '#808080',
         'custom-gray-2': '#D7D7D7',
@@ -49,13 +49,14 @@ module.exports = {
         focus: '0 0 0 3px rgba(66, 153, 225, 0.5)',
         none: 'none',
         hs: '8px 10px 25px rgb(0 0 0 / 35%)',
+        hs2: '0px 15px 20px rgb(0 0 0 / 35%)',
       },
       textColor: theme => ({
         ...theme('colors'),
         'primary': '#000000',
         'secondary': '#000000',
         'title': '#302E72',
-        'teacherTitle': '#302E72',
+        'primary-theme': '#FEA554',
        }),
       borderColor: theme => ({
         ...theme('colors'),

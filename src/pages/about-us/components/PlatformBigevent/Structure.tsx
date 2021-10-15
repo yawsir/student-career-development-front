@@ -1,7 +1,7 @@
 /*
  * @Author: yuyang
  * @Date: 2021-10-13 16:29:15
- * @LastEditTime: 2021-10-13 17:53:47
+ * @LastEditTime: 2021-10-14 09:19:49
  * @LastEditors: yuyang
  */
 import React from 'react';
@@ -20,6 +20,11 @@ import contentBlue from '@/assets/icons/platform-event/content_blue.svg';
 import contentGreen from '@/assets/icons/platform-event/content_green.svg';
 import contentPink from '@/assets/icons/platform-event/content_pink.svg';
 import contentPurple from '@/assets/icons/platform-event/content_purple.svg';
+import dotRed from '@/assets/icons/platform-event/dot_red.svg';
+import dotBlue from '@/assets/icons/platform-event/dot_blue.svg';
+import dotGreen from '@/assets/icons/platform-event/dot_green.svg';
+import dotPink from '@/assets/icons/platform-event/dot_pink.svg';
+import dotPurple from '@/assets/icons/platform-event/dot_purple.svg';
 
 export type Color = 'blue' | 'green' | 'pink' | 'purple' | 'red';
 interface StructureProps {
@@ -32,27 +37,31 @@ const colorMap = {
     pop: popRed,
     circle: circleRed,
     content: contentRed,
-    color: '',
+    dot: dotRed,
   },
   blue: {
     pop: popBlue,
     circle: circleBlue,
     content: contentBlue,
+    dot: dotBlue,
   },
   green: {
     pop: popGreen,
     circle: circleGreen,
     content: contentGreen,
+    dot: dotGreen,
   },
   pink: {
     pop: popPink,
     circle: circlePink,
     content: contentPink,
+    dot: dotPink,
   },
   purple: {
     pop: popPurple,
     circle: circlePurple,
     content: contentPurple,
+    dot: dotPurple,
   },
 };
 const Structure: React.FC<StructureProps> = ({ color, text = '' }) => {
@@ -75,7 +84,9 @@ const Structure: React.FC<StructureProps> = ({ color, text = '' }) => {
         <img src={colorMap[color].circle} alt="" />
       </div>
       <div className="w-0 border-2 border-solid border-red-500 h-32" onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} />
-      <div className="w-8 h-8 bg-red-500 rounded-full" onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} />
+      <div className="" onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
+        <img src={colorMap[color].dot} alt="" />
+      </div>
       <div className="text-center" onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
         <img src={colorMap[color].content} alt="" />
       </div>

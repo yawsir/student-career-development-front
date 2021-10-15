@@ -153,3 +153,17 @@ export const tabs3: TabType[] = [
     ],
   },
 ];
+
+export const tabs4: TabType[] = [
+  {
+    tabKey: '',
+    tabTitle: '中考资讯类',
+    newsList: [
+      {
+        id: '37',
+        title: '女孩子是理科绝缘体吗？谷歌女工程师为此正名',
+        date: '2018-11-16',
+      },
+    ],
+  },
+];
