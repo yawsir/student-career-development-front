@@ -12,7 +12,6 @@
   "dependencies": {
     "@ant-design/icons": "^4.6.2",
     "@ant-design/pro-layout": "^6.5.0",
-    "@tailwindcss/postcss7-compat": "^2.2.16",
     "@umijs/preset-react": "1.x",
     "antd": "^4.16.6",
     "axios": "^0.21.1",

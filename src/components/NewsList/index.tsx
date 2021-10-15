@@ -1,7 +1,7 @@
 /*
  * @Author: yuyang
  * @Date: 2021-09-10 16:21:40
- * @LastEditTime: 2021-10-14 14:46:14
+ * @LastEditTime: 2021-10-15 10:40:28
  * @LastEditors: yuyang
  */
 import React from 'react';
@@ -30,6 +30,8 @@ interface NewsListProps {
   textCentered?: boolean;
   tabBarGutter?: number;
   verticalCentered?: boolean;
+  className?: string;
+  style?: React.CSSProperties;
 }
 
 interface NewsItemProps extends NewsType {
@@ -56,7 +58,7 @@ export const NewsItem: React.FC<NewsItemProps> = (props) => {
   return (
     <Link to={`/article/${id}`} className="w-full block">
       <p
-        className={`w-full text-lg text-black hover:text-blue-400 transition flex justify-between ${className}`}
+        className={`w-full text-base text-black hover:text-blue-400 transition flex justify-between ${className}`}
         style={textCentered ? textCenteredStyle : {}}
       >
         <span className="whitespace-nowrap overflow-hidden overflow-ellipsis">
@@ -79,10 +81,10 @@ export const NewsItem: React.FC<NewsItemProps> = (props) => {
 
 const NewsList: React.FC<NewsListProps> = (props) => {
   const { tabs, listStyle, showDate = false, renderTabBar, tabBarStyle,
-    barCentered = false, textCentered = false, tabBarGutter, verticalCentered = false } = props;
+    barCentered = false, textCentered = false, tabBarGutter, verticalCentered = false, className = '', style } = props;
   if (tabs.length && tabs.length === 1) {
     return (
-      <div className={`flex flex-wrap ${verticalCentered ? 'items-center' : 'items-start'}`}>
+      <div className={`flex flex-wrap ${verticalCentered ? 'items-center' : 'items-start'} ${className}`} style={style}>
         {
           tabs[0].newsList.map((news) => (
             <NewsItem key={news.id} listStyle={listStyle} textCentered={textCentered} showDate={showDate} {...news} />

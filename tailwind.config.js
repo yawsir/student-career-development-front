@@ -1,7 +1,7 @@
 /*
  * @Author: yuyang
  * @Date: 2021-07-06 14:54:43
- * @LastEditTime: 2021-10-14 18:00:36
+ * @LastEditTime: 2021-10-15 11:29:39
  * @LastEditors: yuyang
  */
 module.exports = {
@@ -55,7 +55,7 @@ module.exports = {
       textColor: theme => ({
         ...theme('colors'),
         'primary': '#000000',
-        'secondary': '#000000',
+        'secondary': '#898686',
         'title': '#302E72',
         'primary-theme': '#FEA554',
        }),
