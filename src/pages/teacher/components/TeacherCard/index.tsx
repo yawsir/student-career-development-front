@@ -1,25 +1,15 @@
 /*
  * @Author: yuyang
  * @Date: 2021-09-16 22:16:10
- * @LastEditTime: 2021-10-14 15:50:35
+ * @LastEditTime: 2021-10-18 10:38:11
  * @LastEditors: haoyh
  */
-// create by hygen
-import React, { useState } from 'react';
+import React from 'react';
 import techer1 from '@/assets/teacher/teacher01.png';
 import techer2 from '@/assets/teacher/teacher02.png';
 import techer3 from '@/assets/teacher/teacher03.png';
 import techer4 from '@/assets/teacher/teacher04.png';
 import TeacherItem from './item';
-
-export interface TipValuesType {
-  editHere: string;
-}
-
-interface TipModalProps {
-  modalTitle?: React.ReactNode;
-  onClose?: Function;
-}
 
 const TeacherList = [
   {
@@ -48,7 +38,7 @@ const TeacherList = [
   },
 ];
 
-const TeacherCard: React.FC<TipModalProps> = () => (
+const TeacherCard: React.FC = () => (
   <>
     {
       TeacherList.map((item) => (

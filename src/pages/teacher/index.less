@@ -1,112 +1,30 @@
-@keyframes zhuanquanquan {
-  0% {
-		transform: rotate(360deg);
-	}
 
-	12% {
-		transform: rotate(320deg);
-	}
-
-	24% {
-		transform: rotate(202deg);
-	}
-
-	36% {
-		transform: rotate(7deg);
-	}
-
-	54% {
-		transform: rotate(90deg);
-	}
-
-	74% {
-		transform: rotate(7deg);
-	}
-
-	82% {
-		transform: rotate(22deg);
-	}
-
-	92% {
-		transform: rotate(4deg);
-	}
-
-	96% {
-		transform: rotate(7deg);
-	}
-
-	100% {
-		transform: rotate(0);
-	}
-
-}
-
-@keyframes appear {
-  from {
-    transform: translateX(100%);
-    display: block;
-  }
-  to {
-    transform: translateX(0);
-    display: block;
+@media screen and (max-width: 1440px) {
+  .teacherPage{
+    .teacher-content{
+      width: 67%;
+    }
+    .teacher-title{
+      font-family: '微软雅黑 Bold', '微软雅黑 Regular', '微软雅黑', sans-serif;
+      font-weight: 700;
+      font-style: normal;
+      letter-spacing: 5px;
+      color: #fff;
+    }
   }
 }
 
-@keyframes disappear {
-  0% {
-    display: none;
+@media screen and (min-width: 1441px) {
+  .teacherPage{
+    .teacher-content{
+      width: 57%;
+    }
+    .teacher-title{
+      font-family: '微软雅黑 Bold', '微软雅黑 Regular', '微软雅黑', sans-serif;
+      font-weight: 700;
+      font-style: normal;
+      letter-spacing: 5px;
+      color: #fff;
+    }
   }
-  1% {
-    transform: translateX(0);
-    display: block;
-    position: absolute;
-  }
-  99% {
-    transform: translateX(-100%);
-    display: block;
-    position: absolute;
-  }
-  100% {
-    display: none;
-  }
-}
-
-.teacher-title{
-  background: linear-gradient(
-90deg, rgba(254, 165, 83, 1) 0%, rgba(255, 255, 0, 1) 98%);
-    border: none;
-    border-radius: 6px;
-    width: 200px;
-    height: 62px;
-    margin: 0 auto;
-}
-
-.switcher {
-  width: 150px;
-  height: 150px;
-  padding: 8px;
-  border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  font-size: 20px;
-  font-weight: bold;
-  font-style: normal;
-  transform: rotate(360deg);
-}
-.switcher-active {
-  border: 5px solid @secondary-color;
-  animation: zhuanquanquan 1.2s linear;
-  color: @secondary-color;
-}
-
-.listshow {
-  animation: appear .8s cubic-bezier(0.22, 1, 0.36, 1);
-  animation-fill-mode: forwards;
-
-}
-
-.listhidden {
-  display: none;
 }
