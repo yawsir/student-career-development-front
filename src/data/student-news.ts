@@ -1,7 +1,7 @@
 /*
  * @Author: yuyang
  * @Date: 2021-10-14 14:54:28
- * @LastEditTime: 2021-10-14 16:03:45
+ * @LastEditTime: 2021-10-15 11:40:34
  * @LastEditors: yuyang
  */
 import news1 from '@/assets/students/news/news1.png';
@@ -13,31 +13,18 @@ import news6 from '@/assets/students/news/news6.png';
 import news7 from '@/assets/students/news/news7.png';
 import news8 from '@/assets/students/news/news8.png';
 import news9 from '@/assets/students/news/news9.png';
+import news10 from '@/assets/students/news/news10.png';
+import news11 from '@/assets/students/news/news11.png';
+import news12 from '@/assets/students/news/news12.png';
+import news13 from '@/assets/students/news/news13.png';
 
 interface StudentNews {
   id: string;
+  date?: string;
   title: string;
   content: string;
   image: string;
 }
-// {
-//   id: '4',
-//   title: '',
-//   content: '',
-//   image: news4,
-// },
-// {
-//   id: '5',
-//   title: '',
-//   content: '',
-//   image: news5,
-// },
-// {
-//   id: '6',
-//   title: '',
-//   content: '',
-//   image: news6,
-// },
 const list3: StudentNews[] = [
   {
     id: '7',
@@ -102,3 +89,37 @@ const list1: StudentNews[] = [
 ];
 
 export default [list1, list2, list3];
+
+export const celebrityList1: StudentNews[] = [
+  {
+    id: '1',
+    title: '【院长说】创新创意设计学院院长关道文：科技+设计，让“深圳设计”走向世界',
+    date: '2021年07月22日',
+    content: '2008年，深圳成为国内首个被联合国教科文组织授予“设计之都”称号的城市。近1.5万家创意设计机构。',
+    image: news10,
+  },
+  {
+    id: '2',
+    title: '【毕业季故事汇】李赫奕：听从内心，在更广阔的世界向阳而生',
+    date: '2021年06月13日',
+    content: '作为优秀毕业生，李赫奕获得优秀一等奖奖学金，连续三年荣膺“致新之星”',
+    image: news11,
+  },
+];
+
+export const celebrityList2: StudentNews[] = [
+  {
+    id: '3',
+    title: '【南科大讲堂】唐本忠院士畅谈“聚集体科学”',
+    date: '2021年09月10日',
+    content: '2021年09月10日，中国科学院院士、香港中文大学（深圳）理工学院院长唐本忠做客第293期南科大讲堂',
+    image: news13,
+  },
+  {
+    id: '4',
+    title: '【南科大讲堂】马燕生教授畅谈国际组织和国际化人才',
+    date: '2021年09月08日',
+    content: '2021年9月8日，应南方科技大学国际合作部邀请，带来《国际组织需要什么人才从联合国教科文组织讲起》的主题报告',
+    image: news12,
+  },
+];
