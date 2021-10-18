@@ -1,0 +1,37 @@
+@keyframes horizantalGrow {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+.gradientBg {
+  background: @primary-color !important;
+  background: linear-gradient(to right, @primary-color , @secondary-color) !important;
+}
+.no-hover  {
+  tr:hover td {
+    background: #BDDFF1 !important;
+  }
+}
+.suffix {
+  flex: 1;
+  .suffixInner {
+    animation: horizantalGrow .5s both;
+    height: 4px;
+    background-color: @primary-color;
+    position: relative;
+    &::after {
+      position: absolute;
+      content: "";
+      width: 16px;
+      height: 16px;
+      right: -1px;
+      top: -8px;
+      border-radius: 100%;
+      .gradientBg();
+
+    }
+  }
+}

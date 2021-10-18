@@ -1,7 +1,7 @@
 /*
  * @Author: yuyang
  * @Date: 2021-03-27 14:20:18
- * @LastEditTime: 2021-10-15 10:04:03
+ * @LastEditTime: 2021-10-18 16:26:42
  * @LastEditors: yuyang
  */
 import React from 'react';
@@ -17,8 +17,8 @@ const { Header, Content } = Layout;
 const BaseLayout: React.FunctionComponent = (props: any) => {
   const { children } = props;
   return (
-    <Layout className="w-full 2xl:container mx-auto overflow-x-hidden" style={{ minWidth: '1200px' }}>
-      <Header className={styles.header}>
+    <div className="w-full mx-auto overflow-x-hidden" style={{ minWidth: '1200px' }}>
+      <Header className={`${styles.header} w-full 3xl:w-11/12 mx-auto`}>
         <Row className="w-full" justify="start" align="middle">
           <Col span={6}>
             <div className="flex justify-items-start pl-32 text-3xl">
@@ -30,7 +30,7 @@ const BaseLayout: React.FunctionComponent = (props: any) => {
           </Col>
         </Row>
       </Header>
-      <Layout>
+      <div className="w-full 2xl:container mx-auto">
         <div className="w-full">
           <Content className={styles.content}>{children}</Content>
           <FooterContent />
@@ -40,8 +40,8 @@ const BaseLayout: React.FunctionComponent = (props: any) => {
             <ArrowUpOutlined />
           </div>
         </BackTop>
-      </Layout>
-    </Layout>
+      </div>
+    </div>
   );
 };
 export default BaseLayout;

@@ -1,7 +1,7 @@
 /*
  * @Author: yuyang
  * @Date: 2021-07-06 14:54:43
- * @LastEditTime: 2021-10-15 13:57:39
+ * @LastEditTime: 2021-10-18 17:46:31
  * @LastEditors: yuyang
  */
 module.exports = {
@@ -56,6 +56,7 @@ module.exports = {
         ...theme('colors'),
         'primary': '#000000',
         'secondary': '#898686',
+        'third': '#8c8c8c',
         'title': '#302E72',
         'primary-theme': '#FEA554',
        }),
@@ -70,10 +71,15 @@ module.exports = {
           'el-appear': {
             '0%': { opacity: 0 },
             '100%': { opacity: 1 },
+          },
+          'spin': {
+            '0%': { transform: 'rotate(0deg)' },
+            '100%': { transform: 'rotate(-400deg)' },
           }
         },
         animation: {
           'appear': 'el-appear 1s cubic-bezier(0.19, 1, 0.22, 1);',
+          'parent-rotate': 'spin 16s cubic-bezier(0.33, 1, 0.68, 1) infinite alternate'
          },
          colors: {
            'bg-1': '#FEA554',
@@ -82,7 +88,10 @@ module.exports = {
        }
     },
     variants: {
-      extend: {},
+      extend: {
+        padding: ['hover'],
+        fontWeight: ['hover']
+      }
     },
     plugins: [],
 };

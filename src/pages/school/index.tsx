@@ -1,14 +1,16 @@
 /*
  * @Author: yuyang
  * @Date: 2021-08-31 17:24:02
- * @LastEditTime: 2021-09-23 20:46:57
+ * @LastEditTime: 2021-10-18 15:37:50
  * @LastEditors: yuyang
  */
 import React from 'react';
 import NewsContainer from '@/components/NewsContainer';
-import NewsList from '@/components/NewsList';
+import schoolBanner from '@/assets/school/banner.png';
+import TitleLevel2 from '@/components/TitleLevel2';
+import TitleLevel1 from '@/components/TitleLevel1';
 import Tables from './components/Tables';
-import { tabs1 } from './news-list';
+import SliderActivity from './components/SliderActivity';
 
 interface SchoolProps {
 
@@ -16,23 +18,20 @@ interface SchoolProps {
 
 const School: React.FC<SchoolProps> = () => (
   <NewsContainer>
-    <div className="container mx-auto text-4xl bg-white py-2">
-      <div className="w-5/6 mx-auto p-4">
-        <h3 className="border-0 border-b border-solid border-gray-400 text-center pb-8">
-          <span className="inline-block px-8 py-2 border-0 border-b-2 border-solid border-primary">学校总体生涯教育设计案例</span>
-        </h3>
-        <div className="w-full border-0 border-b border-solid border-gray-400">
-          <NewsList listStyle="square" tabs={tabs1} textCentered />
-        </div>
-      </div>
-      
-      <div className="w-5/6 mx-auto p-4">
-        <h3 className="border-0 border-b border-solid border-gray-400 text-center pb-8">
-          <span className="inline-block px-8 py-2 border-0 border-b-2 border-solid border-primary">政策文件解读</span>
-        </h3>
-        <Tables />
-      </div>
-    </div>
+    <section className="w-full mx-auto" style={{ height: 450 }}>
+      <img src={schoolBanner} alt="" className="w-full h-full object-cover object-center" />
+    </section>
+    <section className="w-full mx-auto my-8">
+      <TitleLevel2 title="近期活动" />
+      <SliderActivity />
+    </section>
+    <section className="w-full mx-auto p-4">
+      <TitleLevel2 title="政策文件解读" />
+      <Tables />
+    </section>
+    <section className="w-full m-auto my-8">
+      <TitleLevel1 bottomText="学校总体生涯教育设计案例" topText="学校" />
+    </section>
   </NewsContainer>
 );
 

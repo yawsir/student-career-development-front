@@ -1,75 +1,41 @@
 /*
  * @Author: yuyang
  * @Date: 2021-09-14 18:18:32
- * @LastEditTime: 2021-09-16 22:22:21
+ * @LastEditTime: 2021-10-18 17:44:50
  * @LastEditors: yuyang
  */
 import React from 'react';
 import NewsContainer from '@/components/NewsContainer';
-import { Row, Col } from 'antd';
-import banner from '@/assets/parent_banner.jpg';
-import List from './components/List';
-import TipModal from './components/TipModal';
-import styles from './index.less';
+import parentBg from '@/assets/bgs/parent_bg.png';
+import circle from '@/assets/parent/u9346.svg';
+import ParentSchool from './components/ParentSchool';
+import TitleLevel1 from '@/components/TitleLevel1';
 
 interface ParentsProps {
 
 }
 const Parents: React.FC<ParentsProps> = () => (
-  <NewsContainer>
-    <Row justify="center" align="top">
-      <Col xxl={20} xl={20} lg={20} md={24} className="relative">
-        <img src={banner} alt="" className="w-full h-96 object-cover object-center" />
-        <TipModal modalTitle={<div className="text-gray-500 text-xl">温馨提示</div>}>
-          <h3
-            className={`${styles.square} absolute left-0 top-1/2 transform -translate-y-1/2 rounded-r-lg text-white bg-secondary text-4xl py-4 pr-16 pl-2`}
-          >
-            家校合作
-          </h3>
-        </TipModal>
-      </Col>
-    </Row>
-    <div className="container mx-auto text-4xl bg-white py-2 my-4">
-      <div className="w-3/4 mx-auto px-16 py-8 border-4 border-solid border-primary">
-        <h3 className="border-0 border-b border-solid border-gray-400 text-center pb-8">
-          <span className="inline-block px-8 py-2 border-0 border-b-2 border-solid border-primary">家长学堂</span>
-        </h3>
-        <div className="w-full pb-16 border-0 border-b-2 border-secondary border-solid">
-          <h3 className="text-xl text-center pt-4 pb-2">生涯规划的重要性</h3>
-          <div className="flex justify-start items-center">
-            <div className="w-40 font-bold text-center bg-secondary text-xl rounded-lg mx-4 px-6 py-1">前言</div>
-            <div className="w-full">
-              <List>
-                <List.Item>生涯规划是一个持续和终身的过程，以达致人生不同阶段的目标。在求学阶段，生涯规划教育在培养学生认识自我、个人规划、设立目标和反思的能力，以及认识衔接各升学就业途径方面，扮演一个重要角色。</List.Item>
-                <List.Item>身为父母的你，该如何帮助子女制定升学就业计划？</List.Item>
-                <List.Item>订立清晰的目标能够使子女有明确的方向，并透过持续的学习、评估和检讨，向目标进发。子女在过程中因而产生热情和动力，取得成就和满足感。生涯规划教育能够让子女在不同成长阶段中认识自己的志向、兴趣和能力，培养他们的自信及自我规划的能力，并掌握未来升学就业道路的发展。</List.Item>
-                <List.Item>家长在子女的生涯规划教育中亦扮演一个很重要的角色。家长透过了解子女性格特征和能力、发掘他们的潜能、传递正确的价值观念，从而协助子女规划和制定不同阶段的目标，以实现他们的理想。</List.Item>
-              </List>
-            </div>
+  <NewsContainer background={parentBg}>
+    <section className="w-full">
+      <div className="flex justify-center items-center w-3/4 mx-auto">
+        <div className="w-60 h-60 flex justify-center items-center">
+          <div className="relative border-8 rounded-full flex items-center justify-center">
+            <img src={circle} alt="" className="transform animate-parent-rotate" />
+            <span className="text-title font-bold text-3xl absolute top-1/2 transform -translate-y-1/2">家校合作</span>
           </div>
         </div>
-
-        <div className="w-full pb-16">
-          <h3 className="text-xl text-center pt-4 pb-2">生涯规划的重要性</h3>
-          <div className="flex justify-start items-center">
-            <div className="w-40 font-bold text-center bg-secondary text-xl rounded-lg mx-4 px-6 py-1">重点过程</div>
-            <div className="w-full">
-              <List>
-                <List.Item>在子女的生涯规划教育中，作为家长该如何帮助他们在不同阶段规划目标?</List.Item>
-                <List.Item>家长在子女的生涯规划中担任极为重要的角色。家长可根据以下五个步骤，协助子女制定他们的升学就业计划以实现他们的理想及目标。</List.Item>
-                <List.Item>制定和实现目标是一个循环的过程，其间不段探索、尝试和检讨，从而制定未来的发展蓝图，以下是重点规划过程：</List.Item>
-                <List.SubItem title="了解自我">多与子女沟通，帮助他们了解和发展自己的兴趣、能力和志向，亦可与老师多沟通以了解子女的优点和弱点。同时给子女足够的空间让他们能独立思考，协助他们更加了解自我。</List.SubItem>
-                <List.SubItem title="寻找探索">主动提出与子女共同寻找和探索各类资料，并提供适当的意见及协助他们。</List.SubItem>
-                <List.SubItem title="整合评估">陪同子女整合各类资料，衡量相关因素，例如时间、能力、人物、事情的限制，然后引导他们收窄范围和作出评估。</List.SubItem>
-                <List.SubItem title="制定计划">经评估后，协助子女拟定相关计划，订立短期目标和方向。</List.SubItem>
-                <List.SubItem title="实践计划">支持和鼓励子女努力尝试，逐步实践目标和计划</List.SubItem>
-                <List.SubItem title="检讨反思">协助子女实践目标的过程中，不断检讨和反思，思考是否与当初订立的计划一致，从而检讨和改善计划，努力向目标前进。</List.SubItem>
-              </List>
-            </div>
-          </div>
+        <div className="flex-1">
+          <h3 className="text-3xl py-4 text-third font-bold text-center border-0 border-b-4 border-solid border-primary">温馨提示</h3>
+          <p className="text-third text-left tracking-widest leading-loose text-xl" style={{ textIndent: '2em' }}>
+            感谢各位家长对于教科院生涯发展支持平台的关注和支持，为更好的面向广大学生提供社会实践资源，如您所在企业或者其他企业资源具备条件展开家校深入合作，可联系家校业务合作专员，联系方式：XX，合作专员会详细对接并积极落实有效资源的落地，感谢您对于教育社会责任的承担与付出。
+          </p>
         </div>
       </div>
-    </div>
+    </section>
+    <section className="w-full">
+      <TitleLevel1 topText="家长" bottomText="家长学堂" />
+      <ParentSchool />
+    </section>
   </NewsContainer>
 );
 

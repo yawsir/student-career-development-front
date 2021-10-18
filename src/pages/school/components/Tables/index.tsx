@@ -2,15 +2,18 @@
 /*
  * @Author: yuyang
  * @Date: 2021-09-22 15:46:51
- * @LastEditTime: 2021-09-23 20:44:36
+ * @LastEditTime: 2021-10-18 15:33:40
  * @LastEditors: yuyang
  */
 import React from 'react';
 import { Link } from 'umi';
-import MultiPane from '@/components/MultiPane';
 import { Table, TableProps } from 'antd';
-import styles from '../index.less';
-import { articleTableData1, articleTableData2, ArticleTableDataType } from '../news-list';
+import MultiPane from '@/components/MultiPane';
+import guojia from '@/assets/icons/guojia.png';
+import shengji from '@/assets/icons/shengji.png';
+import shiji from '@/assets/icons/shiji.png';
+import styles from './index.less';
+import { articleTableData1, articleTableData2, ArticleTableDataType } from '../../news-list';
 
 interface TablesProps {
 
@@ -82,31 +85,46 @@ const columns2: TableProps<ArticleTableDataType>['columns'] = [
   },
 ];
 
+const panes = [
+  {
+    id: 'tab1',
+    name: '国家',
+    image: guojia,
+  },
+  {
+    id: 'tab2',
+    name: '省级',
+    image: shengji,
+  },
+  {
+    id: 'tab3',
+    name: '市级',
+    image: shiji,
+  },
+];
+
 const Tables: React.FC<TablesProps> = () => {
   const [tab, setTab] = React.useState('tab1');
   return (
     <div>
       <div className="flex justify-start items-start">
-        <div>
-          <ul className="list-none">
-            <li
-              className={`transition-all border-2 border-r-0 border-secondary border-solid text-left cursor-pointer ${tab === 'tab1' ? 'text-white' : 'text-secondary'} text-xl mb-10 w-48 px-6 py-10 ${tab === 'tab1' ? 'bg-secondary ' : 'bg-white'} rounded-l-2xl`}
-              onMouseEnter={() => setTab('tab1')}
-            >
-              国家
-            </li>
-            <li
-              className={`transition-all border-2 border-r-0 border-secondary border-solid text-left cursor-pointer ${tab === 'tab2' ? 'text-white' : 'text-secondary'} text-xl mb-10 w-48 px-6 py-10 ${tab === 'tab2' ? 'bg-secondary ' : 'bg-white'} rounded-l-2xl`}
-              onMouseEnter={() => setTab('tab2')}
-            >
-              省级
-            </li>
-            <li
-              className={`transition-all border-2 border-r-0 border-secondary border-solid text-left cursor-pointer ${tab === 'tab3' ? 'text-white' : 'text-secondary'} text-xl mb-10 w-48 px-6 py-10 ${tab === 'tab3' ? 'bg-secondary ' : 'bg-white'} rounded-l-2xl`}
-              onMouseEnter={() => setTab('tab3')}
-            >
-              市级
-            </li>
+        <div className="w-52">
+          <ul className="list-none p-0">
+            {
+              panes.map((item) => (
+                <li
+                  className="flex items-center text-xl mb-0 py-10"
+                  onMouseEnter={() => setTab(item.id)}
+                  key={item.id}
+                >
+                  <div className={`w-32 flex justify-start items-center px-3 py-1 transition-all text-left cursor-pointer border-2 border-primary border-solid rounded-full ${tab === item.id ? 'text-white' : 'text-title'} ${tab === item.id ? 'bg-primary ' : 'bg-white'}`}>
+                    <span><img src={item.image} alt="" /></span>
+                    <span>{item.name}</span>
+                  </div>
+                  <div className={`${tab === item.id ? 'block' : 'hidden'} ${styles.suffix}`}><div className={styles.suffixInner} /></div>
+                </li>
+              ))
+            }
           </ul>
         </div>
         <div className="flex-1">
@@ -118,6 +136,7 @@ const Tables: React.FC<TablesProps> = () => {
                 rowKey="id"
                 bordered
                 className={styles['no-hover']}
+                pagination={false}
               />
             </MultiPane.Item>
             <MultiPane.Item name="tab2">
@@ -127,6 +146,7 @@ const Tables: React.FC<TablesProps> = () => {
                 rowKey="id"
                 bordered
                 className={styles['no-hover']}
+                pagination={false}
               />
             </MultiPane.Item>
             <MultiPane.Item name="tab3">
@@ -136,6 +156,7 @@ const Tables: React.FC<TablesProps> = () => {
                 rowKey="id"
                 bordered
                 className={styles['no-hover']}
+                pagination={false}
               />
             </MultiPane.Item>
           </MultiPane>

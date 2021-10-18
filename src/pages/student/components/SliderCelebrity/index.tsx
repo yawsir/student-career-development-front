@@ -1,7 +1,7 @@
 /*
  * @Author: yuyang
  * @Date: 2021-10-15 10:54:20
- * @LastEditTime: 2021-10-15 13:46:44
+ * @LastEditTime: 2021-10-18 09:35:42
  * @LastEditors: yuyang
  */
 import React from 'react';
@@ -17,6 +17,7 @@ const SliderStudents: React.FC = () => (
           <BasicSlider
             dots={false}
             autoplay={false}
+            reverse
           >
             {
               celebrityList2.map((item) => (
@@ -47,6 +48,7 @@ const SliderStudents: React.FC = () => (
           <BasicSlider
             dots={false}
             autoplay={false}
+            reverse
           >
             {
               celebrityList1.map((item) => (
