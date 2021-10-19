@@ -1,7 +1,7 @@
 /*
  * @Author: yuyang
  * @Date: 2021-08-31 17:24:02
- * @LastEditTime: 2021-10-18 15:37:50
+ * @LastEditTime: 2021-10-19 09:53:24
  * @LastEditors: yuyang
  */
 import React from 'react';
@@ -11,6 +11,7 @@ import TitleLevel2 from '@/components/TitleLevel2';
 import TitleLevel1 from '@/components/TitleLevel1';
 import Tables from './components/Tables';
 import SliderActivity from './components/SliderActivity';
+import SchoolPictures from './components/SchoolPictures';
 
 interface SchoolProps {
 
@@ -31,6 +32,9 @@ const School: React.FC<SchoolProps> = () => (
     </section>
     <section className="w-full m-auto my-8">
       <TitleLevel1 bottomText="学校总体生涯教育设计案例" topText="学校" />
+    </section>
+    <section className="w-full m-auto my-8">
+      <SchoolPictures />
     </section>
   </NewsContainer>
 );

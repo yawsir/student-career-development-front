@@ -1,16 +1,16 @@
 /*
  * @Author: yuyang
  * @Date: 2021-08-29 11:59:52
- * @LastEditTime: 2021-09-22 15:49:36
+ * @LastEditTime: 2021-10-19 13:09:31
  * @LastEditors: yuyang
  */
 import React from 'react';
-import NewsContainer from '@/components/NewsContainer';
-import MultiPane from '@/components/MultiPane';
 import { history } from 'umi';
 import { Button } from 'antd';
 import { LeftOutlined } from '@ant-design/icons';
-import careerInfo from '../career-info';
+import MultiPane from '@/components/MultiPane';
+import NewsContainer from '@/components/NewsContainer';
+import careerInfo from '@/data/career-info';
 
 interface CareerDetailProps {
   match: {
@@ -43,9 +43,9 @@ const CareerDetail: React.FC<CareerDetailProps> = (props) => {
             返回
           </Button>
         </div>
-        <div className="w-4/5 mx-auto border-8 border-third border-solid p-12 bg-white">
+        <div className="w-4/5 mx-auto border-8 border-primary border-solid p-12 bg-white">
           <h3 className="text-center text-primary text-4xl mb-14">
-            <span className="pb-2 px-28 border-0 border-b-2 border-third border-solid">{career.name}</span>
+            <span className="pb-2 px-28 border-0 border-b-2 border-primary border-solid">{career.name}</span>
           </h3>
           <div className="flex justify-start items-start">
             <div className="px-8">

@@ -1,14 +1,17 @@
 /*
  * @Author: yuyang
  * @Date: 2021-08-29 11:50:26
- * @LastEditTime: 2021-08-29 16:45:43
+ * @LastEditTime: 2021-10-19 13:09:15
  * @LastEditors: yuyang
  */
 import React from 'react';
-import bannerImg from '@/assets/career_banner.jpg';
 import { Form, Select } from 'antd';
+import bannerImg from '@/assets/career_banner.jpg';
+import careerbg from '@/assets/bgs/about.png';
+import TitleLevel1 from '@/components/TitleLevel1';
+import NewsContainer from '@/components/NewsContainer';
 import CareerItem from './components/CareerItem';
-import careerInfoList, { hollandCodes, CareenInfoType, HollandCodeType } from './career-info';
+import careerInfoList, { hollandCodes, CareenInfoType, HollandCodeType } from '@/data/career-info';
 
 interface CareerProps {
 
@@ -26,16 +29,14 @@ const Career: React.FC<CareerProps> = () => {
     }
   };
   return (
-    <div className="w-ful">
+    <div>
       <section className="w-full">
         <div className="w-full">
           <img src={bannerImg} alt="" className="w-full h-full object-cover object-center" />
         </div>
-        <h4 className="w-full box-border m-0 bg-primary text-white text-3xl text-left pt-4 pb-2 pl-10">
-          职业信息库
-        </h4>
+        <TitleLevel1 topText="主页·职业信息库" bottomText="职业信息库" />
       </section>
-      <section className="w-full bg-custom-gray-5">
+      <NewsContainer background={careerbg}>
         <div className="sm:w-full md:w-full lg:w-5/6 xl:w-4/5 2xl:w-3/4 flex flex-row-reverse px-16 pt-8">
           <Form form={form}>
             <Form.Item
@@ -65,7 +66,7 @@ const Career: React.FC<CareerProps> = () => {
             }
           </div>
         </div>
-      </section>
+      </NewsContainer>
     </div>
   );
 };
