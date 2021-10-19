@@ -1,7 +1,7 @@
 /*
  * @Author: yuyang
  * @Date: 2021-07-06 14:54:43
- * @LastEditTime: 2021-10-18 17:46:31
+ * @LastEditTime: 2021-10-19 17:06:04
  * @LastEditors: yuyang
  */
 module.exports = {
@@ -13,6 +13,8 @@ module.exports = {
           'table-even-column',
           'text-lg',
           'leading-loose',
+          'bottom-full',
+          '-bottom-full',
         ],
       }
     },
@@ -33,10 +35,12 @@ module.exports = {
         'custom-white': '#E8F0F2',
         'custom-white2': '#E7F0F2',
         'custom-white3': '#ECF5F4',
+        'custom-white4': '#EEF8FA',
         'table-odd-column': '#D5E3E8',
         'table-even-column': '#BDDFF1',
         'slide': '#E7F0F2',
         'teacherBg':'#fea552b0',
+        'translucent-black': 'rgba(0, 0, 0, 0.2)',
       }),
       boxShadow: {
         sm: '0 1px 2px 0 rgba(0, 0, 0, 0.05)',
@@ -90,7 +94,7 @@ module.exports = {
     variants: {
       extend: {
         padding: ['hover'],
-        fontWeight: ['hover']
+        fontWeight: ['hover'],
       }
     },
     plugins: [],

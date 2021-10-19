@@ -1,0 +1,56 @@
+.gradientBg {
+  background: @primary-color !important;
+  background: linear-gradient(to right, @primary-color , @secondary-color) !important;
+}
+.DayPicker-Day {
+  width: 60px;
+  height: 35px;
+}
+
+.DayPicker-Day--eventDate[aria-disabled="false"] {
+  border-radius: 0;
+  position: relative;
+  background-color: transparent;
+  &::after {
+    position: absolute;
+    content: '';
+    width: 8px;
+    height: 8px;
+    top: 4px;
+    right: 4px;
+    background-color: red;
+    border-radius: 50%;
+  }
+}
+
+.DayPicker-Caption {
+  .gradientBg();
+  height: 50px;
+  line-height: 50px;
+  font-size: 16px;
+  text-align: center;
+}
+.DayPicker-Month {
+  margin: 0;
+}
+
+.DayPicker-NavButton {
+  top: 14.5px;
+}
+
+.DayPicker-NavButton {
+  right: 50%;
+  transform: translateX(-50%);
+}
+
+.DayPicker-NavButton--prev {
+  margin-right: 3.5rem;
+}
+.DayPicker-NavButton--next {
+  margin-right: -6rem;
+}
+
+.DayPicker:not(.DayPicker--interactionDisabled) .DayPicker-Day:not(.DayPicker-Day--disabled):not(.DayPicker-Day--selected):not(.DayPicker-Day--outside):hover {
+  background-color: @primary-color;
+  border-radius: 0;
+}

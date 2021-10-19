@@ -1,7 +1,7 @@
 /*
  * @Author: yuyang
  * @Date: 2021-03-27 14:20:18
- * @LastEditTime: 2021-10-18 16:26:42
+ * @LastEditTime: 2021-10-19 13:28:09
  * @LastEditors: yuyang
  */
 import React from 'react';
@@ -17,7 +17,7 @@ const { Header, Content } = Layout;
 const BaseLayout: React.FunctionComponent = (props: any) => {
   const { children } = props;
   return (
-    <div className="w-full mx-auto overflow-x-hidden" style={{ minWidth: '1200px' }}>
+    <div className="w-full mx-auto overflow-x-hidden" style={{ minWidth: '1400px' }}>
       <Header className={`${styles.header} w-full 3xl:w-11/12 mx-auto`}>
         <Row className="w-full" justify="start" align="middle">
           <Col span={6}>
