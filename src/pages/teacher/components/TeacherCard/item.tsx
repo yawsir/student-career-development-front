@@ -1,7 +1,7 @@
 /*
  * @Author: haoyh
  * @Date: 2021-10-14 15:44:40
- * @LastEditTime: 2021-10-14 16:02:26
+ * @LastEditTime: 2021-10-19 13:38:06
  * @LastEditors: haoyh
  */
 
@@ -20,24 +20,14 @@ interface TeacherItemProps {
 
 const TeacherItem: React.FC<TeacherItemProps> = (props) => {
   const { item } = props;
-  const [hover, setHover] = React.useState(false);
-  const handleMouseEnter = () => {
-    setHover(true);
-  };
-  const handleMouseLeave = () => {
-    setHover(false);
-  };
-
   return (
     <>
       <div
-        className={`${styles.tCard} transition transform ${hover ? '-translate-y-2' : '-translate-y-0'} ${hover ? 'scale-105' : 'scale-100'} `}
-        onMouseEnter={handleMouseEnter}
-        onMouseLeave={handleMouseLeave}
+        className={styles.tCard}
       >
         <div className="flex">
           <div>
-            <img src={item.img} alt="teacher" className="w-32" />
+            <img src={item.img} alt="teacher" className="w-32 h-full" />
           </div>
           <div className="flex flex-col">
             <div className={`${styles.tName} flex justify-center items-center h-10 bg-teacherBg`}>{item.name}</div>

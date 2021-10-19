@@ -1,7 +1,7 @@
 /*
  * @Author: yuyang
  * @Date: 2021-05-05 20:01:53
- * @LastEditTime: 2021-10-18 10:39:57
+ * @LastEditTime: 2021-10-19 15:05:31
  * @LastEditors: haoyh
  */
 import React from 'react';
@@ -16,9 +16,10 @@ const Teacher: React.FC = () => (
     <div className={`${styles.teacherPage} container mx-auto py-2`}>
       <div className="w-full mx-auto">
         <div className="flex justify-center items-center text-center my-4">
-          <span className="text-xl text-title my-5 rounded-md font-bold transition transform scale-100 hover:scale-110 bg-gradient-to-r from-bg-1 to-bg-2" style={{ padding: '16px 50px' }}>
-            名师专栏
-          </span>
+        {/* <span className="text-xl text-title my-5 rounded-md font-bold transition transform scale-100 hover:scale-110 bg-gradient-to-r from-bg-1 to-bg-2" style={{ padding: '16px 50px' }}> */}
+          <div className={styles.title}>
+            <span>名师专栏</span>
+          </div>
         </div>
         <div className={`${styles['teacher-content']} mx-auto flex flex-wrap justify-between`}>
           <TeacherCard />
